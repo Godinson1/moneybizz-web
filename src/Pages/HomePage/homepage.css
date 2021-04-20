@@ -1,0 +1,204 @@
+/*
+Color variables
+..........................................................*/
+/*........................................................*/
+/*
+Color variables
+..........................................................*/
+/*........................................................*/
+/*
+Color variables
+..........................................................*/
+/*........................................................*/
+h1 {
+  font-size: Lexend;
+  font-size: clamp(2rem, 7vw, 3.5rem);
+  font-weight: bold;
+  color: #083e9e;
+  cursor: pointer;
+  font-weight: bolder;
+}
+
+div {
+  font-family: "Lexend";
+}
+
+p {
+  font-size: Lexend;
+  font-size: clamp(1rem, 1.2vw, 3rem);
+  line-height: 25px;
+}
+
+@-webkit-keyframes lds-ring {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes lds-ring {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  33% {
+    opacity: 1;
+  }
+  53% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  33% {
+    opacity: 1;
+  }
+  53% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.home-header {
+  background-color: lightblue;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 100px;
+  padding: 50px 200px 50px 50px;
+}
+
+.home-header .register-button-home {
+  padding: 15px 20px 15px 20px;
+  border-bottom-right-radius: 7px;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+  background-color: #083e9e;
+  color: #ffffff;
+  cursor: pointer;
+  width: 190px;
+  margin-top: 10px;
+}
+
+.home-header .register-button-home:hover {
+  background-color: #062863;
+}
+
+.home-header .mobile-button {
+  padding: 5px 10px 5px 10px !important;
+  padding: 15px 20px 15px 20px;
+  border-bottom-right-radius: 7px;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+  background-color: #000000;
+  color: #ffffff;
+  margin-top: 15px;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.home-header .flex-start {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  gap: 10px;
+}
+
+.home-header .picture-holder {
+  width: 500px;
+  height: 500px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.home-header .picture-holder img {
+  position: absolute;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 500px;
+  height: 500px;
+  border-radius: 20px;
+  -webkit-animation-name: fade;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-duration: 30s;
+  animation-name: fade;
+  animation-iteration-count: infinite;
+  animation-duration: 30s;
+}
+
+.home-header .picture-holder #f1 {
+  background-color: lightblue;
+}
+
+.home-header .picture-holder #f2 {
+  -webkit-animation-delay: 6s;
+  animation-delay: 6s;
+  background-color: yellow;
+}
+
+.home-header .picture-holder #f3 {
+  -webkit-animation-delay: 15s;
+  animation-delay: 15s;
+  background-color: lightgreen;
+}
+
+@media screen and (max-width: 768px) {
+  .home-header {
+    padding: 50px;
+  }
+  .picture-holder {
+    display: none;
+  }
+  .mobile-button {
+    padding: 5px 2px 5px 2px !important;
+  }
+}
+/*# sourceMappingURL=homepage.css.map */

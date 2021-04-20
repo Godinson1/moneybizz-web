@@ -1,0 +1,84 @@
+@import "../../sass-styles/variables";
+@import "../../sass-styles/mixins";
+@import "../../sass-styles/typography";
+@import "../../sass-styles/animation";
+@import "../../sass-styles/breakpoints";
+
+.home-header {
+  background-color: lightblue;
+  @include flex-center;
+  gap: 100px;
+  padding: 50px 200px 50px 50px;
+
+  .register-button-home {
+    @include custom-button;
+    width: 190px;
+    margin-top: 10px;
+  }
+
+  .mobile-button {
+    padding: 5px 10px 5px 10px !important;
+    @include custom-border-radius;
+    background-color: $black-color;
+    color: $primary-color;
+    margin-top: 15px;
+    cursor: pointer;
+    @include flex-center;
+  }
+
+  .flex-start {
+    @include flex-start;
+    gap: 10px;
+  }
+
+  .picture-holder {
+    width: 500px;
+    height: 500px;
+
+    border-radius: 10px;
+    overflow: hidden;
+
+    img {
+      position: absolute;
+      object-fit: cover;
+      width: 500px;
+      height: 500px;
+      border-radius: 20px;
+
+      -webkit-animation-name: fade;
+      -webkit-animation-iteration-count: infinite;
+      -webkit-animation-duration: 30s;
+      animation-name: fade;
+      animation-iteration-count: infinite;
+      animation-duration: 30s;
+    }
+
+    #f1 {
+      background-color: lightblue;
+    }
+    #f2 {
+      -webkit-animation-delay: 6s;
+      animation-delay: 6s;
+      background-color: yellow;
+    }
+    #f3 {
+      -webkit-animation-delay: 15s;
+      animation-delay: 15s;
+      background-color: lightgreen;
+    }
+  }
+}
+
+@include media-sm {
+  .home-header {
+    padding: 50px;
+  }
+
+  .picture-holder {
+    display: none;
+  }
+
+  .mobile-button {
+    padding: 5px 2px 5px 2px !important;
+  }
+}

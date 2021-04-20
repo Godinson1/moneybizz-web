@@ -1,13 +1,21 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "@fontsource/lexend";
-import "./index.css";
+import "semantic-ui-css/semantic.min.css";
+import "./sass-styles/_global.scss";
+import { BrowserRouter as Router } from "react-router-dom";
+import { Provider } from "react-redux";
+import store from "./redux/store";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <Router>
+        <App />
+      </Router>
+    </Provider>
   </React.StrictMode>,
   document.getElementById("root")
 );

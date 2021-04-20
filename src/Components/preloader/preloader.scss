@@ -1,0 +1,15 @@
+@import "../../sass-styles/mixins";
+@import "../../sass-styles/animation";
+
+.preloader {
+  @include flex-center;
+  height: 100vh;
+}
+
+.preloader-ring {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+  @include loader;
+}
