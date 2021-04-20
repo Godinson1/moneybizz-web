@@ -1,4 +1,5 @@
 import React, { FC, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { useViewport } from "../../utilities";
 import { small_screen_width } from "./index";
 import "./navbar.scss";
@@ -35,8 +36,12 @@ const Navbar: FC = () => {
             <div className="menu">Invest</div>
             <div className="menu">Stories</div>
             <div className="menu">Faqs</div>
-            <div className="menu">Login</div>
-            <div className="register-button">Create A Free Account</div>
+            <Link id="link" to="/login">
+              <div className="menu">Login</div>
+            </Link>
+            <Link id="link" to="/register">
+              <div className="register-button">Create A Free Account</div>
+            </Link>
             <div
               className={
                 width < small_screen_width ? "menu-icon" : "menu-hidden"

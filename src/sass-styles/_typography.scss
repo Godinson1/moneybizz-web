@@ -1,12 +1,21 @@
 @import "./variables";
 
-h1 {
-  font-size: Lexend;
-  font-size: clamp(2rem, 7vw, 3.5rem);
+@mixin font {
   font-weight: bold;
   color: $secondary-color;
   cursor: pointer;
   font-weight: bolder;
+  font-size: Lexend;
+}
+
+h1 {
+  @include font;
+  font-size: clamp(2rem, 7vw, 3.5rem);
+}
+
+h2 {
+  @include font;
+  font-size: clamp(1.8rem, 1.8vw, 3.5rem);
 }
 
 div {

@@ -11,12 +11,21 @@ Color variables
 ..........................................................*/
 /*........................................................*/
 h1 {
-  font-size: Lexend;
-  font-size: clamp(2rem, 7vw, 3.5rem);
   font-weight: bold;
   color: #083e9e;
   cursor: pointer;
   font-weight: bolder;
+  font-size: Lexend;
+  font-size: clamp(2rem, 7vw, 3.5rem);
+}
+
+h2 {
+  font-weight: bold;
+  color: #083e9e;
+  cursor: pointer;
+  font-weight: bolder;
+  font-size: Lexend;
+  font-size: clamp(1.8rem, 1.8vw, 3.5rem);
 }
 
 div {
@@ -181,13 +190,13 @@ p {
 .home-header .picture-holder #f2 {
   -webkit-animation-delay: 6s;
   animation-delay: 6s;
-  background-color: yellow;
+  background-color: #062863;
 }
 
 .home-header .picture-holder #f3 {
   -webkit-animation-delay: 15s;
   animation-delay: 15s;
-  background-color: lightgreen;
+  background-color: lightblue;
 }
 
 @media screen and (max-width: 768px) {

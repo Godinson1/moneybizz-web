@@ -1,4 +1,5 @@
 import React, { FC } from "react";
+import { Link } from "react-router-dom";
 import { Icon } from "semantic-ui-react";
 import { Navbar } from "../../Components";
 import "./homepage.scss";
@@ -14,7 +15,10 @@ const HomePage: FC = () => {
             A financial app that helps users save, invest in a hassle-free
             manner while also sending money to loved ones.
           </p>
-          <div className="register-button-home">Create A Free Account</div>
+          <Link id="link" to="/register">
+            <div className="register-button-home">Create A Free Account</div>
+          </Link>
+
           <div className="flex-start">
             <div className="mobile-button">
               <div>

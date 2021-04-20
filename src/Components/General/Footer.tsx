@@ -1,11 +1,11 @@
 import React, { FC } from "react";
+import "./general.scss";
 
 const Footer: FC = () => {
   return (
     <div>
-      <div>
-        <h1>Footer</h1>
-      </div>
+      <div className="footer-container"></div>
+      <div className="footer-container"></div>
     </div>
   );
 };

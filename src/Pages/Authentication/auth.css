@@ -1,0 +1,102 @@
+/*
+Color variables
+..........................................................*/
+/*........................................................*/
+.auth {
+  background-color: #062863;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: auto;
+  overflow: auto;
+  overflow-x: hidden;
+}
+
+.auth .login-logo {
+  color: #ffffff;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.auth .login-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.auth .register {
+  margin: 300px 0 100px 0;
+}
+
+.auth .base {
+  margin-top: 40px;
+}
+
+.auth .login-container {
+  width: 450px;
+  padding: 30px 40px 30px 40px;
+  background-color: #ffffff;
+  border-radius: 20px;
+}
+
+.auth .login-container p {
+  margin: -10px 0 10px 0;
+  text-align: center;
+}
+
+.auth .login-container .login-input {
+  width: 100%;
+  padding: 15px;
+  font-size: 1.3rem;
+  height: 50px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  background-color: lightblue;
+}
+
+.auth .login-container .login-input input {
+  border: none;
+  background-color: transparent;
+  width: 100%;
+}
+
+.auth .login-container .login-input input:focus {
+  outline: none;
+}
+
+.auth .login-container .auth-button {
+  padding: 15px 20px 15px 20px;
+  border-bottom-right-radius: 7px;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+  background-color: #083e9e;
+  color: #ffffff;
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.auth .login-container .auth-button:hover {
+  background-color: #062863;
+}
+
+@media screen and (max-width: 768px) {
+  .auth {
+    padding: 0 100px 0 100px;
+  }
+}
+/*# sourceMappingURL=auth.css.map */

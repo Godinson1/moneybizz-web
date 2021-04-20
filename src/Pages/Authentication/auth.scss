@@ -1,0 +1,78 @@
+@import "../../sass-styles/mixins";
+@import "../../sass-styles/breakpoints";
+
+.auth {
+  background-color: $background-color;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  @include flex-center;
+  flex-direction: column;
+  padding: auto;
+  overflow: auto;
+  overflow-x: hidden;
+
+  .login-logo {
+    color: $primary-color;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  .login-header {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .register {
+    margin: 300px 0 100px 0;
+  }
+
+  .base {
+    margin-top: 40px;
+  }
+
+  .login-container {
+    width: 450px;
+    padding: 30px 40px 30px 40px;
+    background-color: $primary-color;
+    border-radius: 20px;
+
+    p {
+      margin: -10px 0 10px 0;
+      text-align: center;
+    }
+
+    .login-input {
+      width: 100%;
+      padding: 15px;
+      font-size: 1.3rem;
+      height: 50px;
+      margin-bottom: 10px;
+      border-radius: 10px;
+      background-color: lightblue;
+
+      input {
+        border: none;
+        background-color: transparent;
+        width: 100%;
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+
+    .auth-button {
+      @include custom-button;
+      width: 100%;
+      text-align: center;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+  }
+}
+
+@include media-sm {
+  .auth {
+    padding: 0 100px 0 100px;
+  }
+}

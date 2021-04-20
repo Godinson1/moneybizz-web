@@ -59,12 +59,12 @@
     #f2 {
       -webkit-animation-delay: 6s;
       animation-delay: 6s;
-      background-color: yellow;
+      background-color: $background-color;
     }
     #f3 {
       -webkit-animation-delay: 15s;
       animation-delay: 15s;
-      background-color: lightgreen;
+      background-color: lightblue;
     }
   }
 }

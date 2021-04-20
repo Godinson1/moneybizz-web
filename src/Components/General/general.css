@@ -1,1 +1,75 @@
-/* No CSS *//*# sourceMappingURL=general.css.map */
+/*
+Color variables
+..........................................................*/
+/*........................................................*/
+.notfound {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+  margin-top: -90px;
+}
+
+.notfound .go-home {
+  padding: 15px 20px 15px 20px;
+  border-bottom-right-radius: 7px;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+  background-color: #083e9e;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.notfound .go-home:hover {
+  background-color: #062863;
+}
+
+.notfound .notfound-message {
+  width: 500px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.notfound .flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+}
+
+.footer-container {
+  padding: 8px 50px 32px 50px;
+  background: #dddccf;
+}
+
+.footer-container:after {
+  background: linear-gradient(-45deg, #ffffff 16px, transparent 0), linear-gradient(45deg, #ffffff 16px, transparent 0);
+  background-position: left-bottom;
+  background-repeat: repeat-x;
+  background-size: 32px 32px;
+  content: " ";
+  display: block;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  height: 92px;
+}
+/*# sourceMappingURL=general.css.map */

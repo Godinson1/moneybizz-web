@@ -1,10 +1,13 @@
-import React, { Suspense } from "react";
+import React, { Suspense, lazy } from "react";
 import { Switch, Route } from "react-router-dom";
 
 //Import components
 import { Preloader, NotFound } from "./Components";
 import { ViewportProvider } from "./utilities";
 import { HomePage } from "./Pages";
+
+const Login = lazy(() => import("./Pages/Authentication/Login"));
+const Register = lazy(() => import("./Pages/Authentication/Register"));
 
 const App = () => {
   return (
@@ -14,6 +17,8 @@ const App = () => {
           <Switch>
             <Route exact path="/load" component={Preloader} />
             <Route exact path="/" component={HomePage} />
+            <Route exact path="/login" component={Login} />
+            <Route exact path="/register" component={Register} />
             <Route component={NotFound} />
           </Switch>
         </Suspense>
