@@ -30,7 +30,9 @@ const Navbar: FC = () => {
       </div>
       <div className="nav">
         <div className="flex-between">
-          <div className="logo">MoneyBizz</div>
+          <Link id="link" to="/">
+            <div className="logo">MoneyBizz</div>
+          </Link>
           <div className="menus">
             <div className="menu">Save</div>
             <div className="menu">Invest</div>

@@ -8,6 +8,10 @@
   font-size: Lexend;
 }
 
+label {
+  font-weight: bold;
+}
+
 h1 {
   @include font;
   font-size: clamp(2.5rem, 7vw, 3.5rem);
@@ -16,6 +20,7 @@ h1 {
 h2 {
   @include font;
   font-size: clamp(1.8rem, 1.8vw, 3.5rem);
+  font-weight: 900;
 }
 
 div {

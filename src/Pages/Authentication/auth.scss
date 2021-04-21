@@ -13,8 +13,6 @@
   @include flex-center;
   margin-top: -170px;
   flex-direction: column;
-  overflow: auto;
-  overflow-x: hidden;
   z-index: 10;
 }
 
@@ -88,6 +86,11 @@
   margin-top: 40px;
 }
 
+.forgot-password {
+  cursor: pointer;
+  font-weight: bold;
+}
+
 .login-container {
   width: 450px;
   padding: 30px 40px 30px 40px;
@@ -140,8 +143,12 @@
     padding: 15px;
   }
 
+  .auth {
+    overflow-x: hidden;
+  }
+
   .register-auth {
-    padding: 15px;
+    padding: 200px 15px 100px 15px;
   }
 
   .ring-three {
@@ -154,5 +161,6 @@
 
   .login-container {
     width: 100% !important;
+    padding: 20px;
   }
 }

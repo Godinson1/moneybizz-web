@@ -10,6 +10,10 @@ Color variables
 Color variables
 ..........................................................*/
 /*........................................................*/
+label {
+  font-weight: bold;
+}
+
 h1 {
   font-weight: bold;
   color: #083e9e;
@@ -26,6 +30,7 @@ h2 {
   font-weight: bolder;
   font-size: Lexend;
   font-size: clamp(1.8rem, 1.8vw, 3.5rem);
+  font-weight: 900;
 }
 
 div {

@@ -1,8 +1,7 @@
 import React, { FC, useState } from "react";
-import { Link } from "react-router-dom";
 import "./auth.scss";
 
-const Login: FC = () => {
+const VerifyEmail: FC = () => {
   const [error, setError] = useState<boolean | string>(false);
   return (
     <div>
@@ -22,32 +21,16 @@ const Login: FC = () => {
           <h1 className="login-logo">MoneyBizz</h1>
           <div className="login-container">
             <div className="login-header">
-              <h2>Login to your Account</h2>
-              <p>Securely login to your moneybizz account.</p>
+              <h2>Verify Email</h2>
+              <p>Securely verify email attached to your moneybizz account.</p>
             </div>
             <div>
-              <label>Email or Handle</label>
+              <label>Email</label>
               <div className="login-input">
-                <input type="text" />
+                <input type="text" placeholder="Email address" />
               </div>
             </div>
-            <div>
-              <label>Password</label>
-              <div className="login-input">
-                <input type="text" />
-              </div>
-            </div>
-            <div>
-              <Link to="/verify-email">
-                <label className="forgot-password">Forgot Password?</label>
-              </Link>
-            </div>
-            <div className="auth-button">Login</div>
-            <div className="base">
-              <p>
-                Don't have an account? <Link to="/register">Register</Link>
-              </p>
-            </div>
+            <div className="auth-button">Verify</div>
           </div>
         </div>
         <div className="flex-between">
@@ -59,4 +42,4 @@ const Login: FC = () => {
   );
 };
 
-export default Login;
+export default VerifyEmail;

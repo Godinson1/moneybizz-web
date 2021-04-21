@@ -14,7 +14,8 @@ const NotFound: FC = () => {
         <div className="notfound-message">
           <p>
             Hi there &#128075;! Seems the page you are looking for does not
-            exist. You can either go back or try searching something on google.
+            exist. You can use the navigation links above, go back or try
+            searching something on google.
           </p>
         </div>
         <div className="flex">

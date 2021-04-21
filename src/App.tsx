@@ -8,6 +8,11 @@ import { HomePage } from "./Pages";
 
 const Login = lazy(() => import("./Pages/Authentication/Login"));
 const Register = lazy(() => import("./Pages/Authentication/Register"));
+const VerifyEmail = lazy(() => import("./Pages/Authentication/VerifyEmail"));
+const ResetPassword = lazy(
+  () => import("./Pages/Authentication/ResetPassword")
+);
+const Activate = lazy(() => import("./Pages/Authentication/Activate"));
 
 const App = () => {
   return (
@@ -19,6 +24,9 @@ const App = () => {
             <Route exact path="/" component={HomePage} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/register" component={Register} />
+            <Route exact path="/verify-email" component={VerifyEmail} />
+            <Route exact path="/reset-password" component={ResetPassword} />
+            <Route exact path="/activate" component={Activate} />
             <Route component={NotFound} />
           </Switch>
         </Suspense>
