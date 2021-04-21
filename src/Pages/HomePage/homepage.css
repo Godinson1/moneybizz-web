@@ -16,7 +16,7 @@ h1 {
   cursor: pointer;
   font-weight: bolder;
   font-size: Lexend;
-  font-size: clamp(2rem, 7vw, 3.5rem);
+  font-size: clamp(2.5rem, 7vw, 3.5rem);
 }
 
 h2 {
@@ -34,7 +34,7 @@ div {
 
 p {
   font-size: Lexend;
-  font-size: clamp(1rem, 1.2vw, 3rem);
+  font-size: clamp(1.3rem, 1.2vw, 3rem);
   line-height: 25px;
 }
 
@@ -201,13 +201,16 @@ p {
 
 @media screen and (max-width: 768px) {
   .home-header {
-    padding: 50px;
+    padding: 0 20px 0 20px;
+    height: 95vh;
   }
   .picture-holder {
     display: none;
   }
   .mobile-button {
     padding: 5px 2px 5px 2px !important;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
   }
 }
 /*# sourceMappingURL=homepage.css.map */

@@ -2,77 +2,157 @@
 @import "../../sass-styles/breakpoints";
 
 .auth {
-  background-color: $background-color;
   width: 100vw;
   height: 100vh;
+  background-color: $background-color;
   position: fixed;
+}
+.login {
+  background-color: $background-color;
+  height: 100%;
   @include flex-center;
+  margin-top: -170px;
   flex-direction: column;
-  padding: auto;
   overflow: auto;
   overflow-x: hidden;
+  z-index: 10;
+}
 
-  .login-logo {
-    color: $primary-color;
-    margin-bottom: 30px;
+.flex-between {
+  @include flex-between;
+}
+
+.login-logo {
+  color: $primary-color;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.register-logo {
+  color: $primary-color;
+  margin-bottom: 70px;
+  text-align: center;
+}
+
+.login-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.register {
+  background-color: $background-color;
+  height: 100%;
+  top: 20%;
+  margin: -80px 0 100px 0;
+  @include flex-center;
+  flex-direction: column;
+}
+
+.ring {
+  width: 200px;
+  height: 200px;
+  margin: -30px 0 0 -80px;
+  border: 30px solid $secondary-color;
+  border-radius: 50%;
+}
+
+.ring-two {
+  width: 200px;
+  height: 200px;
+  margin: -70px -60px 0 0;
+  border: 30px solid $secondary-color;
+  border-top-right-radius: 50%;
+  border-bottom-right-radius: 50%;
+  border-top-left-radius: 50%;
+}
+
+.ring-three {
+  width: 200px;
+  height: 200px;
+  margin: -100px 0 0 -20px;
+  border: 30px solid $secondary-color;
+  border-top-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+  border-bottom-left-radius: 50%;
+}
+
+.ring-four {
+  width: 200px;
+  height: 200px;
+  margin: -100px -50px 0 0;
+  border: 30px solid $secondary-color;
+  border-radius: 50%;
+}
+
+.base {
+  margin-top: 40px;
+}
+
+.login-container {
+  width: 450px;
+  padding: 30px 40px 30px 40px;
+  background-color: $primary-color;
+  border-radius: 20px;
+
+  p {
+    margin: -10px 0 10px 0;
     text-align: center;
   }
 
-  .login-header {
-    text-align: center;
-    margin-bottom: 30px;
-  }
+  .login-input {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.3rem;
+    height: 50px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    background-color: lightblue;
 
-  .register {
-    margin: 300px 0 100px 0;
-  }
-
-  .base {
-    margin-top: 40px;
-  }
-
-  .login-container {
-    width: 450px;
-    padding: 30px 40px 30px 40px;
-    background-color: $primary-color;
-    border-radius: 20px;
-
-    p {
-      margin: -10px 0 10px 0;
-      text-align: center;
-    }
-
-    .login-input {
+    input {
+      border: none;
+      background-color: transparent;
       width: 100%;
-      padding: 15px;
-      font-size: 1.3rem;
-      height: 50px;
-      margin-bottom: 10px;
-      border-radius: 10px;
-      background-color: lightblue;
-
-      input {
-        border: none;
-        background-color: transparent;
-        width: 100%;
-        &:focus {
-          outline: none;
-        }
+      &:focus {
+        outline: none;
       }
     }
-
-    .auth-button {
-      @include custom-button;
-      width: 100%;
-      text-align: center;
-      font-weight: bold;
-      margin-top: 10px;
-    }
   }
+
+  .auth-button {
+    @include custom-button;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+}
+
+.register-auth {
+  width: 100vw;
+  height: 100vh;
+  background-color: $background-color;
+  position: fixed;
+  overflow-x: hidden;
 }
 
 @include media-sm {
   .auth {
-    padding: 0 100px 0 100px;
+    padding: 15px;
+  }
+
+  .register-auth {
+    padding: 15px;
+  }
+
+  .ring-three {
+    display: none;
+  }
+
+  .ring-four {
+    display: none;
+  }
+
+  .login-container {
+    width: 100% !important;
   }
 }

@@ -3,10 +3,68 @@ Color variables
 ..........................................................*/
 /*........................................................*/
 .auth {
-  background-color: #062863;
   width: 100vw;
   height: 100vh;
+  background-color: #062863;
   position: fixed;
+}
+
+.login {
+  background-color: #062863;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: -170px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  overflow: auto;
+  overflow-x: hidden;
+  z-index: 10;
+}
+
+.flex-between {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.login-logo {
+  color: #ffffff;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.register-logo {
+  color: #ffffff;
+  margin-bottom: 70px;
+  text-align: center;
+}
+
+.login-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.register {
+  background-color: #062863;
+  height: 100%;
+  top: 20%;
+  margin: -80px 0 100px 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -20,43 +78,61 @@ Color variables
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding: auto;
-  overflow: auto;
-  overflow-x: hidden;
 }
 
-.auth .login-logo {
-  color: #ffffff;
-  margin-bottom: 30px;
-  text-align: center;
+.ring {
+  width: 200px;
+  height: 200px;
+  margin: -30px 0 0 -80px;
+  border: 30px solid #083e9e;
+  border-radius: 50%;
 }
 
-.auth .login-header {
-  text-align: center;
-  margin-bottom: 30px;
+.ring-two {
+  width: 200px;
+  height: 200px;
+  margin: -70px -60px 0 0;
+  border: 30px solid #083e9e;
+  border-top-right-radius: 50%;
+  border-bottom-right-radius: 50%;
+  border-top-left-radius: 50%;
 }
 
-.auth .register {
-  margin: 300px 0 100px 0;
+.ring-three {
+  width: 200px;
+  height: 200px;
+  margin: -100px 0 0 -20px;
+  border: 30px solid #083e9e;
+  border-top-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+  border-bottom-left-radius: 50%;
 }
 
-.auth .base {
+.ring-four {
+  width: 200px;
+  height: 200px;
+  margin: -100px -50px 0 0;
+  border: 30px solid #083e9e;
+  border-radius: 50%;
+}
+
+.base {
   margin-top: 40px;
 }
 
-.auth .login-container {
+.login-container {
   width: 450px;
   padding: 30px 40px 30px 40px;
   background-color: #ffffff;
   border-radius: 20px;
 }
 
-.auth .login-container p {
+.login-container p {
   margin: -10px 0 10px 0;
   text-align: center;
 }
 
-.auth .login-container .login-input {
+.login-container .login-input {
   width: 100%;
   padding: 15px;
   font-size: 1.3rem;
@@ -66,17 +142,17 @@ Color variables
   background-color: lightblue;
 }
 
-.auth .login-container .login-input input {
+.login-container .login-input input {
   border: none;
   background-color: transparent;
   width: 100%;
 }
 
-.auth .login-container .login-input input:focus {
+.login-container .login-input input:focus {
   outline: none;
 }
 
-.auth .login-container .auth-button {
+.login-container .auth-button {
   padding: 15px 20px 15px 20px;
   border-bottom-right-radius: 7px;
   border-top-left-radius: 7px;
@@ -90,13 +166,33 @@ Color variables
   margin-top: 10px;
 }
 
-.auth .login-container .auth-button:hover {
+.login-container .auth-button:hover {
   background-color: #062863;
+}
+
+.register-auth {
+  width: 100vw;
+  height: 100vh;
+  background-color: #062863;
+  position: fixed;
+  overflow-x: hidden;
 }
 
 @media screen and (max-width: 768px) {
   .auth {
-    padding: 0 100px 0 100px;
+    padding: 15px;
+  }
+  .register-auth {
+    padding: 15px;
+  }
+  .ring-three {
+    display: none;
+  }
+  .ring-four {
+    display: none;
+  }
+  .login-container {
+    width: 100% !important;
   }
 }
 /*# sourceMappingURL=auth.css.map */

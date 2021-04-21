@@ -10,7 +10,7 @@
 
 h1 {
   @include font;
-  font-size: clamp(2rem, 7vw, 3.5rem);
+  font-size: clamp(2.5rem, 7vw, 3.5rem);
 }
 
 h2 {
@@ -24,6 +24,6 @@ div {
 
 p {
   font-size: Lexend;
-  font-size: clamp(1rem, 1.2vw, 3rem);
+  font-size: clamp(1.3rem, 1.2vw, 3rem);
   line-height: 25px;
 }
