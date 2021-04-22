@@ -1,21 +1,6 @@
 @import "../../sass-styles/mixins";
 @import "../../sass-styles/breakpoints";
 
-.auth {
-  width: 100vw;
-  height: 100vh;
-  background-color: $background-color;
-  position: fixed;
-}
-.login {
-  background-color: $background-color;
-  height: 100%;
-  @include flex-center;
-  margin-top: -170px;
-  flex-direction: column;
-  z-index: 10;
-}
-
 .flex-between {
   @include flex-between;
 }
@@ -37,49 +22,67 @@
   margin-bottom: 30px;
 }
 
-.register {
+.designs {
+  height: 100vh;
+  width: 100vw;
   background-color: $background-color;
-  height: 100%;
-  top: 20%;
-  margin: -80px 0 100px 0;
-  @include flex-center;
-  flex-direction: column;
-}
+  overflow: hidden;
+  position: fixed;
 
-.ring {
-  width: 200px;
-  height: 200px;
-  margin: -30px 0 0 -80px;
-  border: 30px solid $secondary-color;
-  border-radius: 50%;
-}
+  .ring {
+    .ring-one {
+      width: 200px;
+      height: 200px;
+      margin: -30px 0 0 -80px;
+      border: 30px solid $secondary-color;
+      border-radius: 50%;
+      top: 0;
+      left: 0;
+    }
+    .ring-two {
+      width: 200px;
+      height: 200px;
+      margin: -70px -60px 0 0;
+      border: 30px solid $secondary-color;
+      border-top-right-radius: 50%;
+      border-bottom-right-radius: 50%;
+      border-top-left-radius: 50%;
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+    .ring-three {
+      width: 200px;
+      height: 200px;
+      margin: 0 0 0 -100px;
+      border: 30px solid yellowgreen;
+      border-top-left-radius: 50%;
+      border-bottom-right-radius: 50%;
+      border-bottom-left-radius: 50%;
+      position: absolute;
+      bottom: -50px;
+    }
+    .ring-four {
+      width: 200px;
+      height: 200px;
+      margin: 0 -100px 0 0;
+      border: 30px solid green;
+      border-radius: 50%;
+      position: absolute;
+      right: 0;
+      bottom: -50px;
+    }
+  }
 
-.ring-two {
-  width: 200px;
-  height: 200px;
-  margin: -70px -60px 0 0;
-  border: 30px solid $secondary-color;
-  border-top-right-radius: 50%;
-  border-bottom-right-radius: 50%;
-  border-top-left-radius: 50%;
-}
+  .container-auth {
+    @include auth-container;
+    padding: 300px 50px 50px 70px;
+  }
 
-.ring-three {
-  width: 200px;
-  height: 200px;
-  margin: -100px 0 0 -20px;
-  border: 30px solid $secondary-color;
-  border-top-left-radius: 50%;
-  border-bottom-right-radius: 50%;
-  border-bottom-left-radius: 50%;
-}
-
-.ring-four {
-  width: 200px;
-  height: 200px;
-  margin: -100px -50px 0 0;
-  border: 30px solid $secondary-color;
-  border-radius: 50%;
+  .login-auth {
+    @include auth-container;
+    padding: 50px;
+  }
 }
 
 .base {
@@ -102,7 +105,7 @@
     text-align: center;
   }
 
-  .login-input {
+  .auth-input {
     width: 100%;
     padding: 15px;
     font-size: 1.3rem;
@@ -130,37 +133,14 @@
   }
 }
 
-.register-auth {
-  width: 100vw;
-  height: 100vh;
-  background-color: $background-color;
-  position: fixed;
-  overflow-x: hidden;
-}
-
 @include media-sm {
-  .auth {
-    padding: 15px;
-  }
-
-  .auth {
-    overflow-x: hidden;
-  }
-
-  .register-auth {
-    padding: 200px 15px 100px 15px;
-  }
-
-  .ring-three {
-    display: none;
-  }
-
-  .ring-four {
-    display: none;
+  .container-auth,
+  .login-auth {
+    width: 100% !important;
+    padding: 0;
   }
 
   .login-container {
-    width: 100% !important;
-    padding: 20px;
+    width: 100%;
   }
 }

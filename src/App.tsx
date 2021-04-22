@@ -4,8 +4,8 @@ import { Switch, Route } from "react-router-dom";
 //Import components
 import { Preloader, NotFound } from "./Components";
 import { ViewportProvider } from "./utilities";
-import { HomePage } from "./Pages";
 
+const HomePage = lazy(() => import("./Pages/HomePage"));
 const Login = lazy(() => import("./Pages/Authentication/Login"));
 const Register = lazy(() => import("./Pages/Authentication/Register"));
 const VerifyEmail = lazy(() => import("./Pages/Authentication/VerifyEmail"));

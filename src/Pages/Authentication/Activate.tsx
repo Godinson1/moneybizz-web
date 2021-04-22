@@ -1,44 +1,54 @@
 import React, { FC, useState } from "react";
+import { Link } from "react-router-dom";
+import {
+  LOGIN_ERROR_HEADER,
+  LOGO,
+  ACTIVATE,
+  ACTIVATE_DESC,
+  ACTIVATE_HEADER,
+  DIDNT_RECEIVE_CODE,
+  ACTIVATION_CODE,
+  TRY_AGAIN,
+} from "./constants";
+import Design from "./Design";
 import "./auth.scss";
 
 const Activate: FC = () => {
   const [error, setError] = useState<boolean | string>(false);
   return (
     <div>
-      <div className="auth">
-        <div className="flex-between">
-          <div className="ring"></div>
-          <div className="ring-two"></div>
-        </div>
-        <div className="login">
-          {error && (
-            <div className="ui error message">
-              <i onClick={() => setError(false)} className="close icon"></i>
-              <div className="header">Error trying to Login..</div>
-              <p>{error}</p>
-            </div>
-          )}
-          <h1 className="login-logo">MoneyBizz</h1>
-          <div className="login-container">
-            <div className="login-header">
-              <h2>Activate Account</h2>
-              <p>
-                Enter bizz activation code sent to your email to continue the
-                bizzer experience.
-              </p>
-            </div>
-            <div>
-              <label>Activation Code</label>
-              <div className="login-input">
-                <input type="text" />
+      <div className="test">
+        <div className="designs">
+          <Design />
+          <div className="login-auth">
+            {error && (
+              <div className="ui error message">
+                <i onClick={() => setError(false)} className="close icon"></i>
+                <div className="header">{LOGIN_ERROR_HEADER}</div>
+                <p>{error}</p>
+              </div>
+            )}
+            <h1 className="register-logo">{LOGO}</h1>
+            <div className="login-container">
+              <div className="login-header">
+                <h2>{ACTIVATE_HEADER}</h2>
+                <p>{ACTIVATE_DESC}</p>
+              </div>
+              <div>
+                <label>{ACTIVATION_CODE}</label>
+                <div className="auth-input">
+                  <input type="text" />
+                </div>
+              </div>
+              <div className="auth-button">{ACTIVATE}</div>
+              <div className="base">
+                <p>
+                  {DIDNT_RECEIVE_CODE}
+                  <Link to="/verify-email"> {TRY_AGAIN}</Link>
+                </p>
               </div>
             </div>
-            <div className="auth-button">Activate</div>
           </div>
-        </div>
-        <div className="flex-between">
-          <div className="ring-three"></div>
-          <div className="ring-four"></div>
         </div>
       </div>
     </div>
