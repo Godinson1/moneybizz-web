@@ -13,36 +13,6 @@ Color variables
   -webkit-box-shadow: rgba(79, 79, 79, 0.07) 0px 4px 10px;
           box-shadow: rgba(79, 79, 79, 0.07) 0px 4px 10px;
   position: fixed;
-  margin-left: 250px;
-  -webkit-transition: width 200ms ease-in-out;
-  transition: width 200ms ease-in-out;
-}
-
-.navbar .header {
-  height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: start;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  gap: 10px;
-  padding-left: 10px;
-  cursor: pointer;
-  color: #083e9e;
-}
-
-.navbar-mobile {
-  width: 100%;
-  height: 70px;
-  background-color: white;
-  -webkit-box-shadow: rgba(79, 79, 79, 0.07) 0px 4px 10px;
-          box-shadow: rgba(79, 79, 79, 0.07) 0px 4px 10px;
-  position: fixed;
-  margin-left: 75px;
   -webkit-transition: width 200ms ease-in-out;
   transition: width 200ms ease-in-out;
   overflow: hidden;
@@ -55,6 +25,56 @@ Color variables
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin-left: 250px;
+  padding-right: 275px;
+}
+
+.navbar .header {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+  padding-left: 10px;
+  cursor: pointer;
+  color: #083e9e;
+}
+
+.navbar #nav-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #083e9e;
+  cursor: pointer;
+}
+
+.navbar-mobile {
+  width: 100%;
+  height: 70px;
+  background-color: white;
+  -webkit-box-shadow: rgba(79, 79, 79, 0.07) 0px 4px 10px;
+          box-shadow: rgba(79, 79, 79, 0.07) 0px 4px 10px;
+  position: fixed;
+  -webkit-transition: width 200ms ease-in-out;
+  transition: width 200ms ease-in-out;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: 75px;
+  padding-right: 100px;
 }
 
 .navbar-mobile .header {
@@ -64,7 +84,7 @@ Color variables
   display: flex;
   -webkit-box-pack: start;
       -ms-flex-pack: start;
-          justify-content: start;
+          justify-content: flex-start;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -75,16 +95,44 @@ Color variables
 }
 
 .navbar-mobile #nav-avatar {
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
-  background-color: #062863;
-  right: 0;
+  background-color: #083e9e;
+  cursor: pointer;
 }
 
 .side-link {
-  color: white;
-  font-weight: 2.5rem;
+  color: #ffffff;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  background-color: #083e9e;
+  color: #ffffff;
+  text-align: center;
+  padding: 10px;
+  border-radius: 6px;
+  top: 100%;
+  left: 50%;
+  margin-left: -10px;
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+.flex-logout {
+  margin-top: 120px;
+  color: #e22d2d;
+  cursor: pointer;
 }
 
 .flex {
@@ -97,8 +145,26 @@ Color variables
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 40px;
-  margin-top: 70px;
-  font-weight: 600;
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.flex:hover {
+  color: #ffffff;
+}
+
+@media screen and (max-width: 768px) {
+  .navbar,
+  .navbar-mobile {
+    margin: 0;
+    padding-right: 10px;
+  }
+  .navbar .header,
+  .navbar-mobile .header {
+    padding: 0;
+  }
+  #nav-icon {
+    display: none;
+  }
 }
 /*# sourceMappingURL=util.css.map */

@@ -3,11 +3,8 @@
 @import "../../../sass-styles/variables";
 
 .dashboard-main {
-  //background-color: red;
   height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flex-center;
 
   .main-mobile {
     margin-left: 75px;
@@ -20,48 +17,56 @@
   }
 
   .sidebar-dash {
-    height: 100vh;
-    background-color: $background-color;
+    @include custom-sidebar;
     width: 250px;
-    position: fixed;
-    left: 0;
-    z-index: 3;
-    top: 0;
-    transition: width 200ms ease-in-out;
-    padding: 15px 20px 50px 20px;
-    .header {
-      @include flex-center;
-      flex-direction: column;
-      #white {
-        color: white;
-        cursor: pointer;
-      }
-    }
   }
 
   .sidebar-dash-mobile {
-    height: 100vh;
-    background-color: $background-color;
+    @include custom-sidebar;
     width: 75px;
-    position: fixed;
-    overflow: hidden;
-    left: 0;
-    transition: width 200ms ease-in-out;
-    padding: 15px 20px 50px 20px;
-    z-index: 3;
-
-    .header {
-      text-align: center;
-      #white {
-        color: white;
-        cursor: pointer;
-      }
-    }
   }
 
   .dashboard-content {
     height: 100vh;
     width: 100%;
-    padding: 0;
+  }
+}
+
+.main-footer {
+  display: none;
+}
+
+@include media-sm {
+  .main-footer {
+    @include flex-center;
+    color: $primary-color;
+    bottom: 0;
+    padding: 20px;
+    height: 60px;
+    width: 100%;
+    background-color: $background-color;
+    position: fixed;
+    cursor: pointer;
+    overflow: hidden;
+
+    .flex-footer {
+      @include flex-between;
+      width: 100%;
+      gap: 20px;
+
+      .icon:hover {
+        color: $primary-color;
+      }
+    }
+  }
+
+  .sidebar-dash,
+  .sidebar-dash-mobile {
+    display: none;
+  }
+
+  .main,
+  .main-mobile {
+    margin: 0 !important;
   }
 }

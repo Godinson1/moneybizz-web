@@ -30,3 +30,5 @@ export const SIDEBAR_LINKS = [
     exact: false,
   },
 ];
+
+export const small_screen_size = 768;

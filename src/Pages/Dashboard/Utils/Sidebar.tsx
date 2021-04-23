@@ -25,6 +25,10 @@ const Sidebar: FC = () => {
             );
           })}
         </div>
+        <div className="flex-logout tooltip">
+          <Icon size="big" name="power" />
+          <span className="tooltiptext">Logout</span>
+        </div>
       </div>
     </div>
   );

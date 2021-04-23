@@ -32,14 +32,16 @@ Color variables
 .dashboard-main .sidebar-dash {
   height: 100vh;
   background-color: #062863;
-  width: 250px;
   position: fixed;
   left: 0;
   z-index: 3;
   top: 0;
   -webkit-transition: width 200ms ease-in-out;
   transition: width 200ms ease-in-out;
+  font-size: 1.1rem;
+  font-weight: bold;
   padding: 15px 20px 50px 20px;
+  width: 250px;
 }
 
 .dashboard-main .sidebar-dash .header {
@@ -59,35 +61,99 @@ Color variables
 }
 
 .dashboard-main .sidebar-dash .header #white {
-  color: white;
+  color: #ffffff;
   cursor: pointer;
 }
 
 .dashboard-main .sidebar-dash-mobile {
   height: 100vh;
   background-color: #062863;
-  width: 75px;
   position: fixed;
-  overflow: hidden;
   left: 0;
+  z-index: 3;
+  top: 0;
   -webkit-transition: width 200ms ease-in-out;
   transition: width 200ms ease-in-out;
+  font-size: 1.1rem;
+  font-weight: bold;
   padding: 15px 20px 50px 20px;
-  z-index: 3;
+  width: 75px;
 }
 
 .dashboard-main .sidebar-dash-mobile .header {
-  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .dashboard-main .sidebar-dash-mobile .header #white {
-  color: white;
+  color: #ffffff;
   cursor: pointer;
 }
 
 .dashboard-main .dashboard-content {
   height: 100vh;
   width: 100%;
-  padding: 0;
+}
+
+.main-footer {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .main-footer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    color: #ffffff;
+    bottom: 0;
+    padding: 20px;
+    height: 60px;
+    width: 100%;
+    background-color: #062863;
+    position: fixed;
+    cursor: pointer;
+    overflow: hidden;
+  }
+  .main-footer .flex-footer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 100%;
+    gap: 20px;
+  }
+  .main-footer .flex-footer .icon:hover {
+    color: #ffffff;
+  }
+  .sidebar-dash,
+  .sidebar-dash-mobile {
+    display: none;
+  }
+  .main,
+  .main-mobile {
+    margin: 0 !important;
+  }
 }
 /*# sourceMappingURL=dashboard.css.map */

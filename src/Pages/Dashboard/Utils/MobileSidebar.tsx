@@ -14,16 +14,21 @@ const MobileSidebar: FC = () => {
           </div>
           <div className="menu-links">
             {SIDEBAR_LINKS.map((data) => {
-              const { path, exact, icon } = data;
+              const { path, exact, icon, title } = data;
               return (
                 <NavLink activeClassName="side-link" to={path} exact={exact}>
-                  <div className="flex">
+                  <div className="flex tooltip">
                     <Icon size="big" name={icon as SemanticICONS | undefined} />
+                    <span className="tooltiptext">{title}</span>
                   </div>
                 </NavLink>
               );
             })}
           </div>
+        </div>
+        <div className="flex-logout tooltip">
+          <Icon size="big" name="power" />
+          <span className="tooltiptext">Logout</span>
         </div>
       </div>
     </div>
