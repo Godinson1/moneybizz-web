@@ -141,7 +141,7 @@
 
   .container-auth {
     width: 100%;
-    padding: 300px 15px 100px 15px !important;
+    padding: 250px 15px 100px 15px !important;
   }
 
   .login-container {
@@ -153,11 +153,11 @@
 @include media-xsm {
   .container-auth {
     width: 100%;
-    padding: 400px 15px 10px 15px !important;
+    padding: 400px 15px 50px 15px !important;
   }
 
   .login-auth {
     width: 100%;
-    padding: 100px 15px 10px 15px !important;
+    padding: 200px 15px 100px 15px !important;
   }
 }
