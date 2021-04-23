@@ -134,13 +134,30 @@
 }
 
 @include media-sm {
-  .container-auth,
   .login-auth {
     width: 100% !important;
-    padding: 0;
+    padding: 15px !important;
+  }
+
+  .container-auth {
+    width: 100%;
+    padding: 300px 15px 100px 15px !important;
   }
 
   .login-container {
     width: 100%;
+    padding: 20px;
+  }
+}
+
+@include media-xsm {
+  .container-auth {
+    width: 100%;
+    padding: 400px 15px 10px 15px !important;
+  }
+
+  .login-auth {
+    width: 100%;
+    padding: 100px 15px 10px 15px !important;
   }
 }
