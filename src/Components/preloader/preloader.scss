@@ -1,5 +1,6 @@
 @import "../../sass-styles/mixins";
 @import "../../sass-styles/animation";
+@import "../../sass-styles/breakpoints";
 
 .preloader {
   @include flex-center;
@@ -14,4 +15,10 @@
   width: 80px;
   height: 80px;
   @include loader;
+}
+
+@include media-sm {
+  .preloader-ring {
+    margin-left: 60px;
+  }
 }

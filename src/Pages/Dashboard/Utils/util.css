@@ -1,0 +1,104 @@
+/*
+Color variables
+..........................................................*/
+/*........................................................*/
+/*
+Color variables
+..........................................................*/
+/*........................................................*/
+.navbar {
+  width: 100%;
+  height: 70px;
+  background-color: white;
+  -webkit-box-shadow: rgba(79, 79, 79, 0.07) 0px 4px 10px;
+          box-shadow: rgba(79, 79, 79, 0.07) 0px 4px 10px;
+  position: fixed;
+  margin-left: 250px;
+  -webkit-transition: width 200ms ease-in-out;
+  transition: width 200ms ease-in-out;
+}
+
+.navbar .header {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+  padding-left: 10px;
+  cursor: pointer;
+  color: #083e9e;
+}
+
+.navbar-mobile {
+  width: 100%;
+  height: 70px;
+  background-color: white;
+  -webkit-box-shadow: rgba(79, 79, 79, 0.07) 0px 4px 10px;
+          box-shadow: rgba(79, 79, 79, 0.07) 0px 4px 10px;
+  position: fixed;
+  margin-left: 75px;
+  -webkit-transition: width 200ms ease-in-out;
+  transition: width 200ms ease-in-out;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.navbar-mobile .header {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+  padding-left: 10px;
+  cursor: pointer;
+  color: #083e9e;
+}
+
+.navbar-mobile #nav-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #062863;
+  right: 0;
+}
+
+.side-link {
+  color: white;
+  font-weight: 2.5rem;
+}
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 40px;
+  margin-top: 70px;
+  font-weight: 600;
+}
+/*# sourceMappingURL=util.css.map */
