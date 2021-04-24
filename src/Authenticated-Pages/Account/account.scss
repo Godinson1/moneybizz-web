@@ -3,7 +3,6 @@
 @import "../../sass-styles/variables";
 
 .auth-account {
-  height: 1000px;
   margin-left: 50px;
 
   .auth-flex {
@@ -11,9 +10,10 @@
     gap: 50px;
     .two-factor-banner {
       @include custom-border-radius;
-      background-color: lightblue;
+      @include flex-center;
+      background-color: $light-secondary;
       width: 300px;
-      height: 100px;
+      height: 120px;
       margin-bottom: 50px;
     }
 
@@ -24,24 +24,95 @@
       font-size: 1.1rem;
       border: 1px solid $secondary-color;
       width: 300px;
-      padding-left: 10px;
-      border-bottom-right-radius: 7px;
-      border-top-left-radius: 7px;
-      border-top-right-radius: 7px;
+      @include custom-border-radius;
       margin-top: 15px;
       height: 50px;
       cursor: pointer;
-
       #icon {
         font-size: 1.3rem;
       }
     }
   }
 
-  .account-avatar {
-    width: 100px;
-    height: 100px;
-    background-color: $secondary-color;
-    border-radius: 50%;
+  .avatar-name {
+    margin-bottom: 50px;
+    text-align: center;
+
+    .account-avatar {
+      width: 150px;
+      height: 150px;
+      background-color: $light-secondary;
+      border-radius: 50%;
+      margin-left: 10px;
+    }
+  }
+
+  .account-second {
+    width: 100%;
+    @include flex-center;
+    flex-direction: column;
+    margin-top: -200px;
+    padding: 0 100px 0 100px;
+
+    .show-balance {
+      @include flex-between;
+      margin-top: 50px;
+      font-size: 1.3rem;
+      width: 100%;
+      cursor: pointer;
+    }
+  }
+
+  .todo-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+    width: 100%;
+    .todo {
+      @include custom-border-radius;
+      @include flex-center;
+      border: 1px solid $secondary-color;
+      height: 100px;
+    }
+  }
+}
+
+@include media-sm {
+  .auth-account {
+    margin: 0;
+    padding-bottom: 50px;
+  }
+
+  .auth-flex {
+    flex-wrap: wrap-reverse;
+
+    .account-first {
+      width: 100%;
+      @include flex-center;
+      flex-direction: column;
+      padding: 10px;
+      margin-left: -5px;
+
+      .auth-options {
+        width: 100%;
+      }
+    }
+
+    .account-second {
+      margin: 0;
+      padding: 10px;
+      margin-left: -5px;
+    }
+
+    .todo-container {
+      grid-template-columns: repeat(1, 1fr);
+      width: 100%;
+
+      .todo {
+        width: 100%;
+        height: 90px;
+        gap: 50px;
+      }
+    }
   }
 }

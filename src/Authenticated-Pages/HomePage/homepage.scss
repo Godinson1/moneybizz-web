@@ -4,5 +4,101 @@
 @import "../../sass-styles/animation";
 
 .auth-home {
-  height: 1000px;
+  padding: 50px 50px 0 50px;
+
+  .flex-between {
+    @include flex-between;
+
+    .quick-save-btn {
+      @include custom-button;
+    }
+  }
+
+  .header-container {
+    width: 100%;
+    height: 150px;
+    margin-top: 10px;
+    @include flex-center;
+    gap: 10px;
+
+    div {
+      width: 500px;
+      height: 100%;
+      border-radius: 10px;
+    }
+
+    div:nth-child(1) {
+      background-color: rgb(13, 39, 88);
+    }
+    div:nth-child(2) {
+      background-color: red;
+    }
+    div:nth-child(3) {
+      background-color: rgb(24, 3, 3);
+    }
+    div:nth-child(4) {
+      background-color: rgb(18, 150, 51);
+    }
+  }
+
+  .home-flex {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    width: 100%;
+
+    .banner {
+      width: 350px;
+      height: 150px;
+      margin: 5px 0 20px 0;
+      border-radius: 10px;
+      background-color: $light-secondary;
+    }
+  }
+
+  .auth-options {
+    @include flex-start-center;
+    gap: 20px;
+    font-weight: 500;
+    font-size: 1.1rem;
+    border: 1px solid $secondary-color;
+    width: 600px;
+    @include custom-border-radius;
+    margin-top: 15px;
+    height: 60px;
+    cursor: pointer;
+    #icon {
+      font-size: 1.3rem;
+    }
+  }
+
+  .mobile-button {
+    padding: 5px 10px 5px 10px !important;
+    @include custom-border-radius;
+    background-color: $black-color;
+    color: $primary-color;
+    cursor: pointer;
+
+    @include flex-center;
+  }
+
+  .flex-start {
+    @include flex-start;
+    margin: 5px 0 20px 0;
+    gap: 45px;
+  }
+}
+
+@include media-sm {
+  .home-flex {
+    flex-wrap: wrap-reverse;
+  }
+
+  .banner {
+    width: 100%;
+  }
+
+  .auth-options {
+    width: 100%;
+  }
 }

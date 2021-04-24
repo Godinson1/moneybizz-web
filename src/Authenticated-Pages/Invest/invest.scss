@@ -3,5 +3,18 @@
 @import "../../sass-styles/variables";
 
 .auth-invest {
-  height: 1000px;
+  height: 500px;
+  width: 100%;
+  @include flex-center;
+  flex-direction: column;
+
+  h3 {
+    color: $secondary-color;
+    font-size: 2em;
+  }
+}
+
+.text-base {
+  margin-top: -10px;
+  font-family: Lexend;
 }

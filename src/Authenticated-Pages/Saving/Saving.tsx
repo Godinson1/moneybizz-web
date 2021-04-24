@@ -7,7 +7,20 @@ const Saving: FC = () => {
     <div>
       <Dashboard title="SAVINGS">
         <div className="auth-saving">
-          <h3>This is the savings page</h3>
+          <div className="save-header">
+            <div className="total-balance"></div>
+            <div className="build">
+              <div>Build Your Saving</div>
+              <div className="banner"></div>
+            </div>
+          </div>
+          <div className="save-options">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
         </div>
       </Dashboard>
     </div>

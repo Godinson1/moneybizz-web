@@ -7,6 +7,30 @@ Color variables
 ..........................................................*/
 /*........................................................*/
 .auth-invest {
-  height: 1000px;
+  height: 500px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.auth-invest h3 {
+  color: #083e9e;
+  font-size: 2em;
+}
+
+.text-base {
+  margin-top: -10px;
+  font-family: Lexend;
 }
 /*# sourceMappingURL=invest.css.map */

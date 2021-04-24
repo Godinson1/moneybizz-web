@@ -130,12 +130,39 @@ Color variables
 }
 
 .auth-home {
-  height: 1000px;
+  padding: 50px 50px 0 50px;
 }
 
-.loader-container {
+.auth-home .flex-between {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.auth-home .flex-between .quick-save-btn {
+  padding: 15px 20px 15px 20px;
+  border-bottom-right-radius: 7px;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+  background-color: #083e9e;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.auth-home .flex-between .quick-save-btn:hover {
+  background-color: #062863;
+}
+
+.auth-home .header-container {
   width: 100%;
-  height: calc(100vh - 130px);
+  height: 150px;
+  margin-top: 10px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -145,48 +172,122 @@ Color variables
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-left: -20px;
+  gap: 10px;
 }
 
-.loader-container .lds-ellipsis {
-  display: inline-block;
-  position: relative;
-  width: 80px;
-  height: 80px;
+.auth-home .header-container div {
+  width: 500px;
+  height: 100%;
+  border-radius: 10px;
 }
 
-.loader-container .lds-ellipsis div {
-  position: absolute;
-  top: 33px;
-  width: 13px;
-  height: 13px;
-  border-radius: 50%;
-  background: #062863;
-  -webkit-animation-timing-function: cubic-bezier(0, 1, 1, 0);
-          animation-timing-function: cubic-bezier(0, 1, 1, 0);
+.auth-home .header-container div:nth-child(1) {
+  background-color: #0d2758;
 }
 
-.loader-container .lds-ellipsis div:nth-child(1) {
-  left: 8px;
-  -webkit-animation: lds-ellipsis1 0.9s infinite;
-          animation: lds-ellipsis1 0.9s infinite;
+.auth-home .header-container div:nth-child(2) {
+  background-color: red;
 }
 
-.loader-container .lds-ellipsis div:nth-child(2) {
-  left: 8px;
-  -webkit-animation: lds-ellipsis2 0.9s infinite;
-          animation: lds-ellipsis2 0.9s infinite;
+.auth-home .header-container div:nth-child(3) {
+  background-color: #180303;
 }
 
-.loader-container .lds-ellipsis div:nth-child(3) {
-  left: 32px;
-  -webkit-animation: lds-ellipsis2 0.9s infinite;
-          animation: lds-ellipsis2 0.9s infinite;
+.auth-home .header-container div:nth-child(4) {
+  background-color: #129633;
 }
 
-.loader-container .lds-ellipsis div:nth-child(4) {
-  left: 56px;
-  -webkit-animation: lds-ellipsis3 0.9s infinite;
-          animation: lds-ellipsis3 0.9s infinite;
+.auth-home .home-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.auth-home .home-flex .banner {
+  width: 350px;
+  height: 150px;
+  margin: 5px 0 20px 0;
+  border-radius: 10px;
+  background-color: #9eddff;
+}
+
+.auth-home .auth-options {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 20px;
+  font-weight: 500;
+  font-size: 1.1rem;
+  border: 1px solid #083e9e;
+  width: 600px;
+  padding: 15px 20px 15px 20px;
+  border-bottom-right-radius: 7px;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+  margin-top: 15px;
+  height: 60px;
+  cursor: pointer;
+}
+
+.auth-home .auth-options #icon {
+  font-size: 1.3rem;
+}
+
+.auth-home .mobile-button {
+  padding: 5px 10px 5px 10px !important;
+  padding: 15px 20px 15px 20px;
+  border-bottom-right-radius: 7px;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+  background-color: #000000;
+  color: #ffffff;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.auth-home .flex-start {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin: 5px 0 20px 0;
+  gap: 45px;
+}
+
+@media screen and (max-width: 768px) {
+  .home-flex {
+    -ms-flex-wrap: wrap-reverse;
+        flex-wrap: wrap-reverse;
+  }
+  .banner {
+    width: 100%;
+  }
+  .auth-options {
+    width: 100%;
+  }
 }
 /*# sourceMappingURL=homepage.css.map */

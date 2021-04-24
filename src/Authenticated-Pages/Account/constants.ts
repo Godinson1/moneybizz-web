@@ -1,42 +1,42 @@
 export const ACCOUNT_OPTIONS = [
   {
-    title: "Logout",
+    title: "action-title",
     icon: "power",
   },
   {
-    title: "Logout",
+    title: "action-title",
     icon: "power",
   },
   {
-    title: "Logout",
+    title: "action-title",
     icon: "power",
   },
   {
-    title: "Logout",
+    title: "action-title",
     icon: "power",
   },
   {
-    title: "Logout",
+    title: "action-title",
     icon: "power",
   },
   {
-    title: "Logout",
+    title: "action-title",
     icon: "power",
   },
   {
-    title: "Logout",
+    title: "action-title",
     icon: "power",
   },
   {
-    title: "Logout",
+    title: "action-title",
     icon: "power",
   },
   {
-    title: "Logout",
+    title: "action-title",
     icon: "power",
   },
   {
-    title: "Logout",
+    title: "action-title",
     icon: "power",
   },
 ];

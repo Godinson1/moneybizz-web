@@ -9,10 +9,11 @@ const Account: FC = () => {
     <div>
       <Dashboard title="My Account">
         <div className="auth-account">
-          <h3>This is the account page</h3>
           <div className="auth-flex">
-            <div>
-              <div className="two-factor-banner"></div>
+            <div className="account-first">
+              <div className="two-factor-banner">
+                <h2>2f Authentication</h2>
+              </div>
               {ACCOUNT_OPTIONS.map((options) => {
                 const { icon, title } = options;
                 return (
@@ -27,8 +28,33 @@ const Account: FC = () => {
                 );
               })}
             </div>
-            <div>
-              <div className="account-avatar"></div>
+            <div className="account-second">
+              <div className="avatar-name">
+                <div className="account-avatar"></div>
+                <div>
+                  <h2>Joseph Godwin</h2>
+                </div>
+              </div>
+              <div className="todo-container">
+                <div className="todo">
+                  <h2>Todo/Info</h2>
+                </div>
+                <div className="todo">
+                  <h2>Todo/Info</h2>
+                </div>
+                <div className="todo">
+                  <h2>Todo/Info</h2>
+                </div>
+                <div className="todo">
+                  <h2>Todo/Info</h2>
+                </div>
+              </div>
+              <div className="show-balance">
+                <div>Show Account Balance</div>
+                <div>
+                  <Icon size="big" name="power" />
+                </div>
+              </div>
             </div>
           </div>
         </div>

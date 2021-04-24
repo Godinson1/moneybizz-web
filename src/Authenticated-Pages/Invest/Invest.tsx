@@ -7,7 +7,18 @@ const Invest: FC = () => {
     <div>
       <Dashboard title="INVEST">
         <div className="auth-invest">
-          <h3>This is the investment page</h3>
+          <div>
+            <img
+              width="300"
+              height="200"
+              src="images/coming.png"
+              alt="coming-soon"
+            />
+          </div>
+          <h3>Bizzivest</h3>
+          <div className="text-base">
+            <p>Kindly check back for this feature as it is coming soon...</p>
+          </div>
         </div>
       </Dashboard>
     </div>
