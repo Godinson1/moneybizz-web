@@ -4,7 +4,6 @@ import { Switch, Route } from "react-router-dom";
 //Import components
 import { Preloader, NotFound } from "./Components";
 import { ViewportProvider } from "./utilities";
-import Dashboard from "./Pages/Dashboard/Components";
 
 const HomePage = lazy(() => import("./Pages/HomePage"));
 const Login = lazy(() => import("./Pages/Authentication/Login"));
@@ -33,7 +32,6 @@ const App = () => {
             <Route exact path="/verify-email" component={VerifyEmail} />
             <Route exact path="/reset-password" component={ResetPassword} />
             <Route exact path="/activate" component={Activate} />
-            <Route exact path="/dashboard" component={Dashboard} />
             <Route exact path="/home" component={Auth_HomePage} />
             <Route exact path="/save" component={Saving} />
             <Route exact path="/invest" component={Invest} />

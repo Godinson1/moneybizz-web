@@ -5,6 +5,7 @@ import "semantic-ui-css/semantic.min.css";
 import "./sass-styles/_global.scss";
 import { BrowserRouter as Router } from "react-router-dom";
 import { Provider } from "react-redux";
+import { MyErrorBoundary } from "./utilities";
 import store from "./redux/store";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
@@ -12,9 +13,11 @@ import reportWebVitals from "./reportWebVitals";
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <Router>
-        <App />
-      </Router>
+      <MyErrorBoundary>
+        <Router>
+          <App />
+        </Router>
+      </MyErrorBoundary>
     </Provider>
   </React.StrictMode>,
   document.getElementById("root")
