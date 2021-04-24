@@ -73,12 +73,11 @@
   }
 
   .mobile-button {
-    padding: 5px 10px 5px 10px !important;
+    padding: 5px 10px 5px 10px;
     @include custom-border-radius;
     background-color: $black-color;
     color: $primary-color;
     cursor: pointer;
-
     @include flex-center;
   }
 
@@ -90,8 +89,15 @@
 }
 
 @include media-sm {
+  .auth-home {
+    padding: 20px 10px 20px 10px;
+    margin-left: -10px;
+  }
+
   .home-flex {
     flex-wrap: wrap-reverse;
+    overflow: hidden;
+    width: 100%;
   }
 
   .banner {
@@ -100,5 +106,6 @@
 
   .auth-options {
     width: 100%;
+    background-color: lightcyan;
   }
 }

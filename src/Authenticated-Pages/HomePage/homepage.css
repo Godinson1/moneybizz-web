@@ -245,7 +245,7 @@ Color variables
 }
 
 .auth-home .mobile-button {
-  padding: 5px 10px 5px 10px !important;
+  padding: 5px 10px 5px 10px;
   padding: 15px 20px 15px 20px;
   border-bottom-right-radius: 7px;
   border-top-left-radius: 7px;
@@ -279,15 +279,22 @@ Color variables
 }
 
 @media screen and (max-width: 768px) {
+  .auth-home {
+    padding: 20px 10px 20px 10px;
+    margin-left: -10px;
+  }
   .home-flex {
     -ms-flex-wrap: wrap-reverse;
         flex-wrap: wrap-reverse;
+    overflow: hidden;
+    width: 100%;
   }
   .banner {
     width: 100%;
   }
   .auth-options {
     width: 100%;
+    background-color: lightcyan;
   }
 }
 /*# sourceMappingURL=homepage.css.map */
