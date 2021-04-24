@@ -8,5 +8,59 @@ Color variables
 /*........................................................*/
 .auth-account {
   height: 1000px;
+  margin-left: 50px;
+}
+
+.auth-account .auth-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 50px;
+}
+
+.auth-account .auth-flex .two-factor-banner {
+  padding: 15px 20px 15px 20px;
+  border-bottom-right-radius: 7px;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+  background-color: lightblue;
+  width: 300px;
+  height: 100px;
+  margin-bottom: 50px;
+}
+
+.auth-account .auth-flex .auth-options {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 20px;
+  font-weight: 500;
+  font-size: 1.1rem;
+  border: 1px solid #083e9e;
+  width: 300px;
+  padding-left: 10px;
+  border-bottom-right-radius: 7px;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+  margin-top: 15px;
+  height: 50px;
+  cursor: pointer;
+}
+
+.auth-account .auth-flex .auth-options #icon {
+  font-size: 1.3rem;
+}
+
+.auth-account .account-avatar {
+  width: 100px;
+  height: 100px;
+  background-color: #083e9e;
+  border-radius: 50%;
 }
 /*# sourceMappingURL=account.css.map */
