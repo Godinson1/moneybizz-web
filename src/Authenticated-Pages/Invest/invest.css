@@ -27,10 +27,21 @@ Color variables
 .auth-invest h3 {
   color: #083e9e;
   font-size: 2em;
+  text-align: center;
+}
+
+.auth-invest p {
+  text-align: center;
 }
 
 .text-base {
   margin-top: -10px;
   font-family: Lexend;
+}
+
+@media screen and (max-width: 768px) {
+  .auth-invest {
+    margin-left: -5px;
+  }
 }
 /*# sourceMappingURL=invest.css.map */

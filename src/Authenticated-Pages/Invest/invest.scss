@@ -11,10 +11,21 @@
   h3 {
     color: $secondary-color;
     font-size: 2em;
+    text-align: center;
+  }
+
+  p {
+    text-align: center;
   }
 }
 
 .text-base {
   margin-top: -10px;
   font-family: Lexend;
+}
+
+@include media-sm {
+  .auth-invest {
+    margin-left: -5px;
+  }
 }

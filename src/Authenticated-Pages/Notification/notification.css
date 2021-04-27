@@ -9,4 +9,9 @@ Color variables
 .auth-notification {
   padding: 50px;
 }
+
+.auth-notification h3,
+.auth-notification p {
+  text-align: center;
+}
 /*# sourceMappingURL=notification.css.map */
