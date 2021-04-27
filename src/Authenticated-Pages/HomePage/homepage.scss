@@ -5,50 +5,22 @@
 
 .auth-home {
   padding: 50px 50px 0 50px;
-
   .flex-between {
     @include flex-between;
-
     .quick-save-btn {
       @include custom-button;
-    }
-  }
-
-  .header-container {
-    width: 100%;
-    height: 150px;
-    margin-top: 10px;
-    @include flex-center;
-    gap: 10px;
-
-    div {
-      width: 500px;
-      height: 100%;
-      border-radius: 10px;
-    }
-
-    div:nth-child(1) {
-      background-color: rgb(13, 39, 88);
-    }
-    div:nth-child(2) {
-      background-color: red;
-    }
-    div:nth-child(3) {
-      background-color: rgb(24, 3, 3);
-    }
-    div:nth-child(4) {
-      background-color: rgb(18, 150, 51);
     }
   }
 
   .home-flex {
     display: flex;
     justify-content: space-between;
+    gap: 50px;
+    flex-wrap: wrap-reverse;
     margin-top: 20px;
     width: 100%;
 
     .banner {
-      width: 350px;
       height: 150px;
       margin: 5px 0 20px 0;
       border-radius: 10px;
@@ -62,7 +34,7 @@
     font-weight: 500;
     font-size: 1.1rem;
     border: 1px solid $secondary-color;
-    width: 600px;
+    width: 400px;
     @include custom-border-radius;
     margin-top: 15px;
     height: 60px;
@@ -77,6 +49,7 @@
     @include custom-border-radius;
     background-color: $black-color;
     color: $primary-color;
+
     cursor: pointer;
     @include flex-center;
   }
@@ -84,28 +57,65 @@
   .flex-start {
     @include flex-start;
     margin: 5px 0 20px 0;
+    flex-wrap: wrap;
     gap: 45px;
+  }
+}
+
+.conn {
+  width: 20vw;
+  border-radius: 10px;
+  height: 150px;
+  display: inline-block;
+}
+
+div.header-home {
+  margin-top: 20px;
+  overflow: auto;
+  white-space: nowrap;
+
+  div:nth-child(1) {
+    background-color: rgb(13, 39, 88);
+  }
+  div:nth-child(2) {
+    background-color: red;
+    margin-left: 10px;
+  }
+  div:nth-child(3) {
+    background-color: rgb(24, 3, 3);
+    margin-left: 10px;
+  }
+  div:nth-child(4) {
+    background-color: rgb(18, 150, 51);
+    margin-left: 10px;
   }
 }
 
 @include media-sm {
   .auth-home {
-    padding: 20px 10px 20px 10px;
+    padding: 20px 10px 50px 10px;
+    overflow: hidden;
     margin-left: -10px;
+    width: 100vw;
+  }
+
+  .conn {
+    width: 80vw;
+  }
+
+  .todo-container,
+  .info-container {
+    width: 100%;
+  }
+
+  .flex-start {
+    gap: 10px !important;
   }
 
   .home-flex {
-    flex-wrap: wrap-reverse;
-    overflow: hidden;
-    width: 100%;
-  }
-
-  .banner {
-    width: 100%;
-  }
-
-  .auth-options {
-    width: 100%;
-    background-color: lightcyan;
+    gap: 10px !important;
+    .auth-options {
+      width: 100%;
+    }
   }
 }

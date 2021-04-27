@@ -20,14 +20,14 @@ const HomePage: FC = () => {
               </div>
               <div className="quick-save-btn">+ Quick Save</div>
             </div>
-            <div className="header-container">
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
+            <div className="header-home">
+              <div className="conn">Helloword</div>
+              <div className="conn">Helloword</div>
+              <div className="conn">Helloword</div>
+              <div className="conn">Helloword</div>
             </div>
             <div className="home-flex">
-              <div>
+              <div className="todo-container">
                 <div>Todo</div>
                 <div className="auth-options">
                   <Icon size="small" id="icon" name="percent" />
@@ -42,7 +42,7 @@ const HomePage: FC = () => {
                   <div></div>
                 </div>
               </div>
-              <div>
+              <div className="info-container">
                 <div>Build Your Savings</div>
                 <div className="banner"></div>
                 <div>Download the App</div>
