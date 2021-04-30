@@ -10,7 +10,7 @@ const Saving: FC = () => {
           <div className="save-header">
             <div className="total-balance"></div>
             <div className="build">
-              <div>Build Your Saving</div>
+              <div className="dash-title">Build Your Saving</div>
               <div className="banner"></div>
             </div>
           </div>

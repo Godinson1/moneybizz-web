@@ -12,13 +12,13 @@
   font-size: 2rem;
   line-height: 3.5rem;
   padding: 0 80px;
-  font-weight: 700;
+  font-weight: 500;
   cursor: pointer;
 }
 
 .header-error {
   font-size: 4rem;
-  color: rgb(132, 0, 255);
+  color: red;
 }
 
 @media screen and (max-width: 600px) {

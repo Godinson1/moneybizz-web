@@ -133,6 +133,14 @@ Color variables
   padding: 50px;
 }
 
+.designs .login-auth .message-auth {
+  top: 0;
+  right: 0;
+  position: absolute;
+  margin-top: 3px;
+  position: fixed;
+}
+
 .base {
   margin-top: 40px;
 }
@@ -182,6 +190,8 @@ Color variables
   background-color: #083e9e;
   color: #ffffff;
   cursor: pointer;
+  outline: none;
+  border: none;
   width: 100%;
   text-align: center;
   font-weight: bold;
@@ -190,6 +200,14 @@ Color variables
 
 .login-container .auth-button:hover {
   background-color: #062863;
+}
+
+.login-container .auth-button:focus {
+  outline: none;
+}
+
+.login-container .auth-button:disabled {
+  cursor: not-allowed;
 }
 
 @media screen and (max-width: 768px) {

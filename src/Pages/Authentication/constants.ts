@@ -68,10 +68,12 @@ const LOGIN_FORM = [
     label: "Email or Handle",
     placeholder: "Enter/Handle",
     type: "text",
+    name: "data",
     className: "auth-input",
   },
   {
     label: "Password",
+    name: "password",
     placeholder: "Password",
     type: "password",
     className: "auth-input",

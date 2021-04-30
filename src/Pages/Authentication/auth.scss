@@ -82,6 +82,14 @@
   .login-auth {
     @include auth-container;
     padding: 50px;
+
+    .message-auth {
+      top: 0;
+      right: 0;
+      position: absolute;
+      margin-top: 3px;
+      position: fixed;
+    }
   }
 }
 

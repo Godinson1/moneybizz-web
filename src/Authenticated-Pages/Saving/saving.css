@@ -10,6 +10,10 @@ Color variables
   padding: 50px;
 }
 
+.auth-saving .dash-title {
+  font-weight: 600;
+}
+
 .auth-saving .save-header {
   display: -webkit-box;
   display: -ms-flexbox;

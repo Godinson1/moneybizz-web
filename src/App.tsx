@@ -4,6 +4,7 @@ import { Switch, Route } from "react-router-dom";
 //Import components
 import { Preloader, NotFound } from "./Components";
 import { ViewportProvider } from "./utilities";
+import axios from "axios";
 
 const HomePage = lazy(() => import("./Pages/HomePage"));
 const Login = lazy(() => import("./Pages/Authentication/Login"));
@@ -18,6 +19,8 @@ const Saving = lazy(() => import("./Authenticated-Pages/Saving"));
 const Invest = lazy(() => import("./Authenticated-Pages/Invest"));
 const Account = lazy(() => import("./Authenticated-Pages/Account"));
 const Notification = lazy(() => import("./Authenticated-Pages/Notification"));
+
+axios.defaults.baseURL = "https://moneybizz.herokuapp.com";
 
 const App = () => {
   return (

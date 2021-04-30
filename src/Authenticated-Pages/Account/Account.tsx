@@ -2,7 +2,7 @@ import React, { FC } from "react";
 import Dashboard from "../../Pages/Dashboard/Components";
 import { ACCOUNT_OPTIONS } from "./constants";
 import "./account.scss";
-import { Icon, SemanticICONS } from "semantic-ui-react";
+import { Icon, SemanticICONS, Checkbox } from "semantic-ui-react";
 
 const Account: FC = () => {
   return (
@@ -52,7 +52,7 @@ const Account: FC = () => {
               <div className="show-balance">
                 <div>Show Account Balance</div>
                 <div>
-                  <Icon size="big" name="power" />
+                <Checkbox toggle />
                 </div>
               </div>
             </div>

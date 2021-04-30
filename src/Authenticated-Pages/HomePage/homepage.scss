@@ -12,6 +12,15 @@
     }
   }
 
+  .dash-title {
+    font-weight: 600;
+  }
+
+  #refresh {
+    color: $secondary-color;
+    cursor: pointer;
+  }
+
   .home-flex {
     display: flex;
     justify-content: space-between;

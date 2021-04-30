@@ -19,23 +19,25 @@
 
 .loader-container {
   width: 100%;
-  height: calc(100vh - 130px);
+  //height: calc(100vh - 130px);
+  height: 100%;
   @include flex-center;
-  margin-left: -20px;
+  //margin-left: -20px;
 
   .lds-ellipsis {
     display: inline-block;
     position: relative;
     width: 80px;
-    height: 80px;
+    //height: 80px;
 
     div {
       position: absolute;
-      top: 33px;
+      //top: 33px;
       width: 13px;
       height: 13px;
       border-radius: 50%;
-      background: $background-color;
+      //background: $background-color;
+      background: $primary-color;
       animation-timing-function: cubic-bezier(0, 1, 1, 0);
 
       &:nth-child(1) {

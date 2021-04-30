@@ -1,5 +1,11 @@
 import { ViewportProvider, useViewport } from "./useViewPort";
 import MyErrorBoundary from "./ErrorBoundary/ErrorBoundary";
-import { getUserMessage } from "./helpers";
+import { getUserMessage, validateLogin } from "./helpers";
 
-export { useViewport, ViewportProvider, MyErrorBoundary, getUserMessage };
+export {
+  useViewport,
+  ViewportProvider,
+  MyErrorBoundary,
+  getUserMessage,
+  validateLogin,
+};

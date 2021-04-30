@@ -153,10 +153,29 @@ Color variables
   background-color: #083e9e;
   color: #ffffff;
   cursor: pointer;
+  outline: none;
+  border: none;
 }
 
 .auth-home .flex-between .quick-save-btn:hover {
   background-color: #062863;
+}
+
+.auth-home .flex-between .quick-save-btn:focus {
+  outline: none;
+}
+
+.auth-home .flex-between .quick-save-btn:disabled {
+  cursor: not-allowed;
+}
+
+.auth-home .dash-title {
+  font-weight: 600;
+}
+
+.auth-home #refresh {
+  color: #083e9e;
+  cursor: pointer;
 }
 
 .auth-home .home-flex {

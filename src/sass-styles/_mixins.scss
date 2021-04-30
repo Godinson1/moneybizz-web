@@ -60,9 +60,19 @@
   background-color: $secondary-color;
   color: $primary-color;
   cursor: pointer;
+  outline: none;
+  border: none;
 
   &:hover {
     background-color: $background-color;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
   }
 }
 

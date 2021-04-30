@@ -41,10 +41,20 @@ Color variables
   background-color: #083e9e;
   color: #ffffff;
   cursor: pointer;
+  outline: none;
+  border: none;
 }
 
 .nav .register-button:hover {
   background-color: #062863;
+}
+
+.nav .register-button:focus {
+  outline: none;
+}
+
+.nav .register-button:disabled {
+  cursor: not-allowed;
 }
 
 .nav .menus {
