@@ -24,8 +24,8 @@ const Invest = lazy(() => import("./Authenticated-Pages/Invest"));
 const Account = lazy(() => import("./Authenticated-Pages/Account"));
 const Notification = lazy(() => import("./Authenticated-Pages/Notification"));
 
-//axios.defaults.baseURL = "https://moneybizz.herokuapp.com";
-axios.defaults.baseURL = "http://localhost:5000";
+axios.defaults.baseURL = "https://moneybizz.herokuapp.com";
+//axios.defaults.baseURL = "http://localhost:5000";
 
 interface jwtType {
   exp: number;
