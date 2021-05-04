@@ -1,20 +1,25 @@
 import React, { FC } from "react";
 import { useSelector, RootStateOrAny } from "react-redux";
-import { Route, useHistory, useRouteMatch, Link } from "react-router-dom";
-import { Icon, Button, Header, Modal, Image } from "semantic-ui-react";
+import { useRouteMatch, Link, useLocation } from "react-router-dom";
+import { Icon } from "semantic-ui-react";
 import Dashboard from "../../Pages/Dashboard/Components";
 import PreloaderMain from "../../Components/preloader/PreloaderMain";
+import { formatNumber } from "../../utilities";
 import "./homepage.scss";
 
 const HomePage: FC = () => {
-  const state = useSelector((state: RootStateOrAny) => state.dashboard);
-  const history = useHistory();
+  //const state = useSelector((state: RootStateOrAny) => state.dashboard);
+  const user = useSelector((state: RootStateOrAny) => state.user);
+  const [open, setOpen] = React.useState(true);
   const { url } = useRouteMatch();
+  const location = useLocation();
+
+  console.log(url);
 
   return (
     <div>
       <Dashboard title="HOMEPAGE">
-        {state.isLoading ? (
+        {user.isUserLoading ? (
           <PreloaderMain />
         ) : (
           <div className="auth-home">
@@ -22,15 +27,60 @@ const HomePage: FC = () => {
               <div>
                 <Icon id="refresh" size="big" name="refresh" />
               </div>
-              <Link to={`${url}/save`}>
-                <div className="quick-save-btn">+ Quick Save</div>
+              <Link
+                to={{
+                  pathname: `${url}/save`,
+                  state: {
+                    background: location,
+                  },
+                }}
+                className="link"
+              >
+                <div onClick={() => setOpen(!open)} className="quick-save-btn">
+                  + Quick Save
+                </div>
               </Link>
             </div>
             <div className="header-home">
-              <div className="conn">Helloword</div>
-              <div className="conn">Helloword</div>
-              <div className="conn">Helloword</div>
-              <div className="conn">Helloword</div>
+              <div className="conn">
+                <div className="tb">
+                  <div className="flex-start">
+                    <div>Total Balance</div>
+                    <div>
+                      {formatNumber(user.user.data.details.total_balance)}
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="conn">
+                <div className="ti">
+                  <div className="flex-start">
+                    <div>Total Investments</div>
+                    <div>
+                      {formatNumber(user.user.data.details.total_balance)}
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="conn">
+                <div className="cns">
+                  <div className="flex-start">
+                    <div id="base">Connections</div>
+                    <div>{user.user.data.connections.length}</div>
+                  </div>
+                </div>
+              </div>
+              <div className="conn">
+                <div className="ab">
+                  <div className="flex-start">
+                    <div>Available Balance</div>
+                    <div>
+                      {" "}
+                      {formatNumber(user.user.data.details.available_balance)}
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
             <div className="home-flex">
               <div className="todo-container">
@@ -50,7 +100,9 @@ const HomePage: FC = () => {
               </div>
               <div className="info-container">
                 <div className="dash-title">Build Your Savings</div>
-                <div className="banner"></div>
+                <div className="banner">
+                  <img src="images/wallet.png" alt="saving" />
+                </div>
                 <div className="dash-title">Download the App</div>
                 <div className="flex-start">
                   <div className="mobile-button">
@@ -71,54 +123,14 @@ const HomePage: FC = () => {
                   </div>
                 </div>
                 <div className="dash-title">Build Your Savings</div>
-                <div className="banner"></div>
+                <div className="banner">
+                  <img src="images/wallet.png" alt="saving" />
+                </div>
               </div>
             </div>
           </div>
         )}
       </Dashboard>
-      <Route
-        path={`${url}/save`}
-        children={({ match }) => {
-          return (
-            <Modal
-              onClose={() => console.log("hhh")}
-              onOpen={() => console.log("hhh")}
-              open={Boolean(match)}
-              trigger={<Button>Show Modal</Button>}
-            >
-              <Modal.Header>Select a Photo</Modal.Header>
-              <Modal.Content image>
-                <Image
-                  size="medium"
-                  src="https://react.semantic-ui.com/images/avatar/large/rachel.png"
-                  wrapped
-                />
-                <Modal.Description>
-                  <Header>Default Profile Image</Header>
-                  <p>
-                    We've found the following gravatar image associated with
-                    your e-mail address.
-                  </p>
-                  <p>Is it okay to use this photo?</p>
-                </Modal.Description>
-              </Modal.Content>
-              <Modal.Actions>
-                <Button color="black" onClick={() => history.goBack()}>
-                  Nope
-                </Button>
-                <Button
-                  content="Yep, that's me"
-                  labelPosition="right"
-                  icon="checkmark"
-                  onClick={() => history.goBack()}
-                  positive
-                />
-              </Modal.Actions>
-            </Modal>
-          );
-        }}
-      />
     </div>
   );
 };

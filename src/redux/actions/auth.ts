@@ -1,6 +1,7 @@
 import { setIsLogin, setIsLoggedOut } from "../slices/auth";
 import axios from "axios";
 import store from "../store";
+import { getUserDetail } from "./user";
 
 export interface loginData {
   data: string;
@@ -20,8 +21,8 @@ export const registerUser = (
       setLoading(false);
       const { token, message } = res.data;
       showMessage(message);
-      setAuthorization(token);
-      dispatch(setIsLogin({ status: true, token }));
+      await setAuthorization(token);
+      dispatch(getUserDetail());
       history.push("/home");
     }
   } catch (err) {
@@ -44,10 +45,12 @@ export const loginUser = (
     setLoading(true);
     const res = await axios.post(`/auth/login`, data);
     if (res) {
+      console.log(res.data);
       setLoading(false);
       const { token, message } = res.data;
       showMessage(message);
       await setAuthorization(token);
+      dispatch(getUserDetail());
       dispatch(setIsLogin({ status: true, token }));
       history.push("/home");
     }
@@ -115,13 +118,12 @@ export const logoutUser = () => async (dispatch: typeof store.dispatch) => {
   await localStorage.removeItem("BizzToken");
   delete axios.defaults.headers.common["mb-token"];
   dispatch(setIsLoggedOut({ status: false }));
+  window.location.href = "/login";
 };
 
 export const setAuthorization = async (token: string) => {
-  const BizzToken = token;
-  await localStorage.setItem("BizzToken", BizzToken);
-  axios.defaults.headers.common["mb-token"] = BizzToken;
-  console.log("AuthCheck", axios.defaults.headers.common["mb-token"]);
+  await localStorage.setItem("BizzToken", token);
+  axios.defaults.headers.common["mb-token"] = token;
 };
 
 type userData = {

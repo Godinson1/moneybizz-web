@@ -7,7 +7,7 @@ const AuthRoute = ({ component: Component, ...rest }: any) => {
     <Route
       {...rest}
       render={(props: any) =>
-        !!localStorage.getItem("auth-token") ? (
+        !!localStorage.getItem("BizzToken") ? (
           <Component {...props} />
         ) : (
           <Redirect to="/login" />

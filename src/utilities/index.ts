@@ -1,6 +1,11 @@
 import { ViewportProvider, useViewport } from "./useViewPort";
 import MyErrorBoundary from "./ErrorBoundary/ErrorBoundary";
-import { getUserMessage, validateLogin } from "./helpers";
+import {
+  getUserMessage,
+  validateLogin,
+  validateReg,
+  formatNumber,
+} from "./helpers";
 
 export {
   useViewport,
@@ -8,4 +13,6 @@ export {
   MyErrorBoundary,
   getUserMessage,
   validateLogin,
+  validateReg,
+  formatNumber,
 };

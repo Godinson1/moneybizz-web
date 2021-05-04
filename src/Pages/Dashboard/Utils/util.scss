@@ -9,6 +9,16 @@
   padding-right: 275px;
 }
 
+.avatar-banter {
+  @include avatar-image;
+  width: 55px;
+  height: 55px;
+  //@include flex-center;
+  color: $primary-color;
+  font-size: 1.3rem;
+  font-weight: bolder;
+}
+
 .navbar-mobile {
   @include custom-navbar;
   margin-left: 75px;

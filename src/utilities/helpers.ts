@@ -40,10 +40,12 @@ export interface resetData {
   password: string;
 }
 
-export interface firstUserData {
+export interface UserData {
   firstName: string;
   lastName: string;
   email: string;
+  password: string;
+  handle: string;
 }
 
 export interface secondUserData {
@@ -77,37 +79,23 @@ const validateLogin = ({
   };
 };
 
-const validateFirstReg = ({
+const validateReg = ({
   firstName,
   lastName,
   email,
-}: firstUserData): { error: string; valid: boolean } => {
-  let error = "";
-  if (isEmpty(email)) error = "Email must not be empty";
-  else if (!isEmail(email)) error = "Please provide a valid email address";
-
-  if (isEmpty(lastName)) error = "Last Name must not be empty";
-  if (isEmpty(firstName)) error = "First Name must not be empty";
-
-  return {
-    error,
-    valid: error === "" ? true : false,
-  };
-};
-
-const validateSecondReg = ({
   handle,
   password,
-  confirmPassword,
-}: secondUserData): { error: string; valid: boolean } => {
+}: UserData): { error: string; valid: boolean } => {
   let error = "";
+
   if (isEmpty(password)) error = "Password must not be empty";
-  if (isEmpty(confirmPassword)) error = "Password must not be empty";
   else if (notValidPassword(password))
     error = "Password must have at least 6 characters";
-  else if (password !== confirmPassword) error = "Passwords do not match!";
-
+  if (isEmpty(email)) error = "Email must not be empty";
+  else if (!isEmail(email)) error = "Please provide a valid email address";
   if (isEmpty(handle)) error = "Handle must not be empty";
+  if (isEmpty(lastName)) error = "Last Name must not be empty";
+  if (isEmpty(firstName)) error = "First Name must not be empty";
 
   return {
     error,
@@ -175,9 +163,8 @@ export {
   isEmpty,
   notValidPassword,
   validateLogin,
-  validateSecondReg,
   validateResetPassword,
-  validateFirstReg,
+  validateReg,
   getUserMessage,
   formatNumber,
 };

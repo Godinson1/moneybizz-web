@@ -42,7 +42,8 @@
       width: 150px;
       height: 150px;
       background-color: $light-secondary;
-      border-radius: 50%;
+      border-radius: 50% !important;
+      @include avatar-image;
       margin-left: 10px;
     }
   }

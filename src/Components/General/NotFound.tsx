@@ -9,7 +9,7 @@ const NotFound: FC = () => {
     <div>
       <Navbar />
       <div className="notfound">
-        <img width="300" height="300" src="images/notf.jpg" alt="notfound" />
+        <img width="300" height="300" src="/images/notf.jpg" alt="notfound" />
         <h1>PAGE NOT FOUND</h1>
         <div className="notfound-message">
           <p>

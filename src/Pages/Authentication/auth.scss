@@ -82,19 +82,25 @@
   .login-auth {
     @include auth-container;
     padding: 50px;
+  }
 
-    .message-auth {
-      top: 0;
-      right: 0;
-      position: absolute;
-      margin-top: 3px;
-      position: fixed;
-    }
+  .message-auth {
+    top: 0;
+    right: 0;
+    position: absolute;
+    margin-top: 3px;
+    position: fixed;
   }
 }
 
 .base {
   margin-top: 40px;
+}
+
+.load-base {
+  text-align: center;
+  color: rgb(189, 189, 8);
+  margin-top: 2px !important;
 }
 
 .forgot-password {

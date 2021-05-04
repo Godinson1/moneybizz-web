@@ -36,7 +36,7 @@ const Dashboard: FC<_layoutTypes> = ({ children, title }) => {
             const { path, exact, icon } = data;
             return (
               <NavLink activeClassName="side-link" to={path} exact={exact}>
-                <div className="icon">
+                <div key={icon} className="icon">
                   <Icon size="big" name={icon as SemanticICONS | undefined} />
                 </div>
               </NavLink>

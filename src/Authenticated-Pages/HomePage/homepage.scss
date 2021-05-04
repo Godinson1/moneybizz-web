@@ -34,6 +34,14 @@
       margin: 5px 0 20px 0;
       border-radius: 10px;
       background-color: $light-secondary;
+      border: 1px solid $light-secondary;
+      overflow: hidden;
+
+      img {
+        max-height: 100%;
+        width: 392px;
+        object-fit: cover;
+      }
     }
   }
 
@@ -72,10 +80,20 @@
 }
 
 .conn {
-  width: 20.7vw;
+  width: 21.3vw;
   border-radius: 10px;
-  height: 150px;
+  max-height: 150px;
   display: inline-block;
+  color: $primary-color;
+  font-size: 1.6rem;
+  font-weight: bolder;
+
+  .flex-start {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 25px;
+  }
 }
 
 div.header-home {
@@ -83,20 +101,32 @@ div.header-home {
   overflow: auto;
   white-space: nowrap;
 
-  div:nth-child(1) {
+  .tb {
+    height: 100%;
+    padding: 20px;
+    border-radius: 15px;
     background-color: rgb(13, 39, 88);
   }
-  div:nth-child(2) {
-    background-color: red;
-    margin-left: 10px;
+  .ti {
+    height: 100%;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: rgb(202, 9, 9);
+    margin-left: 15px;
   }
-  div:nth-child(3) {
-    background-color: rgb(24, 3, 3);
-    margin-left: 10px;
+  .cns {
+    height: 100%;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgb(100, 2, 15);
+    margin-left: 15px;
   }
-  div:nth-child(4) {
-    background-color: rgb(18, 150, 51);
-    margin-left: 10px;
+  .ab {
+    height: 100%;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgb(8, 109, 33);
+    margin-left: 15px;
   }
 }
 

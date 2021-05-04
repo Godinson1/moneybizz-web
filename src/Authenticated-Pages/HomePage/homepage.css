@@ -197,6 +197,15 @@ Color variables
   margin: 5px 0 20px 0;
   border-radius: 10px;
   background-color: #9eddff;
+  border: 1px solid #9eddff;
+  overflow: hidden;
+}
+
+.auth-home .home-flex .banner img {
+  max-height: 100%;
+  width: 392px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .auth-home .auth-options {
@@ -264,10 +273,27 @@ Color variables
 }
 
 .conn {
-  width: 20.7vw;
+  width: 21.3vw;
   border-radius: 10px;
-  height: 150px;
+  max-height: 150px;
   display: inline-block;
+  color: #ffffff;
+  font-size: 1.6rem;
+  font-weight: bolder;
+}
+
+.conn .flex-start {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 25px;
 }
 
 div.header-home {
@@ -276,23 +302,35 @@ div.header-home {
   white-space: nowrap;
 }
 
-div.header-home div:nth-child(1) {
+div.header-home .tb {
+  height: 100%;
+  padding: 20px;
+  border-radius: 15px;
   background-color: #0d2758;
 }
 
-div.header-home div:nth-child(2) {
-  background-color: red;
-  margin-left: 10px;
+div.header-home .ti {
+  height: 100%;
+  border-radius: 10px;
+  padding: 20px;
+  background-color: #ca0909;
+  margin-left: 15px;
 }
 
-div.header-home div:nth-child(3) {
-  background-color: #180303;
-  margin-left: 10px;
+div.header-home .cns {
+  height: 100%;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #64020f;
+  margin-left: 15px;
 }
 
-div.header-home div:nth-child(4) {
-  background-color: #129633;
-  margin-left: 10px;
+div.header-home .ab {
+  height: 100%;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #086d21;
+  margin-left: 15px;
 }
 
 @media screen and (max-width: 768px) {

@@ -1,10 +1,13 @@
 import React, { FC } from "react";
+import { useDispatch } from "react-redux";
 import { Icon, SemanticICONS } from "semantic-ui-react";
 import { NavLink } from "react-router-dom";
 import { SIDEBAR_LINKS } from "./constants";
+import { logoutUser } from "../../../redux";
 import "./util.scss";
 
 const MobileSidebar: FC = () => {
+  const dispatch = useDispatch();
   return (
     <div>
       <div className="sidebar-dash-mobile">
@@ -26,7 +29,10 @@ const MobileSidebar: FC = () => {
             })}
           </div>
         </div>
-        <div className="flex-logout tooltip">
+        <div
+          onClick={() => dispatch(logoutUser())}
+          className="flex-logout tooltip"
+        >
           <Icon size="big" name="power" />
           <span className="tooltiptext">Logout</span>
         </div>

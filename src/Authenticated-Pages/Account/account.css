@@ -74,8 +74,20 @@ Color variables
   width: 150px;
   height: 150px;
   background-color: #9eddff;
-  border-radius: 50%;
+  border-radius: 50% !important;
+  border-radius: 50px;
+  background-color: #083e9e;
+  margin-top: 5px;
+  cursor: pointer;
+  overflow: hidden;
   margin-left: 10px;
+}
+
+.auth-account .avatar-name .account-avatar img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .auth-account .account-second {

@@ -14,7 +14,7 @@ import {
   FORGOT_PASSWORD,
 } from "./constants";
 import { loginUser } from "../../redux/";
-import PreloaderMain from "../../Components/preloader/PreloaderMain";
+//import PreloaderMain from "../../Components/preloader/PreloaderMain";
 import { validateLogin } from "../../utilities";
 import Design from "./Design";
 import "./auth.scss";
@@ -23,8 +23,8 @@ const Login: FC = () => {
   const [errors, setError] = useState<boolean | string>(false);
   const [data, setData] = useState<string>("");
   const [password, setPassword] = useState<string>("");
-  const [message, setMessage] = useState<string>("");
-  const [visible, setVisible] = useState<boolean>(false);
+  //const [message, setMessage] = useState<string>("");
+  //const [visible, setVisible] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(false);
   const dispatch = useDispatch();
   const history = useHistory();
@@ -59,7 +59,6 @@ const Login: FC = () => {
       <div className="test">
         <div className="designs">
           <Design />
-
           <div className="login-auth">
             {errors && (
               <div className="message-auth">
@@ -103,8 +102,9 @@ const Login: FC = () => {
                   onClick={login}
                   className="auth-button"
                 >
-                  {loading ? <PreloaderMain /> : LOGIN}
+                  {loading ? "Loading..." : LOGIN}
                 </button>
+                {loading && <p className="load-base">Please wait...</p>}
               </div>
               <div className="base">
                 <p>

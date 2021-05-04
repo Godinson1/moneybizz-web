@@ -7,12 +7,19 @@ import {
   setIsLoggedOut,
 } from "./slices/auth";
 import {
+  setPaymentLoading,
+  getPayment,
+  setPaymentError,
+} from "./slices/payment";
+import {
   loginUser,
   logoutUser,
   registerUser,
   resetPassword,
   createNewPassword,
 } from "./actions/auth";
+import { getUserDetail } from "./actions/user";
+import { payWithBank } from "./actions/payment";
 
 export {
   store,
@@ -26,4 +33,9 @@ export {
   resetPassword,
   setSidebarOpen,
   createNewPassword,
+  getUserDetail,
+  payWithBank,
+  setPaymentLoading,
+  getPayment,
+  setPaymentError,
 };

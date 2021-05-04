@@ -36,30 +36,35 @@ const REGISTER_FORM = [
     placeholder: "Enter First Name",
     type: "text",
     className: "auth-input",
+    name: "firstname",
   },
   {
     label: "Last Name",
     placeholder: "Enter Last Name",
     type: "text",
     className: "auth-input",
+    name: "lastname",
   },
   {
     label: "Email",
     placeholder: "Enter email address",
     type: "email",
     className: "auth-input",
+    name: "email",
   },
   {
     label: "Handle",
     placeholder: "Enter Handle",
     type: "text",
     className: "auth-input",
+    name: "handle",
   },
   {
     label: "Password",
     placeholder: "Enter Password",
     type: "password",
     className: "auth-input",
+    name: "password",
   },
 ];
 

@@ -47,12 +47,24 @@ Color variables
   color: #083e9e;
 }
 
-.navbar #nav-avatar {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
+.avatar-banter {
+  border-radius: 50px;
   background-color: #083e9e;
+  margin-top: 5px;
   cursor: pointer;
+  overflow: hidden;
+  width: 55px;
+  height: 55px;
+  color: #ffffff;
+  font-size: 1.3rem;
+  font-weight: bolder;
+}
+
+.avatar-banter img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .navbar-mobile {
@@ -93,14 +105,6 @@ Color variables
   padding-left: 10px;
   cursor: pointer;
   color: #083e9e;
-}
-
-.navbar-mobile #nav-avatar {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background-color: #083e9e;
-  cursor: pointer;
 }
 
 .side-link {

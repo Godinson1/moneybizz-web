@@ -1,0 +1,82 @@
+@import "../sass-styles/variables";
+@import "../sass-styles/mixins";
+
+.modal-div,
+.modal-div-pay {
+  height: 400px;
+  padding: 20px;
+  background-color: $primary-color;
+
+  .flex-between {
+    width: 100%;
+    @include flex-between;
+
+    .desc {
+      margin-top: -10px;
+    }
+
+    .icon {
+      cursor: pointer;
+      color: $secondary-color;
+      font-size: 1.7rem;
+    }
+  }
+
+  .form-save {
+    padding: 50px;
+    label {
+      margin-bottom: 15px;
+    }
+
+    #icon {
+      color: $secondary-color;
+    }
+  }
+
+  .drops {
+    margin-top: 5px;
+  }
+
+  .auth-input {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.3rem;
+    height: 50px;
+    margin: 5px 0 10px 0;
+    border-radius: 10px;
+    background-color: lightblue;
+
+    input {
+      border: none;
+      background-color: transparent;
+      width: 100%;
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+  .auth-button {
+    @include custom-button;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.3rem;
+    margin-top: 10px;
+  }
+}
+
+.auth-options {
+  @include flex-start-center;
+  gap: 20px;
+  font-weight: 500;
+  font-size: 1.1rem;
+  border: 1px solid $secondary-color;
+  @include custom-border-radius;
+  margin-top: 15px;
+  height: 50px;
+  cursor: pointer;
+  #icon {
+    font-size: 1.3rem;
+  }
+}

@@ -133,7 +133,7 @@ Color variables
   padding: 50px;
 }
 
-.designs .login-auth .message-auth {
+.designs .message-auth {
   top: 0;
   right: 0;
   position: absolute;
@@ -143,6 +143,12 @@ Color variables
 
 .base {
   margin-top: 40px;
+}
+
+.load-base {
+  text-align: center;
+  color: #bdbd08;
+  margin-top: 2px !important;
 }
 
 .forgot-password {
