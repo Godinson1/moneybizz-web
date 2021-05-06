@@ -3,10 +3,11 @@ import { useSelector, RootStateOrAny, useDispatch } from "react-redux";
 import Dashboard from "../../Pages/Dashboard/Components";
 import { readURI } from "../../utilities";
 import { ACCOUNT_OPTIONS } from "./constants";
-import { updateProfilePhoto } from "../../redux";
+import { logoutUser, updateProfilePhoto } from "../../redux";
 import "./account.scss";
 import "../../Components/preloader/preloader.scss";
 import { Icon, SemanticICONS, Checkbox, Popup } from "semantic-ui-react";
+import { SemanticCOLORS } from "semantic-ui-react/dist/commonjs/generic";
 
 const Account: FC = () => {
   const user = useSelector((state: RootStateOrAny) => state.user);
@@ -28,6 +29,12 @@ const Account: FC = () => {
     }
   };
 
+  const handleAction = (title: string) => {
+    if (title === "Logout") {
+      dispatch(logoutUser());
+    }
+  };
+
   const showBalanceState = localStorage.getItem("showBalance");
 
   return (
@@ -40,16 +47,26 @@ const Account: FC = () => {
                 <h2>2f Authentication</h2>
               </div>
               {ACCOUNT_OPTIONS.map((options) => {
-                const { icon, title } = options;
+                const { icon, title, color } = options;
                 return (
-                  <div className="auth-options">
-                    <Icon
-                      size="small"
-                      id="icon"
-                      name={icon as SemanticICONS | undefined}
-                    />
-                    <div>{title}</div>
-                  </div>
+                  <Popup
+                    content={title}
+                    position="right center"
+                    trigger={
+                      <div
+                        onClick={() => handleAction(title)}
+                        className="auth-options"
+                      >
+                        <Icon
+                          size="small"
+                          id="icon"
+                          color={color as SemanticCOLORS | undefined}
+                          name={icon as SemanticICONS | undefined}
+                        />
+                        <div>{title}</div>
+                      </div>
+                    }
+                  />
                 );
               })}
             </div>

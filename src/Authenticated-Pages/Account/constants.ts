@@ -1,42 +1,47 @@
 export const ACCOUNT_OPTIONS = [
   {
-    title: "action-title",
-    icon: "credit card outline",
+    title: "My Account Settings",
+    icon: "user",
+    color: "blue",
   },
   {
-    title: "action-title",
+    title: "Self Help",
+    icon: "list",
+    color: "blue",
+  },
+  {
+    title: "Add your BVN or NIN",
+    icon: "lock",
+    color: "green",
+  },
+  {
+    title: "Refer & Earn N500",
+    icon: "share",
+    color: "blue",
+  },
+  {
+    title: "Withdraw Funds",
+    icon: "dollar",
+    color: "green",
+  },
+  {
+    title: "My Card & Bank Settings",
     icon: "credit card",
+    color: "blue",
   },
   {
-    title: "action-title",
+    title: "View MoneyBizz Library",
+    icon: "book",
+    color: "green",
+  },
+  {
+    title: "Contact Us",
+    icon: "phone",
+    color: "green",
+  },
+  {
+    title: "Logout",
     icon: "power",
-  },
-  {
-    title: "action-title",
-    icon: "credit card",
-  },
-  {
-    title: "action-title",
-    icon: "credit card outline",
-  },
-  {
-    title: "action-title",
-    icon: "credit card",
-  },
-  {
-    title: "action-title",
-    icon: "credit card outline",
-  },
-  {
-    title: "action-title",
-    icon: "credit card",
-  },
-  {
-    title: "action-title",
-    icon: "power",
-  },
-  {
-    title: "action-title",
-    icon: "credit card outline",
+    color: "red",
   },
 ];

@@ -39,7 +39,7 @@ const Dashboard: FC<_layoutTypes> = ({ children, title }) => {
           <div className={state.isSidebarOpen ? "main-mobile" : "main"}>
             {user.success && (
               <div className="message-show">
-                <span>Profile photo updated successfully.</span>
+                <span>{user.success}</span>
               </div>
             )}
             {children}

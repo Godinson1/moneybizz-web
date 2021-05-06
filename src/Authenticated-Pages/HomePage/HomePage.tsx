@@ -1,10 +1,11 @@
 import React, { FC } from "react";
-import { useSelector, RootStateOrAny } from "react-redux";
+import { useSelector, RootStateOrAny, useDispatch } from "react-redux";
 import { useRouteMatch, Link, useLocation } from "react-router-dom";
-import { Icon } from "semantic-ui-react";
+import { Icon, Popup } from "semantic-ui-react";
 import Dashboard from "../../Pages/Dashboard/Components";
 import PreloaderMain from "../../Components/preloader/PreloaderMain";
 import { Header, HomeInfo, Todo } from "./Components";
+import { getUserDetail } from "../../redux";
 import { HOMEPAGE } from "./constants";
 import "./homepage.scss";
 
@@ -13,6 +14,7 @@ const HomePage: FC = () => {
   const [open, setOpen] = React.useState(true);
   const { url } = useRouteMatch();
   const location = useLocation();
+  const dispatch = useDispatch();
 
   return (
     <div>
@@ -22,8 +24,11 @@ const HomePage: FC = () => {
         ) : (
           <div className="auth-home">
             <div className="flex-between">
-              <div>
-                <Icon id="refresh" size="big" name="refresh" />
+              <div onClick={() => dispatch(getUserDetail())}>
+                <Popup
+                  content="Refresh"
+                  trigger={<Icon id="refresh" size="big" name="refresh" />}
+                ></Popup>
               </div>
               <Link
                 to={{
