@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import { useSelector, RootStateOrAny, useDispatch } from "react-redux";
-import { useRouteMatch, Link, Route, useHistory } from "react-router-dom";
-import { Icon, Popup, Modal } from "semantic-ui-react";
+import { useRouteMatch, Link, Route } from "react-router-dom";
+import { Icon, Popup } from "semantic-ui-react";
 import Dashboard from "../../Pages/Dashboard/Components";
 import { Save } from "../../Components";
 import PreloaderMain from "../../Components/preloader/PreloaderMain";
@@ -16,7 +16,6 @@ const HomePage: FC = () => {
   const [open, setOpen] = React.useState(true);
   const { url } = useRouteMatch();
   const dispatch = useDispatch();
-  const history = useHistory();
 
   const saveLink = usePrepareLink({
     to: "/save",
