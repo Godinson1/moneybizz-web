@@ -1,7 +1,7 @@
 import React, { FC, useState } from "react";
 import { useSelector, RootStateOrAny, useDispatch } from "react-redux";
 import Dashboard from "../../Pages/Dashboard/Components";
-import { readURI } from "../../utilities";
+import { readURI, formatNumber } from "../../utilities";
 import { ACCOUNT_OPTIONS, PHONE_NUMBER } from "./constants";
 import { logoutUser, updateProfilePhoto } from "../../redux";
 import "./account.scss";
@@ -180,7 +180,7 @@ const Account: FC = () => {
                 </div>
                 <div className="todo">
                   <div>
-                    <h2>N5000</h2>
+                    <h2>{formatNumber(5000)}</h2>
                   </div>
                   <div>
                     <span>Referral Earnings</span>
