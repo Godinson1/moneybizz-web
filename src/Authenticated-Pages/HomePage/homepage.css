@@ -365,6 +365,22 @@ div.header-home .ab {
   right: 0;
   position: absolute;
   background-color: #ffffff;
+  -webkit-animation: slide 1.5s forwards;
+  -webkit-animation-delay: 2s;
+  animation: slide 1.5s forwards;
+  animation-delay: 2s;
+}
+
+@-webkit-keyframes slide {
+  100% {
+    right: 0;
+  }
+}
+
+@keyframes slide {
+  100% {
+    right: 0;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -373,6 +389,11 @@ div.header-home .ab {
     overflow: hidden;
     margin-left: -10px;
     width: 100vw;
+  }
+  .modal-container {
+    width: 100% !important;
+    height: 92% !important;
+    top: 0;
   }
   .conn {
     width: 80vw;
