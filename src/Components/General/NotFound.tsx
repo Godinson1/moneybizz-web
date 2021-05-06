@@ -10,7 +10,7 @@ const NotFound: FC = () => {
       <Navbar />
       <div className="notfound">
         <img width="300" height="300" src="/images/notf.jpg" alt="notfound" />
-        <h1>PAGE NOT FOUND</h1>
+        <h2>PAGE NOT FOUND</h2>
         <div className="notfound-message">
           <p>
             Hi there &#128075;! Seems the page you are looking for does not

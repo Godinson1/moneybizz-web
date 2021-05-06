@@ -100,7 +100,13 @@
       @include flex-start;
       flex-direction: column;
       border: 1px solid $secondary-color;
+      cursor: pointer;
       padding: 20px;
+      font-family: Lexend;
+
+      &:hover {
+        background-color: rgb(227, 229, 230);
+      }
     }
   }
 }
@@ -117,6 +123,11 @@
 
   .auth-flex {
     flex-wrap: wrap-reverse;
+
+    .two-factor-banner {
+      width: 100% !important;
+      margin-bottom: 20px !important;
+    }
 
     .account-first {
       width: 100%;
@@ -142,8 +153,6 @@
 
       .todo {
         width: 100%;
-        height: 90px;
-        gap: 50px;
       }
     }
   }

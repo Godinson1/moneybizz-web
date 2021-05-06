@@ -25,7 +25,7 @@ Color variables
   background-color: #ffffff;
   border: 1px solid lightgreen;
   margin: -5px 10px 0 0;
-  border-left: 5px solid lightgreen;
+  border-left: 5px solid green;
   -webkit-transition: all width 1s;
   transition: all width 1s;
   z-index: 20;
@@ -35,7 +35,7 @@ Color variables
 }
 
 .dashboard-main .message-show span {
-  color: lightgreen;
+  color: green;
 }
 
 .dashboard-main .main-mobile {

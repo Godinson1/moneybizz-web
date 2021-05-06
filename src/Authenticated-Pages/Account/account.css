@@ -189,7 +189,13 @@ Color variables
       -ms-flex-direction: column;
           flex-direction: column;
   border: 1px solid #083e9e;
+  cursor: pointer;
   padding: 20px;
+  font-family: Lexend;
+}
+
+.auth-account .todo-container .todo:hover {
+  background-color: #e3e5e6;
 }
 
 @media screen and (max-width: 768px) {
@@ -203,6 +209,10 @@ Color variables
   .auth-flex {
     -ms-flex-wrap: wrap-reverse;
         flex-wrap: wrap-reverse;
+  }
+  .auth-flex .two-factor-banner {
+    width: 100% !important;
+    margin-bottom: 20px !important;
   }
   .auth-flex .account-first {
     width: 100%;
@@ -237,8 +247,6 @@ Color variables
   }
   .auth-flex .todo-container .todo {
     width: 100%;
-    height: 90px;
-    gap: 50px;
   }
 }
 /*# sourceMappingURL=account.css.map */

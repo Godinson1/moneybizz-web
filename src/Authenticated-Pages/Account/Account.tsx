@@ -33,6 +33,9 @@ const Account: FC = () => {
     if (title === "Logout") {
       dispatch(logoutUser());
     }
+    if (title === "Contact Us") {
+      window.location.href = PHONE_NUMBER;
+    }
   };
 
   const showBalanceState = localStorage.getItem("showBalance");
@@ -53,39 +56,19 @@ const Account: FC = () => {
                     content={title}
                     position="right center"
                     trigger={
-                      title === "Contact Us" ? (
-                        <div>
-                          <a id="contact" href={PHONE_NUMBER}>
-                            <div
-                              onClick={() => handleAction(title)}
-                              className="auth-options"
-                            >
-                              <Icon
-                                size="small"
-                                id="icon"
-                                color={color as SemanticCOLORS | undefined}
-                                name={icon as SemanticICONS | undefined}
-                              />
+                      <div
+                        onClick={() => handleAction(title)}
+                        className="auth-options"
+                      >
+                        <Icon
+                          size="small"
+                          id="icon"
+                          color={color as SemanticCOLORS | undefined}
+                          name={icon as SemanticICONS | undefined}
+                        />
 
-                              <div>{title}</div>
-                            </div>
-                          </a>
-                        </div>
-                      ) : (
-                        <div
-                          onClick={() => handleAction(title)}
-                          className="auth-options"
-                        >
-                          <Icon
-                            size="small"
-                            id="icon"
-                            color={color as SemanticCOLORS | undefined}
-                            name={icon as SemanticICONS | undefined}
-                          />
-
-                          <div>{title}</div>
-                        </div>
-                      )
+                        <div>{title}</div>
+                      </div>
                     }
                   />
                 );
@@ -159,7 +142,7 @@ const Account: FC = () => {
                     <h2>Get Bizz Number</h2>
                   </div>
                   <div>
-                    <span>Bizz Points</span>
+                    <span>Add BVN or NIN</span>
                   </div>
                 </div>
                 <div className="todo">
@@ -167,7 +150,7 @@ const Account: FC = () => {
                     <h2>60</h2>
                   </div>
                   <div>
-                    <span>Add BVN or NIN</span>
+                    <span>Bizz Points</span>
                   </div>
                 </div>
                 <div className="todo">

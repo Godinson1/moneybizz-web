@@ -82,4 +82,20 @@ Color variables
   width: 100%;
   height: 92px;
 }
+
+@media screen and (max-width: 768px) {
+  .notfound {
+    margin-top: -50px;
+    overflow: auto;
+  }
+  .notfound-message {
+    padding: 5px 80px 5px 80px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .notfound-message {
+    padding: 5px 100px 5px 100px;
+  }
+}
 /*# sourceMappingURL=general.css.map */
