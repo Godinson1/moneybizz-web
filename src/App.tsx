@@ -1,9 +1,9 @@
 import React, { Suspense, lazy } from "react";
 //import { useDispatch } from "react-redux";
-import { Switch, Route, useLocation } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 
 //Import components
-import { Preloader, NotFound, Save } from "./Components";
+import { Preloader, NotFound } from "./Components";
 import { ViewportProvider } from "./utilities";
 import axios from "axios";
 import JwtDecode from "jwt-decode";
@@ -45,14 +45,11 @@ const App = () => {
     }
   }
 
-  const location = useLocation<any>();
-  const background = location && location.state && location.state.background;
-
   return (
     <div className="App">
       <ViewportProvider>
         <Suspense fallback={<Preloader />}>
-          <Switch location={background || location}>
+          <Switch>
             <Route exact path="/load" component={Preloader} />
             <Route exact path="/" component={HomePage} />
             <Route exact path="/login" component={Login} />
@@ -60,7 +57,7 @@ const App = () => {
             <Route exact path="/verify-email" component={VerifyEmail} />
             <Route exact path="/reset-password" component={ResetPassword} />
             <Route exact path="/activate" component={Activate} />
-            <AuthRoute exact path="/home" component={Auth_HomePage} />
+            <AuthRoute path="/home" component={Auth_HomePage} />
             <AuthRoute exact path="/save" component={Saving} />
             <AuthRoute exact path="/invest" component={Invest} />
             <AuthRoute exact path="/notification" component={Notification} />
@@ -69,11 +66,6 @@ const App = () => {
           </Switch>
         </Suspense>
       </ViewportProvider>
-      {background && (
-        <div>
-          <Route path="/home/save" children={<Save />} />
-        </div>
-      )}
     </div>
   );
 };

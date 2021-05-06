@@ -1,5 +1,6 @@
 import { ViewportProvider, useViewport } from "./useViewPort";
 import MyErrorBoundary from "./ErrorBoundary/ErrorBoundary";
+import usePrepareLink from "./usePrepareLink";
 import {
   getUserMessage,
   validateLogin,
@@ -17,4 +18,5 @@ export {
   validateReg,
   formatNumber,
   readURI,
+  usePrepareLink,
 };

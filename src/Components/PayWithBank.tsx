@@ -50,7 +50,7 @@ const PayWithBank = ({ setOpen, amount }: PaymentOptionProps) => {
           <div className="auth-input">
             <input
               onChange={(e) => setAccountNumber(e.target.value)}
-              type="text"
+              type="number"
               placeholder="Account Number"
             />
           </div>

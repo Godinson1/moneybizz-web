@@ -1,10 +1,12 @@
 import React, { FC } from "react";
 import { useSelector, RootStateOrAny, useDispatch } from "react-redux";
-import { useRouteMatch, Link, useLocation } from "react-router-dom";
-import { Icon, Popup } from "semantic-ui-react";
+import { useRouteMatch, Link, Route, useHistory } from "react-router-dom";
+import { Icon, Popup, Modal } from "semantic-ui-react";
 import Dashboard from "../../Pages/Dashboard/Components";
+import { Save } from "../../Components";
 import PreloaderMain from "../../Components/preloader/PreloaderMain";
 import { Header, HomeInfo, Todo } from "./Components";
+import { usePrepareLink } from "../../utilities";
 import { getUserDetail } from "../../redux";
 import { HOMEPAGE } from "./constants";
 import "./homepage.scss";
@@ -13,8 +15,18 @@ const HomePage: FC = () => {
   const user = useSelector((state: RootStateOrAny) => state.user);
   const [open, setOpen] = React.useState(true);
   const { url } = useRouteMatch();
-  const location = useLocation();
   const dispatch = useDispatch();
+  const history = useHistory();
+
+  const saveLink = usePrepareLink({
+    to: "/save",
+    isRelativePath: true,
+    query: {},
+    pushToQuery: {},
+    hash: null,
+    keepOldQuery: false,
+    state: {},
+  });
 
   return (
     <div>
@@ -30,15 +42,7 @@ const HomePage: FC = () => {
                   trigger={<Icon id="refresh" size="big" name="refresh" />}
                 ></Popup>
               </div>
-              <Link
-                to={{
-                  pathname: `${url}/save`,
-                  state: {
-                    background: location,
-                  },
-                }}
-                className="link"
-              >
+              <Link to={`${url}/save`} className="link">
                 <div onClick={() => setOpen(!open)} className="quick-save-btn">
                   + Quick Save
                 </div>
@@ -54,6 +58,24 @@ const HomePage: FC = () => {
           </div>
         )}
       </Dashboard>
+      <Route
+        path={saveLink.pathname}
+        children={({ match }) => {
+          return (
+            <div>
+              {match && (
+                <div id="show-modal-picture">
+                  <div className="modal-container">
+                    <div>
+                      <Save />
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+          );
+        }}
+      />
     </div>
   );
 };

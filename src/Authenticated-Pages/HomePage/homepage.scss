@@ -130,6 +130,25 @@ div.header-home {
   }
 }
 
+#show-modal-picture {
+  @include overlay;
+  @include flex-center;
+  height: 100vh;
+  position: fixed;
+  z-index: 17;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  transition: width 200ms ease-in-out;
+
+  .modal-container {
+    width: 35%;
+    height: 100%;
+    right: 0;
+    position: absolute;
+    background-color: $primary-color;
+  }
+}
+
 @include media-sm {
   .auth-home {
     padding: 20px 10px 50px 10px;
