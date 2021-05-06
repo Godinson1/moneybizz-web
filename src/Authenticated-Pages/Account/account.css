@@ -31,10 +31,19 @@ Color variables
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: #9eddff;
+  background-color: lightgreen;
   width: 300px;
   height: 120px;
   margin-bottom: 50px;
+  cursor: pointer;
+}
+
+.auth-account .auth-flex .two-factor-banner:hover {
+  background-color: #9eddff;
+}
+
+.auth-account .auth-flex #contact {
+  color: black;
 }
 
 .auth-account .auth-flex .flex-account {
@@ -169,14 +178,18 @@ Color variables
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   border: 1px solid #083e9e;
-  height: 100px;
+  padding: 20px;
 }
 
 @media screen and (max-width: 768px) {

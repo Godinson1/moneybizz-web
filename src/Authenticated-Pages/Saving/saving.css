@@ -14,6 +14,12 @@ Color variables
   font-weight: 600;
 }
 
+.auth-saving .tbs {
+  margin-top: 30px;
+  font-size: 3rem;
+  font-weight: bolder;
+}
+
 .auth-saving .save-header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -77,26 +83,59 @@ Color variables
   width: 300px;
   height: 200px;
   border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #083e9e;
+  cursor: pointer;
 }
 
 .auth-saving .save-options div:nth-child(1) {
   background-color: #cad8f1;
 }
 
+.auth-saving .save-options div:nth-child(1):hover {
+  background-color: #9eddff;
+}
+
 .auth-saving .save-options div:nth-child(2) {
   background-color: #f3dfdf;
+}
+
+.auth-saving .save-options div:nth-child(2):hover {
+  background-color: #9eddff;
 }
 
 .auth-saving .save-options div:nth-child(3) {
   background-color: #dbf3f3;
 }
 
+.auth-saving .save-options div:nth-child(3):hover {
+  background-color: #9eddff;
+}
+
 .auth-saving .save-options div:nth-child(4) {
   background-color: #c9f3d3;
 }
 
+.auth-saving .save-options div:nth-child(4):hover {
+  background-color: #9eddff;
+}
+
 .auth-saving .save-options div:nth-child(5) {
   background-color: #b9baf1;
+}
+
+.auth-saving .save-options div:nth-child(5):hover {
+  background-color: #9eddff;
 }
 
 @media screen and (max-width: 768px) {
@@ -105,6 +144,9 @@ Color variables
     overflow: hidden;
     padding: 0;
     margin-left: -10px;
+  }
+  .tbs {
+    font-size: 2rem;
   }
   .build {
     width: 100%;

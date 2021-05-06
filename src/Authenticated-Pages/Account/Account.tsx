@@ -2,7 +2,7 @@ import React, { FC, useState } from "react";
 import { useSelector, RootStateOrAny, useDispatch } from "react-redux";
 import Dashboard from "../../Pages/Dashboard/Components";
 import { readURI } from "../../utilities";
-import { ACCOUNT_OPTIONS } from "./constants";
+import { ACCOUNT_OPTIONS, PHONE_NUMBER } from "./constants";
 import { logoutUser, updateProfilePhoto } from "../../redux";
 import "./account.scss";
 import "../../Components/preloader/preloader.scss";
@@ -44,7 +44,7 @@ const Account: FC = () => {
           <div className="auth-flex">
             <div className="account-first">
               <div className="two-factor-banner">
-                <h2>2f Authentication</h2>
+                <h2>Enable Two-Factor Authentication</h2>
               </div>
               {ACCOUNT_OPTIONS.map((options) => {
                 const { icon, title, color } = options;
@@ -53,18 +53,39 @@ const Account: FC = () => {
                     content={title}
                     position="right center"
                     trigger={
-                      <div
-                        onClick={() => handleAction(title)}
-                        className="auth-options"
-                      >
-                        <Icon
-                          size="small"
-                          id="icon"
-                          color={color as SemanticCOLORS | undefined}
-                          name={icon as SemanticICONS | undefined}
-                        />
-                        <div>{title}</div>
-                      </div>
+                      title === "Contact Us" ? (
+                        <div>
+                          <a id="contact" href={PHONE_NUMBER}>
+                            <div
+                              onClick={() => handleAction(title)}
+                              className="auth-options"
+                            >
+                              <Icon
+                                size="small"
+                                id="icon"
+                                color={color as SemanticCOLORS | undefined}
+                                name={icon as SemanticICONS | undefined}
+                              />
+
+                              <div>{title}</div>
+                            </div>
+                          </a>
+                        </div>
+                      ) : (
+                        <div
+                          onClick={() => handleAction(title)}
+                          className="auth-options"
+                        >
+                          <Icon
+                            size="small"
+                            id="icon"
+                            color={color as SemanticCOLORS | undefined}
+                            name={icon as SemanticICONS | undefined}
+                          />
+
+                          <div>{title}</div>
+                        </div>
+                      )
                     }
                   />
                 );
@@ -134,16 +155,36 @@ const Account: FC = () => {
               )}
               <div className="todo-container">
                 <div className="todo">
-                  <h2>Todo/Info</h2>
+                  <div>
+                    <h2>Get Bizz Number</h2>
+                  </div>
+                  <div>
+                    <span>Bizz Points</span>
+                  </div>
                 </div>
                 <div className="todo">
-                  <h2>Todo/Info</h2>
+                  <div>
+                    <h2>60</h2>
+                  </div>
+                  <div>
+                    <span>Add BVN or NIN</span>
+                  </div>
                 </div>
                 <div className="todo">
-                  <h2>Todo/Info</h2>
+                  <div>
+                    <h2>#BizzLink ID</h2>
+                  </div>
+                  <div>
+                    <span>Create a Bizzlink ID</span>
+                  </div>
                 </div>
                 <div className="todo">
-                  <h2>Todo/Info</h2>
+                  <div>
+                    <h2>N5000</h2>
+                  </div>
+                  <div>
+                    <span>Referral Earnings</span>
+                  </div>
                 </div>
               </div>
               <div className="show-balance">

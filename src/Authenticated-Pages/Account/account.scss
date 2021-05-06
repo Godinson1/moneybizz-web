@@ -11,10 +11,19 @@
     .two-factor-banner {
       @include custom-border-radius;
       @include flex-center;
-      background-color: $light-secondary;
+      background-color: lightgreen;
       width: 300px;
       height: 120px;
       margin-bottom: 50px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $light-secondary;
+      }
+    }
+
+    #contact {
+      color: black;
     }
 
     .flex-account {
@@ -88,9 +97,10 @@
     width: 100%;
     .todo {
       @include custom-border-radius;
-      @include flex-center;
+      @include flex-start;
+      flex-direction: column;
       border: 1px solid $secondary-color;
-      height: 100px;
+      padding: 20px;
     }
   }
 }

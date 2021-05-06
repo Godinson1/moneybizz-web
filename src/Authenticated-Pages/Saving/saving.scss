@@ -9,6 +9,12 @@
     font-weight: 600;
   }
 
+  .tbs {
+    margin-top: 30px;
+    font-size: 3rem;
+    font-weight: bolder;
+  }
+
   .save-header {
     display: flex;
     justify-content: space-between;
@@ -52,22 +58,42 @@
       width: 300px;
       height: 200px;
       border-radius: 10px;
+      @include flex-center;
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: $secondary-color;
+      cursor: pointer;
     }
 
     div:nth-child(1) {
       background-color: rgb(202, 216, 241);
+      &:hover {
+        background-color: $light-secondary;
+      }
     }
     div:nth-child(2) {
       background-color: rgb(243, 223, 223);
+      &:hover {
+        background-color: $light-secondary;
+      }
     }
     div:nth-child(3) {
       background-color: rgb(219, 243, 243);
+      &:hover {
+        background-color: $light-secondary;
+      }
     }
     div:nth-child(4) {
       background-color: rgb(201, 243, 211);
+      &:hover {
+        background-color: $light-secondary;
+      }
     }
     div:nth-child(5) {
       background-color: rgb(185, 186, 241);
+      &:hover {
+        background-color: $light-secondary;
+      }
     }
   }
 }
@@ -78,6 +104,10 @@
     overflow: hidden;
     padding: 0;
     margin-left: -10px;
+  }
+
+  .tbs {
+    font-size: 2rem;
   }
 
   .build {

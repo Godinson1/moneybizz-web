@@ -45,3 +45,5 @@ export const ACCOUNT_OPTIONS = [
     color: "red",
   },
 ];
+
+export const PHONE_NUMBER = "tel:+2348146961062";
