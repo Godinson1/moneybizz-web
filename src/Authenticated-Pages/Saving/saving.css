@@ -33,6 +33,15 @@ Color variables
   margin-right: 50px;
   background-color: #9eddff;
   border-radius: 10px;
+  border: 1px solid #9eddff;
+  overflow: hidden;
+}
+
+.auth-saving .save-header .banner img {
+  max-width: 100%;
+  max-height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .auth-saving .save-header .total-balance {

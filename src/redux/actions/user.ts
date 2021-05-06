@@ -1,4 +1,10 @@
-import { setUserLoading, getUser, setUserError } from "../slices/user";
+import {
+  setUserLoading,
+  getUser,
+  setUserError,
+  setProfilePhotoLoading,
+  setProfilePhoto,
+} from "../slices/user";
 import axios from "axios";
 import { store } from "..";
 
@@ -31,9 +37,27 @@ export const getUserDetail = () => async (dispatch: typeof store.dispatch) => {
   try {
     dispatch(setUserLoading(true));
     const res = await axios.get(`user/details`);
+    if (res.data) {
+      console.log(res.data);
+      dispatch(getUser(res.data));
+    }
+  } catch (err) {
+    if (err && err.response) {
+      console.log(err.response.data);
+      dispatch(setUserError(err.response.data.message));
+    }
+  }
+};
+
+export const updateProfilePhoto = (data: FormData) => async (
+  dispatch: typeof store.dispatch
+) => {
+  try {
+    dispatch(setProfilePhotoLoading(true));
+    const res = await axios.put(`user/photo`, data);
     console.log(res.data);
     if (res.data) {
-      dispatch(getUser(res.data));
+      dispatch(setProfilePhoto(res.data));
     }
   } catch (err) {
     if (err && err.response) {

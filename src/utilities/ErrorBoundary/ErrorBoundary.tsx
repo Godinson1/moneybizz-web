@@ -17,14 +17,16 @@ const MyErrorBoundary = Catch(function MyErrorBoundary(
     return (
       <div className="error-screen">
         <div className="error">
+          <div className="error-image">
+            <img src="images/conn.png" width="400" height="400" alt="error" />
+          </div>
           <h2 className="header-error">{ERROR_HEADER}</h2>
-          <h4
-            className="error-message"
+          <div
             onClick={() => window.location.reload()}
+            className="button-reload"
           >
-            {" "}
-            &#8635; Reload Page
-          </h4>
+            Reload Page
+          </div>
         </div>
       </div>
     );

@@ -1,33 +1,37 @@
-import React from "react";
+import React, { useState } from "react";
+import { RootStateOrAny, useSelector } from "react-redux";
 import { Modal, Icon } from "semantic-ui-react";
 import { usePaystackPayment } from "react-paystack";
 import PayWithBank from "./PayWithBank";
 import "./styles.scss";
+import { useHistory } from "react-router-dom";
 
 type PaymentOptionProps = {
   setSecondOpen: Function;
   amount: string;
 };
 
-const config = {
-  reference: `${new Date().getTime()}`,
-  email: "user@example.com",
-  amount: 200000,
-  publicKey: "pk_test_a8b5af7abc7694ab53d6896b7a9f70753acdcb36",
-};
-
-const onSuccess = (reference: string | undefined) => {
-  console.log(reference);
-};
-
-const onClose = () => {
-  console.log("closed");
-};
-
 const PaymentOption = ({ setSecondOpen, amount }: PaymentOptionProps) => {
-  const [open, setOpen] = React.useState(false);
+  const user = useSelector((state: RootStateOrAny) => state.user.user);
+  const [open, setOpen] = useState(false);
+  const history = useHistory();
 
+  const config = {
+    reference: `${new Date().getTime()}`,
+    email: `${user && user.data && user.data.details.email}`,
+    amount: parseInt(amount),
+    publicKey: `${process.env.REACT_APP_API_KEY}`,
+  };
   const initializePayment = usePaystackPayment(config);
+
+  const onSuccess = (data: string | undefined) => {
+    history.push("/home");
+    console.log(data);
+  };
+
+  const onClose = () => {
+    console.log("closed");
+  };
 
   return (
     <div>

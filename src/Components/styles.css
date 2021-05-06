@@ -13,6 +13,38 @@ Color variables
   background-color: #ffffff;
 }
 
+.modal-div .flex-center,
+.modal-div-pay .flex-center {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.modal-div .flex-center .form-save,
+.modal-div-pay .flex-center .form-save {
+  margin-top: -20px;
+}
+
+.modal-div .flex-center .desc,
+.modal-div-pay .flex-center .desc {
+  text-align: center;
+  font-family: Lexend;
+  font-weight: bolder;
+  font-size: 1.8rem;
+  color: #083e9e;
+  margin-top: -50px;
+}
+
 .modal-div .flex-between,
 .modal-div-pay .flex-between {
   width: 100%;

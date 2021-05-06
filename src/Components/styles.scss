@@ -7,6 +7,24 @@
   padding: 20px;
   background-color: $primary-color;
 
+  .flex-center {
+    @include flex-center;
+    flex-direction: column;
+
+    .form-save {
+      margin-top: -20px;
+    }
+
+    .desc {
+      text-align: center;
+      font-family: Lexend;
+      font-weight: bolder;
+      font-size: 1.8rem;
+      color: $secondary-color;
+      margin-top: -50px;
+    }
+  }
+
   .flex-between {
     width: 100%;
     @include flex-between;

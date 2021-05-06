@@ -36,7 +36,7 @@ const Save = () => {
             <div className="auth-input">
               <input
                 onChange={(e) => setAmount(e.target.value)}
-                type="text"
+                type="number"
                 placeholder="Enter Amount"
               />
             </div>

@@ -4,6 +4,7 @@ import {
   getUserMessage,
   validateLogin,
   validateReg,
+  readURI,
   formatNumber,
 } from "./helpers";
 
@@ -15,4 +16,5 @@ export {
   validateLogin,
   validateReg,
   formatNumber,
+  readURI,
 };

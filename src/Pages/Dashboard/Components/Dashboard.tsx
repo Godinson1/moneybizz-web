@@ -1,15 +1,26 @@
-import React, { FC } from "react";
-import { useSelector, RootStateOrAny } from "react-redux";
+import React, { FC, useEffect } from "react";
+import { useSelector, RootStateOrAny, useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { Icon, SemanticICONS } from "semantic-ui-react";
 import { Sidebar, Navbar, MobileSidebar } from "../Utils";
 import { _layoutTypes } from "./types";
 import { SIDEBAR_LINKS } from "../Utils/constants";
+import { clearData } from "../../../redux";
 import "./dashboard.scss";
 import "../Utils/util.scss";
 
 const Dashboard: FC<_layoutTypes> = ({ children, title }) => {
   const state = useSelector((state: RootStateOrAny) => state.dashboard);
+  const user = useSelector((state: RootStateOrAny) => state.user);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (user.success) {
+      setTimeout(() => {
+        dispatch(clearData());
+      }, 5000);
+    }
+  }, [user.success, dispatch]);
 
   return (
     <div>
@@ -26,6 +37,11 @@ const Dashboard: FC<_layoutTypes> = ({ children, title }) => {
             <Navbar title={title} mobile={state.isSidebarOpen} />
           </div>
           <div className={state.isSidebarOpen ? "main-mobile" : "main"}>
+            {user.success && (
+              <div className="message-show">
+                <span>Profile photo updated successfully.</span>
+              </div>
+            )}
             {children}
           </div>
         </div>

@@ -1,44 +1,34 @@
-import React from "react";
-import { useState } from "react";
-import { Dropdown, Icon } from "semantic-ui-react";
-import { createKeywordTypeNode } from "typescript";
+import React, { useState } from "react";
+import { RootStateOrAny, useDispatch, useSelector } from "react-redux";
+import { Dropdown, Icon, DropdownProps, Modal } from "semantic-ui-react";
+import { bankOptions } from "./constants";
+import { PaymentOptionProps } from "./types";
+import { payWithBank } from "../redux";
+import SendOtp from "./SendOtp";
 import "./styles.scss";
 
-type PaymentOptionProps = {
-  setOpen: Function;
-  amount: string;
-};
-
-const friendOptions = [
-  {
-    key: "Zenith Bank",
-    text: "Zenith Bank",
-    value: "057",
-  },
-  {
-    key: "UBA",
-    text: "UBA",
-    value: "033",
-  },
-  {
-    key: "Wema Bank",
-    text: "Wema Bank",
-    value: "035",
-  },
-];
-
 const PayWithBank = ({ setOpen, amount }: PaymentOptionProps) => {
+  const pay = useSelector((state: RootStateOrAny) => state.pay);
   const [code, setCode] = useState<string>("");
+  const [otpOpen, setOtpOpen] = useState<boolean>(false);
   const [account_number, setAccountNumber] = useState<string>("");
+  const dispatch = useDispatch();
 
-  const handleDropdown = (value: any) => {
-    console.log(value.target.innerTexxt);
+  const handleChange = (
+    e: React.SyntheticEvent<HTMLElement, Event>,
+    data: DropdownProps
+  ) => {
+    setCode(data.value as string);
   };
 
   const payData = {
     code,
     account_number,
     amount,
+  };
+
+  const handlePayWithBank = () => {
+    dispatch(payWithBank(payData, setOtpOpen));
   };
 
   return (
@@ -61,7 +51,7 @@ const PayWithBank = ({ setOpen, amount }: PaymentOptionProps) => {
             <input
               onChange={(e) => setAccountNumber(e.target.value)}
               type="text"
-              placeholder="Enter Amount"
+              placeholder="Account Number"
             />
           </div>
           <label>Select Bank</label>
@@ -69,16 +59,31 @@ const PayWithBank = ({ setOpen, amount }: PaymentOptionProps) => {
             <Dropdown
               placeholder="Select Bank"
               fluid
+              value={code}
               selection
-              onChange={handleDropdown}
-              options={friendOptions}
+              onChange={handleChange}
+              options={bankOptions}
             />
           </div>
           <div>
-            <button className="auth-button">Pay</button>
+            <button
+              disabled={pay.isPaymentLoading}
+              onClick={handlePayWithBank}
+              className="auth-button"
+            >
+              {pay.isPaymentLoading ? "Processing..." : "Pay"}
+            </button>
           </div>
         </div>
       </div>
+      <Modal
+        onClose={() => setOtpOpen(false)}
+        onOpen={() => setOtpOpen(true)}
+        open={otpOpen}
+        size="tiny"
+      >
+        <SendOtp />
+      </Modal>
     </div>
   );
 };

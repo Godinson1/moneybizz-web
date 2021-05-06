@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   pay_data: {},
   isLoading: false,
-  setPaymentLoading: false,
+  isPaymentLoading: false,
   status: false,
   showBalanceStatus: false,
   error: "",
@@ -15,24 +15,24 @@ const pay = createSlice({
   initialState: initialState,
   reducers: {
     getPayment: (state, action) => {
-      state.setPaymentLoading = false;
+      state.isPaymentLoading = false;
       state.isLoading = false;
       state.error = "";
       state.pay_data = action.payload;
       return state;
     },
     setPaymentLoading: (state, action) => {
-      state.setPaymentLoading = true;
+      state.isPaymentLoading = true;
       return state;
     },
     setPaymentError: (state, action) => {
-      state.setPaymentLoading = false;
+      state.isPaymentLoading = false;
       state.isLoading = false;
       state.error = action.payload;
       return state;
     },
     setUserSuccess: (state, action) => {
-      state.setPaymentLoading = false;
+      state.isPaymentLoading = false;
       state.isLoading = false;
       state.success = action.payload;
       return state;

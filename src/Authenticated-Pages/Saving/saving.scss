@@ -22,6 +22,13 @@
       margin-right: 50px;
       background-color: $light-secondary;
       border-radius: 10px;
+      border: 1px solid $light-secondary;
+      overflow: hidden;
+      img {
+        max-width: 100%;
+        max-height: auto;
+        object-fit: cover;
+      }
     }
 
     .total-balance {

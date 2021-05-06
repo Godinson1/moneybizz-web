@@ -12,14 +12,20 @@ import {
   setPaymentError,
 } from "./slices/payment";
 import {
+  setProfilePhotoLoading,
+  setProfilePhoto,
+  clearData,
+} from "./slices/user";
+import {
   loginUser,
   logoutUser,
   registerUser,
   resetPassword,
   createNewPassword,
 } from "./actions/auth";
-import { getUserDetail } from "./actions/user";
-import { payWithBank } from "./actions/payment";
+import { getUserDetail, updateProfilePhoto } from "./actions/user";
+import { clearMessage } from "./actions/dashboard";
+import { payWithBank, sendOtp } from "./actions/payment";
 
 export {
   store,
@@ -38,4 +44,10 @@ export {
   setPaymentLoading,
   getPayment,
   setPaymentError,
+  sendOtp,
+  setProfilePhotoLoading,
+  updateProfilePhoto,
+  setProfilePhoto,
+  clearData,
+  clearMessage,
 };

@@ -11,7 +11,9 @@ const Saving: FC = () => {
             <div className="total-balance"></div>
             <div className="build">
               <div className="dash-title">Build Your Saving</div>
-              <div className="banner"></div>
+              <div className="banner">
+                <img src="images/wallet.png" alt="saving" />
+              </div>
             </div>
           </div>
           <div className="save-options">

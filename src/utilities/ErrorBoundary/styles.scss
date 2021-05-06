@@ -8,6 +8,27 @@
   padding: 50px;
 }
 
+.error-image {
+  margin-top: -70px;
+}
+
+.button-reload {
+  padding: 20px;
+  background-color: #083e9e;
+  border-bottom-right-radius: 7px;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+  color: white;
+  font-family: "Lexend";
+  font-weight: bolder;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+.button-reload:hover {
+  background-color: #062863;
+}
+
 .error-message {
   font-size: 2rem;
   line-height: 3.5rem;
@@ -17,7 +38,7 @@
 }
 
 .header-error {
-  font-size: 4rem;
+  font-size: 1.5rem;
   color: red;
 }
 
