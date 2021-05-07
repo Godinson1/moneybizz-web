@@ -16,6 +16,11 @@ const dashboard = createSlice({
       state.isSidebarOpen = !state.isSidebarOpen;
       return state;
     },
+    clearData: (state) => {
+      state.success = "";
+      state.error = "";
+      return state;
+    },
   },
 });
 

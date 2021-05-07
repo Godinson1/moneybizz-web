@@ -33,6 +33,33 @@ export const payWithBank = (data: bankDataType, setOtpOpen: Function) => async (
   }
 };
 
+type cardType = { amount: string };
+
+export const payWithExistingCard = (
+  data: cardType,
+  setSuccessOpen: Function,
+  history: RouteComponentProps["history"]
+) => async (dispatch: typeof store.dispatch) => {
+  try {
+    dispatch(setPaymentLoading(true));
+    const res = await axios.post(`/pay/fund`, data);
+    if (res.data) {
+      dispatch(getPayment(res.data));
+      setSuccessOpen(true);
+      setTimeout(() => {
+        setSuccessOpen(false);
+        history.push("/home");
+        dispatch(getUserDetail());
+      }, 5000);
+    }
+  } catch (err) {
+    if (err && err.response) {
+      console.log(err.response.data);
+      dispatch(setPaymentError(err.response.data.message));
+    }
+  }
+};
+
 type OtpType = { otp: string };
 
 export const sendOtp = (

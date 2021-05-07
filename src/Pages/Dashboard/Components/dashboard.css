@@ -38,6 +38,26 @@ Color variables
   color: green;
 }
 
+.dashboard-main .message-show-error {
+  width: 300px;
+  padding: 10px;
+  background-color: #ffffff;
+  border: 1px solid red;
+  margin: -30px 10px 0 0;
+  border-left: 5px solid red;
+  -webkit-transition: all width 1s;
+  transition: all width 1s;
+  z-index: 20;
+  position: absolute;
+  position: fixed;
+  right: 0;
+}
+
+.dashboard-main .message-show-error span {
+  color: red;
+  font-size: 1.3rem;
+}
+
 .dashboard-main .main-mobile {
   margin-left: 75px;
   padding: 80px 0 50px 10px;
@@ -171,12 +191,13 @@ Color variables
   .sidebar-dash-mobile {
     display: none;
   }
-  .message-show {
+  .message-show,
+  .message-show-error {
     width: 100vw !important;
     padding: 20px 10px 30px 20px !important;
     bottom: 0;
     margin: 0 !important;
-    z-index: 22;
+    z-index: 25 !important;
   }
   .main,
   .main-mobile {

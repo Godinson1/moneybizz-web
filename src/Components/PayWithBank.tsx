@@ -35,17 +35,18 @@ const PayWithBank = ({ setOpen, amount }: PaymentOptionProps) => {
     <div>
       <div className="modal-div-pay">
         <div className="flex-between">
-          <div>
-            <h2>Pay With Bank</h2>
-            <div className="desc">
-              Enter account number and select desired bank.
-            </div>
-          </div>
+          <div></div>
           <div className="icon" onClick={() => setOpen(false)}>
             <Icon name="cancel" />
           </div>
         </div>
         <div className="form-save">
+          <div className="info-header">
+            <h2>Pay With Bank</h2>
+            <div className="desc">
+              Enter account number and select desired bank.
+            </div>
+          </div>
           <label>Enter Account Number</label>
           <div className="auth-input">
             <input

@@ -1,5 +1,5 @@
 import { setSidebarOpen } from "../slices/dashboard";
-import { clearData } from "../index";
+import { clearData, clearPayData } from "../index";
 import store from "../store";
 
 export const openSidebar = (dispatch: typeof store.dispatch) => {
@@ -8,4 +8,8 @@ export const openSidebar = (dispatch: typeof store.dispatch) => {
 
 export const clearMessage = (dispatch: typeof store.dispatch) => {
   dispatch(clearData());
+};
+
+export const clearPayMessage = (dispatch: typeof store.dispatch) => {
+  dispatch(clearPayData());
 };

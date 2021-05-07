@@ -8,6 +8,11 @@
   padding: 20px;
   background-color: $primary-color;
 
+  .flex-buttons {
+    @include flex-center;
+    gap: 10px;
+  }
+
   .flex-center {
     @include flex-center;
     flex-direction: column;
@@ -32,10 +37,6 @@
     @include flex-between;
     flex-wrap: wrap-reverse;
 
-    .desc {
-      margin-top: -10px;
-    }
-
     .icon {
       cursor: pointer;
       color: $secondary-color;
@@ -45,6 +46,12 @@
 
   .form-save {
     padding: 50px 20px 50px 20px;
+    .info-header {
+      margin-bottom: 50px;
+    }
+    .desc {
+      margin-top: -10px;
+    }
     label {
       margin-bottom: 15px;
     }
@@ -65,7 +72,7 @@
     height: 50px;
     margin: 5px 0 10px 0;
     border-radius: 10px;
-    background-color: lightblue;
+    background-color: rgb(204, 223, 230);
 
     input {
       border: none;
@@ -85,6 +92,15 @@
     font-size: 1.3rem;
     margin-top: 10px;
   }
+
+  .cancels {
+    background-color: transparent;
+    border: 1px solid $secondary-color;
+    color: $secondary-color;
+    &:hover {
+      color: $primary-color;
+    }
+  }
 }
 
 .auth-options {
@@ -100,6 +116,10 @@
   #icon {
     font-size: 1.3rem;
   }
+}
+
+.confirm-payment {
+  @include flex-center;
 }
 
 @include media-sm {

@@ -9,6 +9,7 @@ import {
 import {
   setPaymentLoading,
   getPayment,
+  clearPayData,
   setPaymentError,
 } from "./slices/payment";
 import {
@@ -24,8 +25,8 @@ import {
   createNewPassword,
 } from "./actions/auth";
 import { getUserDetail, updateProfilePhoto } from "./actions/user";
-import { clearMessage } from "./actions/dashboard";
-import { payWithBank, sendOtp } from "./actions/payment";
+import { clearMessage, clearPayMessage } from "./actions/dashboard";
+import { payWithBank, sendOtp, payWithExistingCard } from "./actions/payment";
 
 export {
   store,
@@ -50,4 +51,7 @@ export {
   setProfilePhoto,
   clearData,
   clearMessage,
+  payWithExistingCard,
+  clearPayData,
+  clearPayMessage,
 };

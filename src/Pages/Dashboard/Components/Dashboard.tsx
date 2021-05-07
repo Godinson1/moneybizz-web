@@ -5,22 +5,24 @@ import { Icon, SemanticICONS } from "semantic-ui-react";
 import { Sidebar, Navbar, MobileSidebar } from "../Utils";
 import { _layoutTypes } from "./types";
 import { SIDEBAR_LINKS } from "../Utils/constants";
-import { clearData } from "../../../redux";
+import { clearData, clearPayData } from "../../../redux";
 import "./dashboard.scss";
 import "../Utils/util.scss";
 
 const Dashboard: FC<_layoutTypes> = ({ children, title }) => {
   const state = useSelector((state: RootStateOrAny) => state.dashboard);
   const user = useSelector((state: RootStateOrAny) => state.user);
+  const pay = useSelector((state: RootStateOrAny) => state.pay);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (user.success) {
+    if (user.success || pay.error) {
       setTimeout(() => {
         dispatch(clearData());
+        dispatch(clearPayData());
       }, 5000);
     }
-  }, [user.success, dispatch]);
+  }, [user.success, pay.error, dispatch]);
 
   return (
     <div>
@@ -40,6 +42,11 @@ const Dashboard: FC<_layoutTypes> = ({ children, title }) => {
             {user.success && (
               <div className="message-show">
                 <span>{user.success}</span>
+              </div>
+            )}
+            {pay.error && (
+              <div className="message-show-error">
+                <span>{pay.error}</span>
               </div>
             )}
             {children}

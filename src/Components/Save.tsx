@@ -20,17 +20,18 @@ const Save = () => {
     <div>
       <div className="modal-div">
         <div className="flex-between">
-          <div>
-            <h2>Quick Save</h2>
-            <div className="desc">
-              Enter an amount and proceed to desired payment option.
-            </div>
-          </div>
+          <div></div>
           <div className="icon" onClick={() => history.goBack()}>
             <Icon name="cancel" />
           </div>
         </div>
         <div className="form-save">
+          <div className="info-header">
+            <h2>Quick Save</h2>
+            <div className="desc">
+              Enter an amount and proceed to desired payment option.
+            </div>
+          </div>
           <label>Enter an Amount - E.g 5000</label>
           <div className="auth-input">
             <input

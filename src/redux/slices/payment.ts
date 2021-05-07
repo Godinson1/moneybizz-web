@@ -25,6 +25,11 @@ const pay = createSlice({
       state.isPaymentLoading = true;
       return state;
     },
+    clearPayData: (state) => {
+      state.success = "";
+      state.error = "";
+      return state;
+    },
     setPaymentError: (state, action) => {
       state.isPaymentLoading = false;
       state.isLoading = false;
@@ -55,6 +60,7 @@ export const {
   setStatus,
   setUserSuccess,
   showUserBalance,
+  clearPayData,
 } = pay.actions;
 
 export default pay.reducer;

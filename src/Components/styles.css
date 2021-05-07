@@ -13,6 +13,20 @@ Color variables
   background-color: #ffffff;
 }
 
+.modal-div .flex-buttons,
+.modal-div-pay .flex-buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+}
+
 .modal-div .flex-center,
 .modal-div-pay .flex-center {
   display: -webkit-box;
@@ -62,11 +76,6 @@ Color variables
       flex-wrap: wrap-reverse;
 }
 
-.modal-div .flex-between .desc,
-.modal-div-pay .flex-between .desc {
-  margin-top: -10px;
-}
-
 .modal-div .flex-between .icon,
 .modal-div-pay .flex-between .icon {
   cursor: pointer;
@@ -77,6 +86,16 @@ Color variables
 .modal-div .form-save,
 .modal-div-pay .form-save {
   padding: 50px 20px 50px 20px;
+}
+
+.modal-div .form-save .info-header,
+.modal-div-pay .form-save .info-header {
+  margin-bottom: 50px;
+}
+
+.modal-div .form-save .desc,
+.modal-div-pay .form-save .desc {
+  margin-top: -10px;
 }
 
 .modal-div .form-save label,
@@ -102,7 +121,7 @@ Color variables
   height: 50px;
   margin: 5px 0 10px 0;
   border-radius: 10px;
-  background-color: lightblue;
+  background-color: #ccdfe6;
 }
 
 .modal-div .auth-input input,
@@ -150,6 +169,18 @@ Color variables
   cursor: not-allowed;
 }
 
+.modal-div .cancels,
+.modal-div-pay .cancels {
+  background-color: transparent;
+  border: 1px solid #083e9e;
+  color: #083e9e;
+}
+
+.modal-div .cancels:hover,
+.modal-div-pay .cancels:hover {
+  color: #ffffff;
+}
+
 .auth-options {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -175,6 +206,18 @@ Color variables
 
 .auth-options #icon {
   font-size: 1.3rem;
+}
+
+.confirm-payment {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 @media screen and (max-width: 768px) {
