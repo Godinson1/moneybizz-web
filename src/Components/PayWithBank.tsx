@@ -24,7 +24,7 @@ const PayWithBank = ({ setOpen, amount }: PaymentOptionProps) => {
   const payData = {
     code,
     account_number,
-    amount,
+    amount: amount + "00",
   };
 
   const handlePayWithBank = () => {

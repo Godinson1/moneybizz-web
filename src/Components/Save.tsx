@@ -23,7 +23,7 @@ const Save = () => {
           <div>
             <h2>Quick Save</h2>
             <div className="desc">
-              Enter an amount and a destination to save to.
+              Enter an amount and proceed to desired payment option.
             </div>
           </div>
           <div className="icon" onClick={() => history.goBack()}>
@@ -41,7 +41,7 @@ const Save = () => {
           </div>
           <div>
             <button
-              disabled={amount.length < 4 ? true : false}
+              disabled={amount.length < 2 ? true : false}
               onClick={() => setSecondOpen(true)}
               className="auth-button"
             >

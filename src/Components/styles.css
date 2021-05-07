@@ -58,6 +58,8 @@ Color variables
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -ms-flex-wrap: wrap-reverse;
+      flex-wrap: wrap-reverse;
 }
 
 .modal-div .flex-between .desc,
@@ -74,7 +76,7 @@ Color variables
 
 .modal-div .form-save,
 .modal-div-pay .form-save {
-  padding: 50px;
+  padding: 50px 20px 50px 20px;
 }
 
 .modal-div .form-save label,
@@ -173,5 +175,11 @@ Color variables
 
 .auth-options #icon {
   font-size: 1.3rem;
+}
+
+@media screen and (max-width: 768px) {
+  .flex-between {
+    gap: 10px;
+  }
 }
 /*# sourceMappingURL=styles.css.map */

@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { RootStateOrAny, useSelector } from "react-redux";
+import { RootStateOrAny, useSelector, useDispatch } from "react-redux";
 import { Icon } from "semantic-ui-react";
 import { usePaystackPayment } from "react-paystack";
+import { getUserDetail } from "../redux";
 import PayWithBank from "./PayWithBank";
 import "./styles.scss";
 import { useHistory } from "react-router-dom";
@@ -15,18 +16,19 @@ const PaymentOption = ({ setSecondOpen, amount }: PaymentOptionProps) => {
   const user = useSelector((state: RootStateOrAny) => state.user.user);
   const [open, setOpen] = useState(false);
   const history = useHistory();
+  const dispatch = useDispatch();
 
   const config = {
     reference: `${new Date().getTime()}`,
     email: `${user && user.data && user.data.details.email}`,
-    amount: parseInt(amount),
-    publicKey: `${process.env.REACT_APP_API_KEY}`,
+    amount: parseInt(amount + "00"),
+    publicKey: `${user && user.data && user.data.secret}`,
   };
   const initializePayment = usePaystackPayment(config);
 
   const onSuccess = (data: string | undefined) => {
     history.push("/home");
-    console.log(data);
+    dispatch(getUserDetail());
   };
 
   const onClose = () => {
@@ -59,10 +61,12 @@ const PaymentOption = ({ setSecondOpen, amount }: PaymentOptionProps) => {
             <Icon size="small" id="icon" name="cc mastercard" />
             <div>Use new Card</div>
           </div>
-          <div className="auth-options">
-            <Icon size="small" id="icon" name="credit card outline" />
-            <div>Pay with Existing Card</div>
-          </div>
+          {user && user.data && (
+            <div className="auth-options">
+              <Icon size="small" id="icon" name="credit card outline" />
+              <div>Pay with bank card **** **3453</div>
+            </div>
+          )}
         </div>
       </div>
       {open && (
