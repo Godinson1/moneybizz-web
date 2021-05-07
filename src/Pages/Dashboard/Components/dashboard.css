@@ -141,7 +141,7 @@ Color variables
         -ms-flex-align: center;
             align-items: center;
     color: #ffffff;
-    z-index: 10;
+    z-index: 20;
     bottom: 0;
     padding: 20px;
     height: 60px;

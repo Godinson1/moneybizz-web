@@ -333,6 +333,31 @@ div.header-home .ab {
   margin-left: 15px;
 }
 
+#show-modal-payment {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 0 50px 0 70px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100vh;
+  position: fixed;
+  z-index: 17;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  background: transparent;
+}
+
 #show-modal-picture {
   position: absolute;
   top: 0;
@@ -355,32 +380,14 @@ div.header-home .ab {
   z-index: 17;
   overflow-y: scroll;
   overflow-x: hidden;
-  -webkit-transition: width 200ms ease-in-out;
-  transition: width 200ms ease-in-out;
 }
 
-#show-modal-picture .modal-container {
-  width: 35%;
+.modal-container {
+  width: 36%;
   height: 100%;
   right: 0;
   position: absolute;
   background-color: #ffffff;
-  -webkit-animation: slide 1.5s forwards;
-  -webkit-animation-delay: 2s;
-  animation: slide 1.5s forwards;
-  animation-delay: 2s;
-}
-
-@-webkit-keyframes slide {
-  100% {
-    right: 0;
-  }
-}
-
-@keyframes slide {
-  100% {
-    right: 0;
-  }
 }
 
 @media screen and (max-width: 768px) {
@@ -392,7 +399,6 @@ div.header-home .ab {
   }
   .modal-container {
     width: 100% !important;
-    height: 92% !important;
     top: 0;
   }
   .conn {

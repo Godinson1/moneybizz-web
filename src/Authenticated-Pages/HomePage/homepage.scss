@@ -130,39 +130,21 @@ div.header-home {
   }
 }
 
+#show-modal-payment {
+  @include main-modal;
+  background: transparent;
+}
+
 #show-modal-picture {
-  @include overlay;
-  @include flex-center;
-  height: 100vh;
-  position: fixed;
-  z-index: 17;
-  overflow-y: scroll;
-  overflow-x: hidden;
-  transition: width 200ms ease-in-out;
+  @include main-modal;
+}
 
-  .modal-container {
-    width: 35%;
-    height: 100%;
-    right: 0;
-    position: absolute;
-    background-color: $primary-color;
-    -webkit-animation: slide 1.5s forwards;
-    -webkit-animation-delay: 2s;
-    animation: slide 1.5s forwards;
-    animation-delay: 2s;
-  }
-
-  @-webkit-keyframes slide {
-    100% {
-      right: 0;
-    }
-  }
-
-  @keyframes slide {
-    100% {
-      right: 0;
-    }
-  }
+.modal-container {
+  width: 36%;
+  height: 100%;
+  right: 0;
+  position: absolute;
+  background-color: $primary-color;
 }
 
 @include media-sm {
@@ -175,7 +157,7 @@ div.header-home {
 
   .modal-container {
     width: 100% !important;
-    height: 92% !important;
+
     top: 0;
   }
 

@@ -58,7 +58,7 @@
   .main-footer {
     @include flex-center;
     color: $primary-color;
-    z-index: 10;
+    z-index: 20;
     bottom: 0;
     padding: 20px;
     height: 60px;

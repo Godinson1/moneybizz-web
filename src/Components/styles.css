@@ -32,7 +32,7 @@ Color variables
 
 .modal-div .flex-center .form-save,
 .modal-div-pay .flex-center .form-save {
-  margin-top: -20px;
+  margin-top: 60px;
 }
 
 .modal-div .flex-center .desc,
@@ -42,7 +42,8 @@ Color variables
   font-weight: bolder;
   font-size: 1.8rem;
   color: #083e9e;
-  margin-top: -50px;
+  margin-top: -30px;
+  line-height: 30px;
 }
 
 .modal-div .flex-between,

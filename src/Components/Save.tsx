@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Modal, Icon } from "semantic-ui-react";
+import { Icon } from "semantic-ui-react";
 import { useHistory } from "react-router-dom";
 import PaymentOption from "./PaymentOption";
 import "./styles.scss";
@@ -50,9 +50,15 @@ const Save = () => {
           </div>
         </div>
       </div>
-      <Modal onClose={() => setSecondOpen(false)} open={secondOpen} size="tiny">
-        <PaymentOption amount={amount} setSecondOpen={setSecondOpen} />
-      </Modal>
+      {secondOpen && (
+        <div id="show-modal-payment">
+          <div className="modal-container">
+            <div>
+              <PaymentOption amount={amount} setSecondOpen={setSecondOpen} />
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

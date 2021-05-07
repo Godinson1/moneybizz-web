@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { RootStateOrAny, useDispatch, useSelector } from "react-redux";
-import { Modal, Icon } from "semantic-ui-react";
+import { Icon } from "semantic-ui-react";
 import { useHistory } from "react-router-dom";
 import { sendOtp } from "../redux";
 import PinCode from "./PinCode";
@@ -51,13 +51,15 @@ const SendOtp = () => {
           </div>
         </div>
       </div>
-      <Modal
-        onClose={() => setSucessOpen(false)}
-        open={successOpen}
-        size="tiny"
-      >
-        <Success />
-      </Modal>
+      {successOpen && (
+        <div id="show-modal-payment">
+          <div className="modal-container">
+            <div>
+              <Success />
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

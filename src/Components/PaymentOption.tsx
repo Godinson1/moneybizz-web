@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { RootStateOrAny, useSelector } from "react-redux";
-import { Modal, Icon } from "semantic-ui-react";
+import { Icon } from "semantic-ui-react";
 import { usePaystackPayment } from "react-paystack";
 import PayWithBank from "./PayWithBank";
 import "./styles.scss";
@@ -65,9 +65,15 @@ const PaymentOption = ({ setSecondOpen, amount }: PaymentOptionProps) => {
           </div>
         </div>
       </div>
-      <Modal onClose={() => setSecondOpen(false)} open={open} size="tiny">
-        <PayWithBank amount={amount} setOpen={setOpen} />
-      </Modal>
+      {open && (
+        <div id="show-modal-payment">
+          <div className="modal-container">
+            <div>
+              <PayWithBank amount={amount} setOpen={setOpen} />
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { RootStateOrAny, useDispatch, useSelector } from "react-redux";
-import { Dropdown, Icon, DropdownProps, Modal } from "semantic-ui-react";
+import { Dropdown, Icon, DropdownProps } from "semantic-ui-react";
 import { bankOptions } from "./constants";
 import { PaymentOptionProps } from "./types";
 import { payWithBank } from "../redux";
@@ -67,7 +67,13 @@ const PayWithBank = ({ setOpen, amount }: PaymentOptionProps) => {
           </div>
           <div>
             <button
-              disabled={pay.isPaymentLoading}
+              disabled={
+                pay.isPaymentLoading ||
+                code === "" ||
+                account_number.length < 10
+                  ? true
+                  : false
+              }
               onClick={handlePayWithBank}
               className="auth-button"
             >
@@ -76,14 +82,15 @@ const PayWithBank = ({ setOpen, amount }: PaymentOptionProps) => {
           </div>
         </div>
       </div>
-      <Modal
-        onClose={() => setOtpOpen(false)}
-        onOpen={() => setOtpOpen(true)}
-        open={otpOpen}
-        size="tiny"
-      >
-        <SendOtp />
-      </Modal>
+      {otpOpen && (
+        <div id="show-modal-payment">
+          <div className="modal-container">
+            <div>
+              <SendOtp />
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
