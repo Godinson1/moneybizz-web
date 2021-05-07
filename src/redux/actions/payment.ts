@@ -1,4 +1,9 @@
-import { setPaymentLoading, getPayment, setPaymentError } from "../index";
+import {
+  setPaymentLoading,
+  getPayment,
+  setPaymentError,
+  getUserDetail,
+} from "../index";
 import { RouteComponentProps } from "react-router-dom";
 import axios from "axios";
 import { store } from "..";
@@ -45,6 +50,7 @@ export const sendOtp = (
       setTimeout(() => {
         setSuccessOpen(false);
         history.push("/home");
+        dispatch(getUserDetail());
       }, 5000);
     }
   } catch (err) {
