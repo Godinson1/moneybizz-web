@@ -176,6 +176,7 @@ Color variables
     padding: 20px 10px 30px 20px !important;
     bottom: 0;
     margin: 0 !important;
+    z-index: 22;
   }
   .main,
   .main-mobile {
