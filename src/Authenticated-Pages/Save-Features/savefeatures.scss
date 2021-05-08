@@ -14,3 +14,17 @@
     color: $secondary-color;
   }
 }
+
+.total-balance {
+  @include custom-border-radius;
+  border: 1px solid $secondary-color;
+  width: 60%;
+  height: 140px;
+  margin-top: 15px;
+
+  .tbs {
+    margin-top: 30px;
+    font-size: 3rem;
+    font-weight: bolder;
+  }
+}

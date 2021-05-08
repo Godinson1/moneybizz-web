@@ -18,7 +18,7 @@ const MyErrorBoundary = Catch(function MyErrorBoundary(
       <div className="error-screen">
         <div className="error">
           <div className="error-image">
-            <img src="images/conn.png" width="400" height="400" alt="error" />
+            <img src="/images/conn.png" width="400" height="400" alt="error" />
           </div>
           <h2 className="header-error">{ERROR_HEADER}</h2>
           <div

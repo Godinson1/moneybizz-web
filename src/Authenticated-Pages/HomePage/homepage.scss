@@ -10,11 +10,26 @@
     .quick-save-btn {
       @include custom-button;
     }
+    .quick-buzz-btn {
+      @include custom-button;
+      background-color: transparent;
+      border: 1px solid $secondary-color;
+      color: $secondary-color;
+
+      &:hover {
+        color: $primary-color;
+      }
+    }
   }
 
   .dash-title {
     font-weight: 600;
     margin-bottom: 40px;
+  }
+
+  .flex-home-btns {
+    display: flex;
+    gap: 5px;
   }
 
   .todo {
@@ -165,6 +180,10 @@ div.header-home {
   .modal-container {
     width: 100% !important;
     top: 0;
+  }
+
+  .quick-buzz-btn {
+    display: none;
   }
 
   .conn {

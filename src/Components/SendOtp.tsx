@@ -26,17 +26,18 @@ const SendOtp = () => {
     <div>
       <div className="modal-div">
         <div className="flex-between">
-          <div>
-            <h2>OTP</h2>
-            <div className="desc">
-              Enter the otp sent to your phone or email address.
-            </div>
-          </div>
+          <div></div>
           <div className="icon" onClick={() => history.goBack()}>
             <Icon name="cancel" />
           </div>
         </div>
         <div className="form-save">
+          <div className="info-header">
+            <h2>OTP</h2>
+            <div className="desc">
+              Enter the otp sent to your phone or email address.
+            </div>
+          </div>
           <div className="flex-center">
             <PinCode setOtp={setOtp} />
           </div>

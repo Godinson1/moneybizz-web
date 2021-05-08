@@ -1,7 +1,8 @@
 import React, { FC } from "react";
 import Dashboard from "../../Pages/Dashboard/Components";
 import { useRouteMatch, useHistory } from "react-router-dom";
-import { Tab } from "semantic-ui-react";
+import { getIndex, getTabString, handleTabRouting, panes } from "./index";
+import { Tab, TabProps } from "semantic-ui-react";
 import "./savefeatures.scss";
 
 const SaveFeatures: FC = () => {
@@ -9,72 +10,24 @@ const SaveFeatures: FC = () => {
   const history = useHistory();
 
   const urlData = url.substring(url.lastIndexOf("/")).slice(1);
-  const colors = [
-    "red",
-    "orange",
-    "yellow",
-    "olive",
-    "green",
-    "teal",
-    "blue",
-    "violet",
-    "purple",
-    "pink",
-    "brown",
-    "grey",
-  ];
-  const panes = [
-    {
-      menuItem: "Bizz Bank",
+  const handleTabChange = (
+    e: React.MouseEvent<HTMLDivElement, MouseEvent>,
+    data: TabProps
+  ) => {
+    console.log(data.activeIndex);
+    handleTabRouting(data.activeIndex as number, history);
+  };
 
-      render: () => (
-        <Tab.Pane
-          onclick={() => history.push("/save/bizzbank")}
-          attached={false}
-        >
-          Tab 1 Content
-        </Tab.Pane>
-      ),
-    },
-    {
-      menuItem: "Ajo",
-      render: () => <Tab.Pane attached={false}>Tab 2 Content</Tab.Pane>,
-    },
-    {
-      menuItem: "Safelock",
-      render: () => <Tab.Pane attached={false}>Tab 3 Content</Tab.Pane>,
-    },
-    {
-      menuItem: "Targets",
-      render: () => <Tab.Pane attached={false}>Tab 4 Content</Tab.Pane>,
-    },
-    {
-      menuItem: "Coming Soon",
-      render: () => <Tab.Pane attached={false}>Tab 5 Content</Tab.Pane>,
-    },
-  ];
   return (
     <div>
-      <Dashboard
-        title={
-          urlData === "ajo"
-            ? "AJO"
-            : urlData === "safelock"
-            ? "SAFELOCK"
-            : urlData === "bizzbank"
-            ? "BIZZBANK"
-            : urlData === "targets"
-            ? "TARGETS"
-            : urlData === "soon"
-            ? "COMING SOON"
-            : ""
-        }
-      >
+      <Dashboard title={getTabString(urlData)}>
         <div className="auth-notification">
           <Tab
+            onTabChange={handleTabChange}
             className="tab"
-            menu={{ colors: colors, secondary: true, pointing: true }}
+            menu={{ secondary: true, pointing: true }}
             panes={panes}
+            defaultActiveIndex={getIndex(urlData)}
           />
         </div>
       </Dashboard>

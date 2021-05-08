@@ -169,9 +169,47 @@ Color variables
   cursor: not-allowed;
 }
 
+.auth-home .flex-between .quick-buzz-btn {
+  padding: 15px 20px 15px 20px;
+  border-bottom-right-radius: 7px;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+  background-color: #083e9e;
+  color: #ffffff;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  border: 1px solid #083e9e;
+  color: #083e9e;
+}
+
+.auth-home .flex-between .quick-buzz-btn:hover {
+  background-color: #062863;
+}
+
+.auth-home .flex-between .quick-buzz-btn:focus {
+  outline: none;
+}
+
+.auth-home .flex-between .quick-buzz-btn:disabled {
+  cursor: not-allowed;
+}
+
+.auth-home .flex-between .quick-buzz-btn:hover {
+  color: #ffffff;
+}
+
 .auth-home .dash-title {
   font-weight: 600;
   margin-bottom: 40px;
+}
+
+.auth-home .flex-home-btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 5px;
 }
 
 .auth-home .todo {
@@ -407,6 +445,9 @@ div.header-home .ab {
   .modal-container {
     width: 100% !important;
     top: 0;
+  }
+  .quick-buzz-btn {
+    display: none;
   }
   .conn {
     width: 80vw;

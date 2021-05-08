@@ -18,4 +18,21 @@ Color variables
 .auth-notification .tab {
   color: #083e9e;
 }
+
+.total-balance {
+  padding: 15px 20px 15px 20px;
+  border-bottom-right-radius: 7px;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+  border: 1px solid #083e9e;
+  width: 60%;
+  height: 140px;
+  margin-top: 15px;
+}
+
+.total-balance .tbs {
+  margin-top: 30px;
+  font-size: 3rem;
+  font-weight: bolder;
+}
 /*# sourceMappingURL=savefeatures.css.map */

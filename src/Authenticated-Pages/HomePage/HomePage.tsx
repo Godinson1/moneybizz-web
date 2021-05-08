@@ -41,11 +41,28 @@ const HomePage: FC = () => {
                   trigger={<Icon id="refresh" size="big" name="refresh" />}
                 ></Popup>
               </div>
-              <Link to={`${url}/save`} className="link">
-                <div onClick={() => setOpen(!open)} className="quick-save-btn">
-                  + Quick Save
-                </div>
-              </Link>
+              <div className="flex-home-btns">
+                <Popup
+                  content="Still in development."
+                  trigger={
+                    <div
+                      onClick={() => setOpen(!open)}
+                      className="quick-buzz-btn"
+                    >
+                      + Quick Buzz
+                    </div>
+                  }
+                ></Popup>
+
+                <Link to={`${url}/save`} className="link">
+                  <div
+                    onClick={() => setOpen(!open)}
+                    className="quick-save-btn"
+                  >
+                    + Quick Save
+                  </div>
+                </Link>
+              </div>
             </div>
             <div className="header-home">
               <Header />
