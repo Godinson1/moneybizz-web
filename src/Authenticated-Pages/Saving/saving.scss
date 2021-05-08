@@ -63,8 +63,11 @@
       width: 300px;
       height: 200px;
       border-radius: 10px;
-      @include flex-center;
-      font-size: 1.5rem;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      flex-direction: column;
+      padding: 15px;
       font-weight: bold;
       color: $secondary-color;
       cursor: pointer;
@@ -95,7 +98,7 @@
       }
     }
     div:nth-child(5) {
-      background-color: rgb(185, 186, 241);
+      background-color: rgb(241, 215, 185);
       &:hover {
         background-color: $light-secondary;
       }

@@ -91,13 +91,17 @@ Color variables
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  font-size: 1.5rem;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 15px;
   font-weight: bold;
   color: #083e9e;
   cursor: pointer;
@@ -136,7 +140,7 @@ Color variables
 }
 
 .auth-saving .save-options div:nth-child(5) {
-  background-color: #b9baf1;
+  background-color: #f1d7b9;
 }
 
 .auth-saving .save-options div:nth-child(5):hover {

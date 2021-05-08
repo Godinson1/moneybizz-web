@@ -1,6 +1,7 @@
 import React, { FC } from "react";
 import { useSelector, RootStateOrAny } from "react-redux";
 import { useHistory } from "react-router-dom";
+import { Icon } from "semantic-ui-react";
 import { formatNumber } from "../../utilities";
 import PreloaderMain from "../../Components/preloader/PreloaderMain";
 import Dashboard from "../../Pages/Dashboard/Components";
@@ -38,11 +39,40 @@ const Saving: FC = () => {
               </div>
             </div>
             <div className="save-options">
-              <div onClick={() => history.push("/save/bizzbank")}>BizzBank</div>
-              <div onClick={() => history.push("/save/ajo")}>Ajo</div>
-              <div onClick={() => history.push("/save/safelock")}>Safelock</div>
-              <div onClick={() => history.push("/save/targets")}>Targets</div>
-              <div onClick={() => history.push("/save/soon")}>Coming Soon</div>
+              <div onClick={() => history.push("/save/bizzbank")}>
+                <Icon name="th" size="big" />
+                <h2>BizzBank</h2>
+                <span>
+                  Strictly save automatically; Daily, Weekly, Monthly.
+                </span>
+              </div>
+              <div onClick={() => history.push("/save/ajo")}>
+                <Icon name="save" size="big" />
+                <h2>Ajo</h2>
+                <span>
+                  Collectively save funds with other bizzers for your desired
+                  need.
+                </span>
+              </div>
+              <div onClick={() => history.push("/save/safelock")}>
+                <Icon name="lock" size="big" />
+                <h2>Safelock</h2>
+                <span>
+                  Lock funds to avoid temptations and withdraw at set dates.
+                </span>
+              </div>
+              <div onClick={() => history.push("/save/targets")}>
+                <Icon name="rocket" size="big" />
+                <h2>Targets</h2>
+                <span>Reach your unique individual saving goals.</span>
+              </div>
+              <div onClick={() => history.push("/save/soon")}>
+                <Icon name="osi" size="big" />
+                <h2>Coming Soon</h2>
+                <span>
+                  See MoneyBizz features that will be available soonest.
+                </span>
+              </div>
             </div>
           </div>
         )}
