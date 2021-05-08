@@ -31,9 +31,7 @@ const Header = () => {
                             {formatNumber(user.user.data.details.total_balance)}
                           </div>
                         ) : title === TOTAL_INVESTMENT ? (
-                          <div>
-                            {formatNumber(user.user.data.details.total_balance)}
-                          </div>
+                          <div>{formatNumber(0)}</div>
                         ) : title === CONNECTIONS ? (
                           <div>{user.user.data.connections.length}</div>
                         ) : title === AVAILABLE_BALANCE ? (
