@@ -171,6 +171,11 @@ Color variables
 
 .auth-home .dash-title {
   font-weight: 600;
+  margin-bottom: 40px;
+}
+
+.auth-home .todo {
+  font-weight: 600;
 }
 
 .auth-home #refresh {
@@ -306,14 +311,14 @@ div.header-home .tb {
   height: 100%;
   padding: 20px;
   border-radius: 15px;
-  background-color: #0d2758;
+  background-color: #0d60d8;
 }
 
 div.header-home .ti {
   height: 100%;
   border-radius: 10px;
   padding: 20px;
-  background-color: #ca0909;
+  background-color: #7d1ae6;
   margin-left: 15px;
 }
 
@@ -321,7 +326,7 @@ div.header-home .cns {
   height: 100%;
   padding: 20px;
   border-radius: 10px;
-  background-color: #64020f;
+  background-color: #222222;
   margin-left: 15px;
 }
 
@@ -329,7 +334,9 @@ div.header-home .ab {
   height: 100%;
   padding: 20px;
   border-radius: 10px;
-  background-color: #086d21;
+  border: 1px solid #083e9e;
+  color: #083e9e;
+  background-color: #ffffff;
   margin-left: 15px;
 }
 

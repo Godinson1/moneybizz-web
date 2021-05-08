@@ -23,9 +23,10 @@ const Saving = lazy(() => import("./Authenticated-Pages/Saving"));
 const Invest = lazy(() => import("./Authenticated-Pages/Invest"));
 const Account = lazy(() => import("./Authenticated-Pages/Account"));
 const Notification = lazy(() => import("./Authenticated-Pages/Notification"));
+const SaveFeatures = lazy(() => import("./Authenticated-Pages/Save-Features"));
 
-axios.defaults.baseURL = "https://moneybizz.herokuapp.com";
-//axios.defaults.baseURL = "http://localhost:5000";
+//axios.defaults.baseURL = "https://moneybizz.herokuapp.com";
+axios.defaults.baseURL = "http://localhost:5000";
 
 interface jwtType {
   exp: number;
@@ -59,6 +60,7 @@ const App = () => {
             <Route exact path="/activate" component={Activate} />
             <AuthRoute path="/home" component={Auth_HomePage} />
             <AuthRoute exact path="/save" component={Saving} />
+            <AuthRoute exact path="/save/:id" component={SaveFeatures} />
             <AuthRoute exact path="/invest" component={Invest} />
             <AuthRoute exact path="/notification" component={Notification} />
             <AuthRoute exact path="/account" component={Account} />

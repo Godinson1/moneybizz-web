@@ -1,0 +1,12 @@
+@import "../../sass-styles/breakpoints";
+@import "../../sass-styles/mixins";
+@import "../../sass-styles/variables";
+
+.auth-notification {
+  padding: 50px;
+
+  h3,
+  p {
+    text-align: center;
+  }
+}
