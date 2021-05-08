@@ -79,6 +79,11 @@ Color variables
   margin: 10px 0 0 -10px;
 }
 
+.auth-saving .save-options #savelink {
+  text-decoration: none;
+  background-color: transparent;
+}
+
 .auth-saving .save-options div {
   width: 300px;
   height: 200px;

@@ -14,4 +14,8 @@ Color variables
 .auth-notification p {
   text-align: center;
 }
+
+.auth-notification .tab {
+  color: #083e9e;
+}
 /*# sourceMappingURL=savefeatures.css.map */

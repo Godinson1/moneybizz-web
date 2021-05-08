@@ -1,55 +1,81 @@
 import React, { FC } from "react";
 import Dashboard from "../../Pages/Dashboard/Components";
+import { useRouteMatch, useHistory } from "react-router-dom";
 import { Tab } from "semantic-ui-react";
 import "./savefeatures.scss";
 
 const SaveFeatures: FC = () => {
+  const { url } = useRouteMatch();
+  const history = useHistory();
+
+  const urlData = url.substring(url.lastIndexOf("/")).slice(1);
+  const colors = [
+    "red",
+    "orange",
+    "yellow",
+    "olive",
+    "green",
+    "teal",
+    "blue",
+    "violet",
+    "purple",
+    "pink",
+    "brown",
+    "grey",
+  ];
   const panes = [
     {
-      menuItem: "Tab 1",
+      menuItem: "Bizz Bank",
+
       render: () => (
-        <Tab.Pane loading attached={false}>
+        <Tab.Pane
+          onclick={() => history.push("/save/bizzbank")}
+          attached={false}
+        >
           Tab 1 Content
         </Tab.Pane>
       ),
     },
     {
-      menuItem: "Tab 2",
-      render: () => (
-        <Tab.Pane loading attached={false}>
-          Tab 2 Content
-        </Tab.Pane>
-      ),
+      menuItem: "Ajo",
+      render: () => <Tab.Pane attached={false}>Tab 2 Content</Tab.Pane>,
     },
     {
-      menuItem: "Tab 3",
-      render: () => (
-        <Tab.Pane loading attached={false}>
-          Tab 3 Content
-        </Tab.Pane>
-      ),
+      menuItem: "Safelock",
+      render: () => <Tab.Pane attached={false}>Tab 3 Content</Tab.Pane>,
     },
     {
-      menuItem: "Tab 3",
-      render: () => (
-        <Tab.Pane loading attached={false}>
-          Tab 3 Content
-        </Tab.Pane>
-      ),
+      menuItem: "Targets",
+      render: () => <Tab.Pane attached={false}>Tab 4 Content</Tab.Pane>,
+    },
+    {
+      menuItem: "Coming Soon",
+      render: () => <Tab.Pane attached={false}>Tab 5 Content</Tab.Pane>,
     },
   ];
   return (
     <div>
-      <Dashboard title="AJO">
+      <Dashboard
+        title={
+          urlData === "ajo"
+            ? "AJO"
+            : urlData === "safelock"
+            ? "SAFELOCK"
+            : urlData === "bizzbank"
+            ? "BIZZBANK"
+            : urlData === "targets"
+            ? "TARGETS"
+            : urlData === "soon"
+            ? "COMING SOON"
+            : ""
+        }
+      >
         <div className="auth-notification">
-          <Tab menu={{ secondary: true, pointing: true }} panes={panes} />
-          <h3>AJO</h3>
-          <div className="text-base">
-            <p>
-              Kindly check back for this feature as it is currently in
-              development...
-            </p>
-          </div>
+          <Tab
+            className="tab"
+            menu={{ colors: colors, secondary: true, pointing: true }}
+            panes={panes}
+          />
         </div>
       </Dashboard>
     </div>

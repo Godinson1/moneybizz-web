@@ -1,5 +1,6 @@
 import React, { FC } from "react";
 import { useSelector, RootStateOrAny } from "react-redux";
+import { useHistory } from "react-router-dom";
 import { formatNumber } from "../../utilities";
 import PreloaderMain from "../../Components/preloader/PreloaderMain";
 import Dashboard from "../../Pages/Dashboard/Components";
@@ -7,6 +8,8 @@ import "./saving.scss";
 
 const Saving: FC = () => {
   const user = useSelector((state: RootStateOrAny) => state.user);
+  const history = useHistory();
+
   return (
     <div>
       <Dashboard title="SAVINGS">
@@ -35,11 +38,11 @@ const Saving: FC = () => {
               </div>
             </div>
             <div className="save-options">
-              <div>BizzBank</div>
-              <div>Ajo</div>
-              <div>Safelock</div>
-              <div>Targets</div>
-              <div>Coming Soon</div>
+              <div onClick={() => history.push("/save/bizzbank")}>BizzBank</div>
+              <div onClick={() => history.push("/save/ajo")}>Ajo</div>
+              <div onClick={() => history.push("/save/safelock")}>Safelock</div>
+              <div onClick={() => history.push("/save/targets")}>Targets</div>
+              <div onClick={() => history.push("/save/soon")}>Coming Soon</div>
             </div>
           </div>
         )}
