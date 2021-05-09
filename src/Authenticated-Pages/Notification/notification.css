@@ -14,4 +14,59 @@ Color variables
 .auth-notification p {
   text-align: center;
 }
+
+.auth-notification .custom-card {
+  padding: 15px 20px 15px 20px;
+  border-bottom-right-radius: 7px;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+  border: 1px solid #b6b5b5;
+}
+
+.auth-notification .custom-card .flex-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.auth-notification .custom-card .notification-header {
+  padding: 15px 20px 15px 20px;
+  border-bottom-right-radius: 7px;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+  border: 1px solid #b6b5b5;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.auth-notification .amount-base {
+  margin-top: 20px;
+}
+
+.auth-notification .active {
+  background-color: #083e9e;
+  color: #ffffff;
+}
+
+.auth-notification .flex-between {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 10px;
+}
+
+.auth-notification .status-color {
+  width: 20px;
+  height: 20px;
+  border-radius: 50px;
+  background-color: green;
+}
 /*# sourceMappingURL=notification.css.map */

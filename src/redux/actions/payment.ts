@@ -7,12 +7,8 @@ import {
 import { RouteComponentProps } from "react-router-dom";
 import axios from "axios";
 import { store } from "..";
-
-type bankDataType = {
-  account_number: string;
-  amount: string;
-  code: string;
-};
+import { redirectUser } from "../helpers";
+import { bankDataType, cardType, OtpType } from "../types";
 
 export const payWithBank = (data: bankDataType, setOtpOpen: Function) => async (
   dispatch: typeof store.dispatch
@@ -33,12 +29,11 @@ export const payWithBank = (data: bankDataType, setOtpOpen: Function) => async (
   }
 };
 
-type cardType = { amount: string };
-
 export const payWithExistingCard = (
   data: cardType,
   setSuccessOpen: Function,
-  history: RouteComponentProps["history"]
+  history: RouteComponentProps["history"],
+  url: string
 ) => async (dispatch: typeof store.dispatch) => {
   try {
     dispatch(setPaymentLoading(true));
@@ -48,7 +43,7 @@ export const payWithExistingCard = (
       setSuccessOpen(true);
       setTimeout(() => {
         setSuccessOpen(false);
-        history.push("/home");
+        redirectUser(url, history);
         dispatch(getUserDetail());
       }, 5000);
     }
@@ -60,12 +55,11 @@ export const payWithExistingCard = (
   }
 };
 
-type OtpType = { otp: string };
-
 export const sendOtp = (
   data: OtpType,
   setSuccessOpen: Function,
-  history: RouteComponentProps["history"]
+  history: RouteComponentProps["history"],
+  url: string
 ) => async (dispatch: typeof store.dispatch) => {
   try {
     dispatch(setPaymentLoading(true));
@@ -76,7 +70,7 @@ export const sendOtp = (
       setSuccessOpen(true);
       setTimeout(() => {
         setSuccessOpen(false);
-        history.push("/home");
+        redirectUser(url, history);
         dispatch(getUserDetail());
       }, 5000);
     }

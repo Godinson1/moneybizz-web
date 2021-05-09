@@ -1,15 +1,19 @@
 import React, { FC } from "react";
 import { useSelector, RootStateOrAny } from "react-redux";
-import { useHistory } from "react-router-dom";
+import { useHistory, Link, Route, useRouteMatch } from "react-router-dom";
 import { Icon } from "semantic-ui-react";
-import { formatNumber } from "../../utilities";
+import { formatNumber, usePrepareLink, getChildRoute } from "../../utilities";
 import PreloaderMain from "../../Components/preloader/PreloaderMain";
 import Dashboard from "../../Pages/Dashboard/Components";
+import { Save } from "../../Components";
 import "./saving.scss";
+import "../HomePage/homepage.scss";
 
 const Saving: FC = () => {
   const user = useSelector((state: RootStateOrAny) => state.user);
   const history = useHistory();
+  const { url } = useRouteMatch();
+  const saveLink = usePrepareLink(getChildRoute("/quicksave"));
 
   return (
     <div>
@@ -31,22 +35,24 @@ const Saving: FC = () => {
                   </div>
                 )}
               </div>
-              <div className="build">
-                <div className="dash-title">Build Your Saving</div>
-                <div className="banner">
-                  <img src="images/wallet.png" alt="saving" />
+              <Link to={`${url}/quicksave`}>
+                <div className="build">
+                  <div className="dash-title">Build Your Saving</div>
+                  <div className="banner">
+                    <img src="images/wallet.png" alt="saving" />
+                  </div>
                 </div>
-              </div>
+              </Link>
             </div>
             <div className="save-options">
-              <div onClick={() => history.push("/save/bizzbank")}>
+              <div onClick={() => history.push("/save/b/bizzbank")}>
                 <Icon name="th" size="big" />
                 <h2>BizzBank</h2>
                 <span>
                   Strictly save automatically; Daily, Weekly, Monthly.
                 </span>
               </div>
-              <div onClick={() => history.push("/save/ajo")}>
+              <div onClick={() => history.push("/save/b/ajo")}>
                 <Icon name="save" size="big" />
                 <h2>Ajo</h2>
                 <span>
@@ -54,19 +60,19 @@ const Saving: FC = () => {
                   need.
                 </span>
               </div>
-              <div onClick={() => history.push("/save/safelock")}>
+              <div onClick={() => history.push("/save/b/safelock")}>
                 <Icon name="lock" size="big" />
                 <h2>Safelock</h2>
                 <span>
                   Lock funds to avoid temptations and withdraw at set dates.
                 </span>
               </div>
-              <div onClick={() => history.push("/save/targets")}>
+              <div onClick={() => history.push("/save/b/targets")}>
                 <Icon name="rocket" size="big" />
                 <h2>Targets</h2>
                 <span>Reach your unique individual saving goals.</span>
               </div>
-              <div onClick={() => history.push("/save/soon")}>
+              <div onClick={() => history.push("/save/b/soon")}>
                 <Icon name="osi" size="big" />
                 <h2>Coming Soon</h2>
                 <span>
@@ -77,6 +83,24 @@ const Saving: FC = () => {
           </div>
         )}
       </Dashboard>
+      <Route
+        path={saveLink.pathname}
+        children={({ match }) => {
+          return (
+            <div>
+              {match && (
+                <div id="show-modal-picture">
+                  <div className="modal-container">
+                    <div>
+                      <Save data="save" />
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+          );
+        }}
+      />
     </div>
   );
 };

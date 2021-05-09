@@ -6,23 +6,39 @@ export const panes = [
       key: "Bizz Bank",
       icon: "th",
       content: "Bizz Bank",
+      color: "blue",
     },
     render: () => <BizzBank />,
   },
   {
-    menuItem: { key: "Ajo", icon: "save", content: "Ajo" },
+    menuItem: { key: "Ajo", icon: "save", content: "Ajo", color: "green" },
     render: () => <Ajo />,
   },
   {
-    menuItem: { key: "Safelock", icon: "lock", content: "Safelock" },
+    menuItem: {
+      key: "Safelock",
+      icon: "lock",
+      content: "Safelock",
+      color: "red",
+    },
     render: () => <Safelock />,
   },
   {
-    menuItem: { key: "Targets", icon: "rocket", content: "Targets" },
+    menuItem: {
+      key: "Targets",
+      icon: "rocket",
+      content: "Targets",
+      color: "purple",
+    },
     render: () => <Targets />,
   },
   {
-    menuItem: { key: "Coming Soon", icon: "osi", content: "Coming Soon" },
+    menuItem: {
+      key: "Coming Soon",
+      icon: "osi",
+      content: "Coming Soon",
+      color: "yellow",
+    },
     render: () => <ComingSoon />,
   },
 ];

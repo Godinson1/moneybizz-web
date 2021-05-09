@@ -1,13 +1,11 @@
 export type PaymentOptionProps = {
   setOpen: Function;
   amount: string;
+  data: string;
 };
 
-export type dropdownType = {
-  dropdown:
-    | string
-    | number
-    | boolean
-    | (string | number | boolean)[]
-    | undefined;
+export type ExistingCardType = {
+  setModalOpen: Function;
+  amount: string;
+  data: string;
 };

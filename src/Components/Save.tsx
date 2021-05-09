@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 import PaymentOption from "./PaymentOption";
 import "./styles.scss";
 
-const Save = () => {
+const Save = ({ data }: { data: string }) => {
   const [secondOpen, setSecondOpen] = useState(false);
   const [amount, setAmount] = useState<string>("");
   const history = useHistory();
@@ -55,7 +55,11 @@ const Save = () => {
         <div id="show-modal-payment">
           <div className="modal-container">
             <div>
-              <PaymentOption amount={amount} setSecondOpen={setSecondOpen} />
+              <PaymentOption
+                data={data}
+                amount={amount}
+                setOpen={setSecondOpen}
+              />
             </div>
           </div>
         </div>

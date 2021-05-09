@@ -6,7 +6,7 @@ import Dashboard from "../../Pages/Dashboard/Components";
 import { Save } from "../../Components";
 import PreloaderMain from "../../Components/preloader/PreloaderMain";
 import { Header, HomeInfo, Todo } from "./Components";
-import { usePrepareLink } from "../../utilities";
+import { usePrepareLink, getChildRoute } from "../../utilities";
 import { getUserDetail } from "../../redux";
 import { HOMEPAGE } from "./constants";
 import "./homepage.scss";
@@ -16,16 +16,7 @@ const HomePage: FC = () => {
   const [open, setOpen] = React.useState(true);
   const { url } = useRouteMatch();
   const dispatch = useDispatch();
-
-  const saveLink = usePrepareLink({
-    to: "/save",
-    isRelativePath: true,
-    query: {},
-    pushToQuery: {},
-    hash: null,
-    keepOldQuery: false,
-    state: {},
-  });
+  const saveLink = usePrepareLink(getChildRoute("/quicksave"));
 
   return (
     <div>
@@ -49,12 +40,12 @@ const HomePage: FC = () => {
                       onClick={() => setOpen(!open)}
                       className="quick-buzz-btn"
                     >
-                      + Quick Buzz
+                      Send Fund
                     </div>
                   }
                 ></Popup>
 
-                <Link to={`${url}/save`} className="link">
+                <Link to={`${url}/quicksave`} className="link">
                   <div
                     onClick={() => setOpen(!open)}
                     className="quick-save-btn"
@@ -83,7 +74,7 @@ const HomePage: FC = () => {
                 <div id="show-modal-picture">
                   <div className="modal-container">
                     <div>
-                      <Save />
+                      <Save data="home" />
                     </div>
                   </div>
                 </div>

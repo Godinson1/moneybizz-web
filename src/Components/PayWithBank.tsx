@@ -7,7 +7,7 @@ import { payWithBank } from "../redux";
 import SendOtp from "./SendOtp";
 import "./styles.scss";
 
-const PayWithBank = ({ setOpen, amount }: PaymentOptionProps) => {
+const PayWithBank = ({ setOpen, amount, data }: PaymentOptionProps) => {
   const pay = useSelector((state: RootStateOrAny) => state.pay);
   const [code, setCode] = useState<string>("");
   const [otpOpen, setOtpOpen] = useState<boolean>(false);
@@ -87,7 +87,7 @@ const PayWithBank = ({ setOpen, amount }: PaymentOptionProps) => {
         <div id="show-modal-payment">
           <div className="modal-container">
             <div>
-              <SendOtp />
+              <SendOtp data={data} />
             </div>
           </div>
         </div>

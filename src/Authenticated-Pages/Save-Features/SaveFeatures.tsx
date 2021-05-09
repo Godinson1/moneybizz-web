@@ -27,6 +27,7 @@ const SaveFeatures: FC = () => {
             className="tab"
             menu={{ secondary: true, pointing: true }}
             panes={panes}
+            color="blue"
             defaultActiveIndex={getIndex(urlData)}
           />
         </div>

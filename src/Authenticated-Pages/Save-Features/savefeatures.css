@@ -15,10 +15,6 @@ Color variables
   text-align: center;
 }
 
-.auth-notification .tab {
-  color: #083e9e;
-}
-
 .total-balance {
   padding: 15px 20px 15px 20px;
   border-bottom-right-radius: 7px;

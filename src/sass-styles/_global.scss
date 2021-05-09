@@ -19,6 +19,18 @@ input[type="number"] {
   -moz-appearance: textfield;
 }
 
-.ui .attached .tabular menu .active .item {
+.ui.menu > .item:not(.active) {
   color: $secondary-color;
+  font-size: 1.3rem;
+  font-weight: bolder;
+
+  &:hover {
+    color: $secondary-color;
+  }
+}
+
+.ui.secondary.pointing.menu .active.item {
+  border-color: green;
+  font-size: 1.3rem;
+  font-weight: bolder;
 }

@@ -7,7 +7,7 @@ import PinCode from "./PinCode";
 import Success from "./Success";
 import "./styles.scss";
 
-const SendOtp = () => {
+const SendOtp = ({ data }: { data: string }) => {
   const [successOpen, setSucessOpen] = useState(false);
   const pay = useSelector((state: RootStateOrAny) => state.pay);
   const [otp, setOtp] = useState<string>("");
@@ -19,7 +19,7 @@ const SendOtp = () => {
   };
 
   const handleOtp = () => {
-    dispatch(sendOtp(otpData, setSucessOpen, history));
+    dispatch(sendOtp(otpData, setSucessOpen, history, data));
   };
 
   return (

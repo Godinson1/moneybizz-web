@@ -9,4 +9,43 @@
   p {
     text-align: center;
   }
+
+  .custom-card {
+    @include custom-border-radius;
+    border: 1px solid rgb(182, 181, 181);
+
+    .flex-header {
+      display: flex;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .notification-header {
+      @include custom-border-radius;
+      border: 1px solid rgb(182, 181, 181);
+      padding: 5px;
+      cursor: pointer;
+    }
+  }
+
+  .amount-base {
+    margin-top: 20px;
+  }
+
+  .active {
+    background-color: $secondary-color;
+    color: $primary-color;
+  }
+
+  .flex-between {
+    @include flex-between;
+    margin-top: 10px;
+  }
+
+  .status-color {
+    width: 20px;
+    height: 20px;
+    border-radius: 50px;
+    background-color: green;
+  }
 }

@@ -1,0 +1,238 @@
+/*
+Color variables
+..........................................................*/
+/*........................................................*/
+/*
+Color variables
+..........................................................*/
+/*........................................................*/
+/*
+Color variables
+..........................................................*/
+/*........................................................*/
+label {
+  font-weight: bold;
+}
+
+h1 {
+  color: #083e9e;
+  cursor: pointer;
+  font-weight: bolder;
+  font-family: Lexend;
+  font-size: clamp(2.5rem, 7vw, 3.5rem);
+}
+
+h2 {
+  color: #083e9e;
+  cursor: pointer;
+  font-weight: bolder;
+  font-family: Lexend;
+  font-size: clamp(1.8rem, 1.8vw, 3.5rem);
+  font-weight: 900;
+}
+
+div {
+  font-family: "Lexend";
+}
+
+p {
+  font-size: Lexend;
+  font-size: clamp(1.3rem, 1.2vw, 3rem);
+  line-height: 25px;
+}
+
+.custom-card {
+  padding: 15px 20px 15px 20px;
+  border-bottom-right-radius: 7px;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+  padding: 0;
+  border: 1px solid #b6b5b5;
+}
+
+.custom-card-right {
+  padding: 15px 20px 15px 20px;
+  border-bottom-right-radius: 7px;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+  padding: 10px;
+  border: 1px solid #b6b5b5;
+  margin: 0 0 20px 0;
+}
+
+.custom-card-right div {
+  margin-top: 5px;
+}
+
+.custom-card-right .interest {
+  color: #083e9e;
+  font-size: 1.7rem;
+  font-weight: bold;
+}
+
+.custom-card-autosave {
+  padding: 15px 20px 15px 20px;
+  border-bottom-right-radius: 7px;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+  border: 1px solid #b6b5b5;
+  margin: 0 0 20px 0;
+  padding: 0;
+}
+
+.custom-card-autosave div {
+  margin-top: 5px;
+}
+
+.custom-card-autosave .card-header {
+  padding: 10px;
+}
+
+.custom-card-autosave .autosave-btn {
+  padding: 15px 20px 15px 20px;
+  border-bottom-right-radius: 7px;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+  border: 1px solid #b6b5b5;
+  width: 150px;
+  padding: 5px;
+  cursor: pointer;
+  background: transparent;
+}
+
+.first-card {
+  width: 60%;
+}
+
+.second-card {
+  width: 35%;
+}
+
+.second-card .info {
+  text-align: center;
+}
+
+.amount-text {
+  color: #083e9e;
+  cursor: pointer;
+  font-weight: bolder;
+  font-family: Lexend;
+  font-size: 2rem;
+  font-weight: bolder;
+}
+
+.card-container {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.flex-bottom-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  width: 100%;
+  height: 50px;
+  margin-top: 20px;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+  border-top: 1px solid #b6b5b5;
+}
+
+.flex-bottom-card div {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  cursor: pointer;
+}
+
+.flex-bottom-card div:hover {
+  color: #083e9e;
+}
+
+.flex-bottom-card #iconed {
+  margin-top: -5px;
+}
+
+.flex-bottom-card div:nth-child(1) {
+  border-right: 1px solid #b6b5b5;
+}
+
+.flex-bottom-card div:nth-child(2) {
+  border-right: 1px solid #b6b5b5;
+}
+
+.flex-bottom-card div:nth-child(3):hover {
+  color: #083e9e;
+}
+
+.custom-card-header {
+  padding: 10px;
+}
+
+.flex-between {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.quick-save-btn {
+  padding: 15px 20px 15px 20px;
+  border-bottom-right-radius: 7px;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+  background-color: #083e9e;
+  color: #ffffff;
+  cursor: pointer;
+  outline: none;
+  border: none;
+}
+
+.quick-save-btn:hover {
+  background-color: #062863;
+}
+
+.quick-save-btn:focus {
+  outline: none;
+}
+
+.quick-save-btn:disabled {
+  cursor: not-allowed;
+}
+/*# sourceMappingURL=styles.css.map */

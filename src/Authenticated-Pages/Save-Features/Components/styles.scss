@@ -1,0 +1,126 @@
+@import "../../../sass-styles/variables";
+@import "../../../sass-styles/mixins";
+@import "../../../sass-styles/breakpoints";
+@import "../../../sass-styles/typography";
+
+.custom-card {
+  @include custom-border-radius;
+  padding: 0;
+  border: 1px solid rgb(182, 181, 181);
+}
+
+.custom-card-right {
+  @include custom-border-radius;
+  padding: 10px;
+  border: 1px solid rgb(182, 181, 181);
+  margin: 0 0 20px 0;
+
+  div {
+    margin-top: 5px;
+  }
+
+  .interest {
+    color: $secondary-color;
+    font-size: 1.7rem;
+    font-weight: bold;
+  }
+}
+
+.custom-card-autosave {
+  @include custom-border-radius;
+  border: 1px solid rgb(182, 181, 181);
+  margin: 0 0 20px 0;
+  padding: 0;
+
+  div {
+    margin-top: 5px;
+  }
+
+  .card-header {
+    padding: 10px;
+  }
+
+  .autosave-btn {
+    @include custom-border-radius;
+    border: 1px solid rgb(182, 181, 181);
+    width: 150px;
+    padding: 5px;
+    cursor: pointer;
+    background: transparent;
+  }
+}
+
+.first-card {
+  width: 60%;
+}
+
+.second-card {
+  width: 35%;
+  .info {
+    text-align: center;
+  }
+}
+
+.amount-text {
+  @include font;
+  font-size: 2rem;
+  font-weight: bolder;
+}
+
+.card-container {
+  width: 100%;
+  @include flex-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.flex-bottom-card {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  height: 50px;
+  margin-top: 20px;
+  @include flex-center;
+  cursor: pointer;
+  border-top: 1px solid rgb(182, 181, 181);
+
+  div {
+    width: 100%;
+    height: 100%;
+    @include flex-center;
+    text-align: center;
+
+    cursor: pointer;
+    &:hover {
+      color: $secondary-color;
+    }
+  }
+
+  #iconed {
+    margin-top: -5px;
+  }
+
+  div:nth-child(1) {
+    border-right: 1px solid rgb(182, 181, 181);
+  }
+  div:nth-child(2) {
+    border-right: 1px solid rgb(182, 181, 181);
+  }
+  div:nth-child(3) {
+    &:hover {
+      color: $secondary-color;
+    }
+  }
+}
+
+.custom-card-header {
+  padding: 10px;
+}
+
+.flex-between {
+  @include flex-between;
+}
+
+.quick-save-btn {
+  @include custom-button;
+}

@@ -1,11 +1,10 @@
 @import "./variables";
 
 @mixin font {
-  font-weight: bold;
   color: $secondary-color;
   cursor: pointer;
   font-weight: bolder;
-  font-size: Lexend;
+  font-family: Lexend;
 }
 
 label {

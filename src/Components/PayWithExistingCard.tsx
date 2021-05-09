@@ -2,16 +2,16 @@ import React, { useState } from "react";
 import { RootStateOrAny, useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { payWithExistingCard } from "../redux";
+import { ExistingCardType } from "./types";
 import { formatNumber } from "../utilities";
 import Success from "./Success";
 import { Icon } from "semantic-ui-react";
 
-type ExistingCardType = {
-  setModalOpen: Function;
-  amount: string;
-};
-
-const PayWithExistingCard = ({ setModalOpen, amount }: ExistingCardType) => {
+const PayWithExistingCard = ({
+  setModalOpen,
+  amount,
+  data,
+}: ExistingCardType) => {
   const [openSuccess, setOpenSuccess] = useState(false);
   const pay = useSelector((state: RootStateOrAny) => state.pay);
   const dispatch = useDispatch();
@@ -21,7 +21,7 @@ const PayWithExistingCard = ({ setModalOpen, amount }: ExistingCardType) => {
     const payData = {
       amount: amount + "00",
     };
-    dispatch(payWithExistingCard(payData, setOpenSuccess, history));
+    dispatch(payWithExistingCard(payData, setOpenSuccess, history, data));
   };
 
   return (

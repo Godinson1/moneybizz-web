@@ -6,6 +6,7 @@ import {
   validateLogin,
   validateReg,
   readURI,
+  getChildRoute,
   formatNumber,
 } from "./helpers";
 
@@ -19,4 +20,5 @@ export {
   formatNumber,
   readURI,
   usePrepareLink,
+  getChildRoute,
 };

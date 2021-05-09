@@ -4,18 +4,14 @@ import { Icon } from "semantic-ui-react";
 import { usePaystackPayment } from "react-paystack";
 import { getUserDetail } from "../redux";
 import PayWithBank from "./PayWithBank";
+import { PaymentOptionProps } from "./types";
 import PayWithExistingCard from "./PayWithExistingCard";
 import "./styles.scss";
 import { useHistory } from "react-router-dom";
 
-type PaymentOptionProps = {
-  setSecondOpen: Function;
-  amount: string;
-};
-
-const PaymentOption = ({ setSecondOpen, amount }: PaymentOptionProps) => {
+const PaymentOption = ({ setOpen, amount, data }: PaymentOptionProps) => {
   const user = useSelector((state: RootStateOrAny) => state.user.user);
-  const [open, setOpen] = useState(false);
+  const [opens, setOpens] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
 
   const history = useHistory();
@@ -29,8 +25,12 @@ const PaymentOption = ({ setSecondOpen, amount }: PaymentOptionProps) => {
   };
   const initializePayment = usePaystackPayment(config);
 
-  const onSuccess = (data: string | undefined) => {
-    history.push("/home");
+  const onSuccess = () => {
+    if (data === "home") {
+      history.push("/home");
+    } else if (data === "save") {
+      history.push("/save");
+    }
     dispatch(getUserDetail());
   };
 
@@ -43,11 +43,10 @@ const PaymentOption = ({ setSecondOpen, amount }: PaymentOptionProps) => {
       <div className="modal-div-pay">
         <div className="flex-between">
           <div></div>
-          <div className="icon" onClick={() => setSecondOpen(false)}>
+          <div className="icon" onClick={() => setOpen(false)}>
             <Icon name="cancel" />
           </div>
         </div>
-
         <div className="form-save">
           <div className="info-header">
             <h2>Payment Options</h2>
@@ -55,7 +54,7 @@ const PaymentOption = ({ setSecondOpen, amount }: PaymentOptionProps) => {
               Select any of the options below to quick save immediately.
             </div>
           </div>
-          <div className="auth-options" onClick={() => setOpen(true)}>
+          <div className="auth-options" onClick={() => setOpens(true)}>
             <Icon size="small" id="icon" name="block layout" />
             <div>Pay with Bank</div>
           </div>
@@ -77,11 +76,11 @@ const PaymentOption = ({ setSecondOpen, amount }: PaymentOptionProps) => {
           )}
         </div>
       </div>
-      {open && (
+      {opens && (
         <div id="show-modal-payment">
           <div className="modal-container">
             <div>
-              <PayWithBank amount={amount} setOpen={setOpen} />
+              <PayWithBank data={data} amount={amount} setOpen={setOpens} />
             </div>
           </div>
         </div>
@@ -89,7 +88,11 @@ const PaymentOption = ({ setSecondOpen, amount }: PaymentOptionProps) => {
       {modalOpen && (
         <div id="show-modal-payment">
           <div className="modal-container">
-            <PayWithExistingCard setModalOpen={setModalOpen} amount={amount} />
+            <PayWithExistingCard
+              data={data}
+              setModalOpen={setModalOpen}
+              amount={amount}
+            />
           </div>
         </div>
       )}

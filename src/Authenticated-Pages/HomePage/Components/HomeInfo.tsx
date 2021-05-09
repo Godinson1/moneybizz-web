@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Icon } from "semantic-ui-react";
 
 const HomeInfo = () => {
@@ -7,9 +8,11 @@ const HomeInfo = () => {
       <div className="info-container">
         <div className="dash-title">
           <div>BUILD YOUR SAVINGS</div>
-          <div className="banner">
-            <img src="images/wallet.png" alt="saving" />
-          </div>
+          <Link to="/save">
+            <div className="banner">
+              <img src="images/wallet.png" alt="saving" />
+            </div>
+          </Link>
         </div>
         <div className="dash-title">
           <div>DOWNLOAD THE MOBILE APP</div>
