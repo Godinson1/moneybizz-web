@@ -59,7 +59,7 @@ const App = () => {
             <Route exact path="/reset-password" component={ResetPassword} />
             <Route exact path="/activate" component={Activate} />
             <AuthRoute path="/home" component={Auth_HomePage} />
-            <AuthRoute exact path="/save/b/:id" component={SaveFeatures} />
+            <AuthRoute path="/save/b/:id" component={SaveFeatures} />
             <AuthRoute path="/save" component={Saving} />
             <AuthRoute exact path="/invest" component={Invest} />
             <AuthRoute exact path="/notification" component={Notification} />

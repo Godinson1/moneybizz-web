@@ -242,6 +242,7 @@ Color variables
   background-color: #9eddff;
   border: 1px solid #9eddff;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .auth-home .home-flex .banner img {

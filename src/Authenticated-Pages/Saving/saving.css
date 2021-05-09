@@ -161,7 +161,7 @@ Color variables
     width: 100%;
   }
   .save-header {
-    gap: 10px !important;
+    gap: 30px !important;
     padding: 10px;
   }
   .save-header .banner,

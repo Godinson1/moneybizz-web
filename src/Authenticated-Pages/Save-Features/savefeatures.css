@@ -6,12 +6,12 @@ Color variables
 Color variables
 ..........................................................*/
 /*........................................................*/
-.auth-notification {
+.auth-saving-features {
   padding: 50px;
 }
 
-.auth-notification h3,
-.auth-notification p {
+.auth-saving-features h3,
+.auth-saving-features p {
   text-align: center;
 }
 
@@ -30,5 +30,16 @@ Color variables
   margin-top: 30px;
   font-size: 3rem;
   font-weight: bolder;
+}
+
+#icon-back {
+  margin-bottom: 30px;
+}
+
+@media screen and (max-width: 768px) {
+  .auth-saving-features {
+    padding: 20px;
+    margin-left: -10px;
+  }
 }
 /*# sourceMappingURL=savefeatures.css.map */

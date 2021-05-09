@@ -27,7 +27,7 @@ h2 {
   cursor: pointer;
   font-weight: bolder;
   font-family: Lexend;
-  font-size: clamp(1.8rem, 1.8vw, 3.5rem);
+  font-size: clamp(1.7rem, 1.7vw, 3.3rem);
   font-weight: 900;
 }
 
@@ -234,5 +234,18 @@ p {
 
 .quick-save-btn:disabled {
   cursor: not-allowed;
+}
+
+@media screen and (max-width: 1024px) {
+  .first-card {
+    width: 100%;
+  }
+  .second-card {
+    width: 100%;
+    margin-top: 20px;
+  }
+  .second-card .info {
+    display: none;
+  }
 }
 /*# sourceMappingURL=styles.css.map */

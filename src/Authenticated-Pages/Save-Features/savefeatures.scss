@@ -2,7 +2,7 @@
 @import "../../sass-styles/mixins";
 @import "../../sass-styles/variables";
 
-.auth-notification {
+.auth-saving-features {
   padding: 50px;
 
   h3,
@@ -22,5 +22,16 @@
     margin-top: 30px;
     font-size: 3rem;
     font-weight: bolder;
+  }
+}
+
+#icon-back {
+  margin-bottom: 30px;
+}
+
+@include media-sm {
+  .auth-saving-features {
+    padding: 20px;
+    margin-left: -10px;
   }
 }

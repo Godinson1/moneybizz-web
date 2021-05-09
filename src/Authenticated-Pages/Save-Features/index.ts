@@ -1,6 +1,6 @@
 import SaveFeatures from "./SaveFeatures";
 import { getIndex, getTabString, handleTabRouting } from "./helpers";
-import { panes } from "./data";
+import { panes, renderPage } from "./data";
 
 export default SaveFeatures;
-export { getIndex, getTabString, handleTabRouting, panes };
+export { getIndex, getTabString, handleTabRouting, panes, renderPage };

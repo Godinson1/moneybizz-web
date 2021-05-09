@@ -42,3 +42,19 @@ export const panes = [
     render: () => <ComingSoon />,
   },
 ];
+
+export const renderPage = (urlData: string) => {
+  return urlData === "ajo" ? (
+    <Ajo />
+  ) : urlData === "safelock" ? (
+    <Safelock />
+  ) : urlData === "bizzbank" ? (
+    <BizzBank />
+  ) : urlData === "targets" ? (
+    <Targets />
+  ) : urlData === "soon" ? (
+    <ComingSoon />
+  ) : (
+    ""
+  );
+};

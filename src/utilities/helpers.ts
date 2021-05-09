@@ -189,11 +189,6 @@ const getChildRoute = (to: string) => {
   return {
     to,
     isRelativePath: true,
-    query: {},
-    pushToQuery: {},
-    hash: null,
-    keepOldQuery: false,
-    state: {},
   };
 };
 

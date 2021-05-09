@@ -21,12 +21,34 @@ Color variables
   border-top-left-radius: 7px;
   border-top-right-radius: 7px;
   border: 1px solid #b6b5b5;
+  padding: 0;
+}
+
+.auth-notification .custom-card .trans {
+  padding: 20px;
+}
+
+.auth-notification .custom-card .header-options {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 15px;
 }
 
 .auth-notification .custom-card .flex-header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   gap: 15px;
   margin-top: 20px;
 }
@@ -45,9 +67,35 @@ Color variables
   margin-top: 20px;
 }
 
+.auth-notification .secondary-color {
+  color: #083e9e;
+  font-size: 1.2rem;
+}
+
 .auth-notification .active {
   background-color: #083e9e;
   color: #ffffff;
+}
+
+.auth-notification .flex-bottom-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  width: 100%;
+  height: 50px;
+  margin-top: 20px;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+  border-top: 1px solid #b6b5b5;
 }
 
 .auth-notification .flex-between {
@@ -68,5 +116,18 @@ Color variables
   height: 20px;
   border-radius: 50px;
   background-color: green;
+}
+
+@media screen and (max-width: 768px) {
+  .auth-notification {
+    padding: 10px;
+    margin-left: -10px;
+  }
+  .custom-card {
+    margin-bottom: 20px;
+  }
+  .custom-card .status-color {
+    margin-top: 10px;
+  }
 }
 /*# sourceMappingURL=notification.css.map */

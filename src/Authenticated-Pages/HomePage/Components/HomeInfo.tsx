@@ -1,8 +1,11 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useRouteMatch, useHistory } from "react-router-dom";
 import { Icon } from "semantic-ui-react";
 
 const HomeInfo = () => {
+  const { url } = useRouteMatch();
+  const history = useHistory();
+
   return (
     <div>
       <div className="info-container">
@@ -37,7 +40,10 @@ const HomeInfo = () => {
         </div>
         <div className="dash-title">
           <div>REFER & EARN</div>
-          <div className="banner">
+          <div
+            onClick={() => history.push(`${url}/refer&earn`)}
+            className="banner"
+          >
             <img src="images/wallet.png" alt="saving" />
           </div>
         </div>

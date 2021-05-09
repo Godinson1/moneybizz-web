@@ -41,6 +41,9 @@ const Navbar: FC<NavbarProps> = ({ mobile, title }) => {
                 <div className="greeting">
                   <Markup content={getUserMessage()} />{" "}
                 </div>
+              ) : title === "SAVINGS" &&
+                user.data.details.total_balance === 0 ? (
+                <div className="greeting">Begin your financial journey 💪.</div>
               ) : title === "SAVINGS" ? (
                 <div className="greeting">
                   You are doing well, Keep on moving on 💪.

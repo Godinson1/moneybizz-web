@@ -6,8 +6,8 @@ const ComingSoon: FC = () => {
   return (
     <div>
       <div>
-        <div>
-          <h2>Coming Soon</h2>
+        <div className="desc">
+          Still in development. Kindly check back later!
         </div>
       </div>
     </div>

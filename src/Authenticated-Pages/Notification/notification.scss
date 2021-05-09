@@ -13,9 +13,21 @@
   .custom-card {
     @include custom-border-radius;
     border: 1px solid rgb(182, 181, 181);
+    padding: 0;
+
+    .trans {
+      padding: 20px;
+    }
+
+    .header-options {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
 
     .flex-header {
-      display: flex;
+      @include flex-between;
+      flex-wrap: wrap;
       gap: 15px;
       margin-top: 20px;
     }
@@ -32,9 +44,18 @@
     margin-top: 20px;
   }
 
+  .secondary-color {
+    color: $secondary-color;
+    font-size: 1.2rem;
+  }
+
   .active {
     background-color: $secondary-color;
     color: $primary-color;
+  }
+
+  .flex-bottom-card {
+    @include flex-bottom-card;
   }
 
   .flex-between {
@@ -47,5 +68,20 @@
     height: 20px;
     border-radius: 50px;
     background-color: green;
+  }
+}
+
+@include media-sm {
+  .auth-notification {
+    padding: 10px;
+    margin-left: -10px;
+  }
+
+  .custom-card {
+    margin-bottom: 20px;
+
+    .status-color {
+      margin-top: 10px;
+    }
   }
 }

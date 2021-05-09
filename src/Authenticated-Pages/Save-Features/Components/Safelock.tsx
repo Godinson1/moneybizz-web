@@ -6,7 +6,9 @@ const Safelock: FC = () => {
   return (
     <div>
       <div>
-        <h2>Safelock</h2>
+        <div className="desc">
+          Still in development. Kindly check back later!
+        </div>
       </div>
     </div>
   );

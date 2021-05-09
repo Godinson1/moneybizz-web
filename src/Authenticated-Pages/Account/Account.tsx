@@ -147,7 +147,7 @@ const Account: FC = () => {
                 </div>
                 <div className="todo">
                   <div>
-                    <h2>60</h2>
+                    <h2>0</h2>
                   </div>
                   <div>
                     <span>Bizz Points</span>
@@ -163,7 +163,7 @@ const Account: FC = () => {
                 </div>
                 <div className="todo">
                   <div>
-                    <h2>{formatNumber(5000)}</h2>
+                    <h2>{formatNumber(0)}</h2>
                   </div>
                   <div>
                     <span>Referral Earnings</span>

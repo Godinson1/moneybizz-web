@@ -4,11 +4,21 @@ import { useRouteMatch, Link, Route } from "react-router-dom";
 import { Icon, Popup } from "semantic-ui-react";
 import Dashboard from "../../Pages/Dashboard/Components";
 import { Save } from "../../Components";
+import { AutoSaveSettings } from "../Save-Features/Components";
 import PreloaderMain from "../../Components/preloader/PreloaderMain";
-import { Header, HomeInfo, Todo } from "./Components";
+import {
+  Header,
+  HomeInfo,
+  Todo,
+  SendFund,
+  RequestFund,
+  AddBVN,
+  ReferEarn,
+} from "./Components";
 import { usePrepareLink, getChildRoute } from "../../utilities";
 import { getUserDetail } from "../../redux";
 import { HOMEPAGE } from "./constants";
+
 import "./homepage.scss";
 
 const HomePage: FC = () => {
@@ -33,18 +43,22 @@ const HomePage: FC = () => {
                 ></Popup>
               </div>
               <div className="flex-home-btns">
-                <Popup
-                  content="Still in development."
-                  trigger={
-                    <div
-                      onClick={() => setOpen(!open)}
-                      className="quick-buzz-btn"
-                    >
-                      Send Fund
-                    </div>
-                  }
-                ></Popup>
-
+                <Link to={`${url}/request_fund`} className="link">
+                  <div
+                    onClick={() => setOpen(!open)}
+                    className="quick-buzz-btn"
+                  >
+                    Request Fund
+                  </div>
+                </Link>
+                <Link to={`${url}/send_fund`} className="link">
+                  <div
+                    onClick={() => setOpen(!open)}
+                    className="quick-buzz-btn"
+                  >
+                    Send Fund
+                  </div>
+                </Link>
                 <Link to={`${url}/quicksave`} className="link">
                   <div
                     onClick={() => setOpen(!open)}
@@ -75,6 +89,96 @@ const HomePage: FC = () => {
                   <div className="modal-container">
                     <div>
                       <Save data="home" />
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+          );
+        }}
+      />
+      <Route
+        path={`${url}/request_fund`}
+        children={({ match }) => {
+          return (
+            <div>
+              {match && (
+                <div id="show-modal-picture">
+                  <div className="modal-container">
+                    <div>
+                      <RequestFund />
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+          );
+        }}
+      />
+      <Route
+        path={`${url}/send_fund`}
+        children={({ match }) => {
+          return (
+            <div>
+              {match && (
+                <div id="show-modal-picture">
+                  <div className="modal-container">
+                    <div>
+                      <SendFund />
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+          );
+        }}
+      />
+      <Route
+        path={`${url}/identity`}
+        children={({ match }) => {
+          return (
+            <div>
+              {match && (
+                <div id="show-modal-picture">
+                  <div className="modal-container">
+                    <div>
+                      <AddBVN />
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+          );
+        }}
+      />
+      <Route
+        path={`${url}/autosave_settings`}
+        children={({ match }) => {
+          return (
+            <div>
+              {match && (
+                <div id="show-modal-picture">
+                  <div className="modal-container">
+                    <div>
+                      <AutoSaveSettings />
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+          );
+        }}
+      />
+      <Route
+        path={`${url}/refer&earn`}
+        children={({ match }) => {
+          return (
+            <div>
+              {match && (
+                <div id="show-modal-picture">
+                  <div className="modal-container">
+                    <div>
+                      <ReferEarn />
                     </div>
                   </div>
                 </div>
