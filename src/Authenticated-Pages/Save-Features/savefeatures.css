@@ -34,6 +34,7 @@ Color variables
 
 #icon-back {
   margin-bottom: 30px;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 768px) {

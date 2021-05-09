@@ -8,7 +8,7 @@ import {
   panes,
   renderPage,
 } from "./index";
-import { Tab, TabProps, Icon } from "semantic-ui-react";
+import { Tab, TabProps, Icon, Popup } from "semantic-ui-react";
 import { useViewport } from "../../utilities";
 import "./savefeatures.scss";
 
@@ -42,10 +42,15 @@ const SaveFeatures: FC = () => {
           ) : (
             <div>
               <div onClick={() => history.goBack()}>
-                <Icon
-                  size="big"
-                  id="icon-back"
-                  name="long arrow alternate left"
+                <Popup
+                  content="Go back"
+                  trigger={
+                    <Icon
+                      size="big"
+                      id="icon-back"
+                      name="long arrow alternate left"
+                    />
+                  }
                 />
               </div>
               {renderPage(urlData)}
