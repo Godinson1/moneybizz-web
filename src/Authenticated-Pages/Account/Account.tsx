@@ -52,25 +52,19 @@ const Account: FC = () => {
               {ACCOUNT_OPTIONS.map((options) => {
                 const { icon, title, color } = options;
                 return (
-                  <Popup
-                    content={title}
-                    position="right center"
-                    trigger={
-                      <div
-                        onClick={() => handleAction(title)}
-                        className="auth-options"
-                      >
-                        <Icon
-                          size="small"
-                          id="icon"
-                          color={color as SemanticCOLORS | undefined}
-                          name={icon as SemanticICONS | undefined}
-                        />
+                  <div
+                    onClick={() => handleAction(title)}
+                    className="auth-options"
+                  >
+                    <Icon
+                      size="small"
+                      id="icon"
+                      color={color as SemanticCOLORS | undefined}
+                      name={icon as SemanticICONS | undefined}
+                    />
 
-                        <div>{title}</div>
-                      </div>
-                    }
-                  />
+                    <div>{title}</div>
+                  </div>
                 );
               })}
             </div>
