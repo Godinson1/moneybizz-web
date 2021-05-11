@@ -12,15 +12,15 @@ export const SIDEBAR_LINKS = [
     exact: false,
   },
   {
-    title: "Invest",
-    icon: "rocket",
-    path: "/invest",
-    exact: false,
-  },
-  {
     title: "Notifications",
     icon: "bell",
     path: "/notification",
+    exact: false,
+  },
+  {
+    title: "Invest",
+    icon: "rocket",
+    path: "/invest",
     exact: false,
   },
   {

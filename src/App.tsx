@@ -24,6 +24,7 @@ const Invest = lazy(() => import("./Authenticated-Pages/Invest"));
 const Account = lazy(() => import("./Authenticated-Pages/Account"));
 const Notification = lazy(() => import("./Authenticated-Pages/Notification"));
 const SaveFeatures = lazy(() => import("./Authenticated-Pages/Save-Features"));
+const Connections = lazy(() => import("./Authenticated-Pages/Connections"));
 
 axios.defaults.baseURL = "https://moneybizz.herokuapp.com";
 //axios.defaults.baseURL = "http://localhost:5000";
@@ -62,6 +63,7 @@ const App = () => {
             <AuthRoute path="/save/b/:id" component={SaveFeatures} />
             <AuthRoute path="/save" component={Saving} />
             <AuthRoute exact path="/invest" component={Invest} />
+            <AuthRoute exact path="/connections" component={Connections} />
             <AuthRoute exact path="/notification" component={Notification} />
             <AuthRoute exact path="/account" component={Account} />
             <Route component={NotFound} />

@@ -1,5 +1,6 @@
 import React from "react";
 import { useSelector, RootStateOrAny } from "react-redux";
+import { useHistory } from "react-router-dom";
 import { formatNumber } from "../../../utilities";
 import {
   HOME_HEADER,
@@ -13,13 +14,21 @@ import "../homepage.scss";
 const Header = () => {
   const showBalanceState = localStorage.getItem("showBalance");
   const user = useSelector((state: RootStateOrAny) => state.user);
+  const history = useHistory();
   return (
     <div>
       {HOME_HEADER.map((data) => {
         const { title, className } = data;
         return (
           <div className="conn">
-            <div className={className}>
+            <div
+              onClick={
+                className === "cns"
+                  ? () => history.push("/connections")
+                  : () => console.log("object")
+              }
+              className={className}
+            >
               <div className="flex-start">
                 <div>{title}</div>
                 {showBalanceState === "true" ? (
