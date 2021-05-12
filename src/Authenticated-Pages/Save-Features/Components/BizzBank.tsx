@@ -8,7 +8,13 @@ import {
   usePrepareLink,
   getChildRoute,
 } from "../../../utilities";
-import { Settings, Withdraw, Interest, AutoSaveSettings } from "./index";
+import {
+  Settings,
+  Withdraw,
+  Interest,
+  AutoSaveSettings,
+  SwitchAutosave,
+} from "./index";
 import "./styles.scss";
 
 import "../savefeatures.scss";
@@ -21,7 +27,9 @@ const BizzBank: FC = () => {
   const withdrawLink = usePrepareLink(getChildRoute("/withdraw"));
   const interestLink = usePrepareLink(getChildRoute("/interest"));
   const settingsLink = usePrepareLink(getChildRoute("/settings"));
+  const autosaveToggleLink = usePrepareLink(getChildRoute("/autosavetoggle"));
   const { url } = useRouteMatch();
+  const AutosaveState = localStorage.getItem("autosave");
 
   return (
     <div>
@@ -63,25 +71,51 @@ const BizzBank: FC = () => {
           <div className="custom-card-autosave">
             <div className="card-header">
               <div>SAVINGS INFO</div>
-              <div className="flex-between">
-                <div className="autosave-btn">
-                  <div>AutoSave Deposit</div>
-                  <div>{formatNumber(2000)} Weekly</div>
+              {user.user && user.user.data && user.user.data.details.autoSave && (
+                <div className="flex-between">
+                  <div
+                    onClick={() => history.push(`${url}/autosave_settings`)}
+                    className="autosave-btn"
+                  >
+                    <div>AutoSave Deposit</div>
+                    <div>
+                      {formatNumber(
+                        parseInt(
+                          user.user.data.details.autoSave.amount.slice(0, -2)
+                        )
+                      )}{" "}
+                      {user.user.data.details.autoSave.interval ===
+                      "testing" ? (
+                        "/2mins"
+                      ) : (
+                        <span id="bold-text">
+                          {user.user.data.details.autoSave.interval}
+                        </span>
+                      )}
+                    </div>
+                  </div>
+                  <div className="autosave-btn">
+                    <div>Next Withdrawal</div>
+                    <div>30 June 21</div>
+                  </div>
                 </div>
-                <div className="autosave-btn">
-                  <div>Next Withdrawal</div>
-                  <div>30 June 21</div>
-                </div>
-              </div>
+              )}
             </div>
             <div
-              onClick={() => history.push(`${url}/autosave_settings`)}
+              onClick={() => history.push(`${url}/autosavetoggle`)}
               className="flex-bottom-card"
             >
-              <Icon id="iconed" name="power" /> &nbsp;Turn on AutoSave
+              <Icon id="iconed" name="power" /> &nbsp;{" "}
+              {AutosaveState === "true"
+                ? "Turn off AutoSave"
+                : "Turn on AutoSave"}
             </div>
           </div>
-          <div className="info">Your autosave is off.</div>
+          <div className="info">
+            {AutosaveState === "true"
+              ? "Your autosave is ON."
+              : "  Your autosave is OFF."}
+          </div>
         </div>
       </div>
       <Route
@@ -105,7 +139,6 @@ const BizzBank: FC = () => {
       <Route
         path={settingsLink.pathname}
         children={({ match }) => {
-          console.log(match);
           return (
             <div>
               {match && (
@@ -167,6 +200,24 @@ const BizzBank: FC = () => {
                   <div className="modal-container">
                     <div>
                       <AutoSaveSettings />
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+          );
+        }}
+      />
+      <Route
+        path={autosaveToggleLink.pathname}
+        children={({ match }) => {
+          return (
+            <div>
+              {match && (
+                <div id="show-modal-picture">
+                  <div className="modal-container">
+                    <div>
+                      <SwitchAutosave />
                     </div>
                   </div>
                 </div>

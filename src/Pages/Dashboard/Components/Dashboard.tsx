@@ -16,13 +16,13 @@ const Dashboard: FC<_layoutTypes> = ({ children, title }) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (user.success || pay.error) {
+    if (user.success || pay.error || user.error) {
       setTimeout(() => {
         dispatch(clearData());
         dispatch(clearPayData());
       }, 5000);
     }
-  }, [user.success, pay.error, dispatch]);
+  }, [user.success, user.error, pay.error, dispatch]);
 
   return (
     <div>
@@ -47,6 +47,11 @@ const Dashboard: FC<_layoutTypes> = ({ children, title }) => {
             {pay.error && (
               <div className="message-show-error">
                 <span>{pay.error}</span>
+              </div>
+            )}
+            {user.error && (
+              <div className="message-show-error">
+                <span>{user.error}</span>
               </div>
             )}
             {children}

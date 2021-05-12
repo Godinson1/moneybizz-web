@@ -64,7 +64,11 @@ const AutoSave_Settings = () => {
             />
           </div>
           <div>
-            <button onClick={() => setFinish(true)} className="auth-button">
+            <button
+              disabled={amount.length < 3 || code === "" ? true : false}
+              onClick={() => setFinish(true)}
+              className="auth-button"
+            >
               Continue
             </button>
           </div>
@@ -74,7 +78,11 @@ const AutoSave_Settings = () => {
         <div id="show-modal-payment">
           <div className="modal-container">
             <div>
-              <FinishAutoSaveSettings />
+              <FinishAutoSaveSettings
+                amount={amount}
+                code={code}
+                setFinish={setFinish}
+              />
             </div>
           </div>
         </div>

@@ -112,7 +112,7 @@ const Notification: FC = () => {
                   </div>
                 </div>
                 <div>
-                  {allNotification.length !== 0 && (
+                  {allNotification.length < 0 && (
                     <Pagination
                       firstItem={null}
                       lastItem={null}

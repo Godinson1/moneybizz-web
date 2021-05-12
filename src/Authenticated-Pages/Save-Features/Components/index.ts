@@ -7,6 +7,7 @@ import Withdraw from "./Withdraw";
 import Interest from "./Interests";
 import Settings from "./Settings";
 import AutoSaveSettings from "./AutoSave_Settings";
+import SwitchAutosave from "./SwitchAutosave";
 
 export {
   Targets,
@@ -18,4 +19,5 @@ export {
   Interest,
   Withdraw,
   AutoSaveSettings,
+  SwitchAutosave,
 };

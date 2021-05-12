@@ -14,6 +14,8 @@ import {
 } from "./slices/payment";
 import {
   setProfilePhotoLoading,
+  setAutosaveSetting,
+  setAutosaveSettingLoading,
   setProfilePhoto,
   clearData,
 } from "./slices/user";
@@ -24,7 +26,13 @@ import {
   resetPassword,
   createNewPassword,
 } from "./actions/auth";
-import { getUserDetail, updateProfilePhoto } from "./actions/user";
+import {
+  getUserDetail,
+  updateProfilePhoto,
+  updateAutosaveSettings,
+  switchOffAutosave,
+  switchOnAutosave,
+} from "./actions/user";
 import { clearMessage, clearPayMessage } from "./actions/dashboard";
 import { payWithBank, sendOtp, payWithExistingCard } from "./actions/payment";
 
@@ -54,4 +62,9 @@ export {
   payWithExistingCard,
   clearPayData,
   clearPayMessage,
+  setAutosaveSettingLoading,
+  setAutosaveSetting,
+  updateAutosaveSettings,
+  switchOffAutosave,
+  switchOnAutosave,
 };

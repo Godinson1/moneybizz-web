@@ -1,22 +1,51 @@
 import React, { useEffect, useState } from "react";
-import { Icon, DropdownProps, Dropdown } from "semantic-ui-react";
+import { Icon, Dropdown } from "semantic-ui-react";
+import { useDispatch, RootStateOrAny, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
-import { saveOptions } from "./constants";
-
+import {
+  dayOptions,
+  timeOptions,
+  fundsOptions,
+  startTimeOptions,
+  monthOptions,
+} from "./constants";
+import { dropdownTypes, dropdownSetStateType } from "./types";
+import { updateAutosaveSettings } from "../../../redux";
+import { getMinuteHour } from "../../../utilities";
 import "./styles.scss";
 
-const FinishAutoSaveSettings = () => {
-  const [code, setCode] = useState<string>("");
-  const [amount, setAmount] = useState<string>("");
-  const [finish, setFinish] = useState<boolean>(false);
-
-  const handleChange = (
-    e: React.SyntheticEvent<HTMLElement, Event>,
-    data: DropdownProps
-  ) => {
-    setCode(data.value as string);
-  };
+const FinishAutoSaveSettings = ({
+  code,
+  setFinish,
+  amount,
+}: {
+  code: string;
+  setFinish: Function;
+  amount: string;
+}) => {
+  const user = useSelector((state: RootStateOrAny) => state.user);
+  const [weekday, setWeekday] = useState<dropdownTypes>();
+  const [monthday, setMonthday] = useState<dropdownTypes>();
+  const [preferredTime, setPreferredTime] = useState<dropdownTypes>();
+  const [startTime, setStartTime] = useState<dropdownTypes>();
+  const dispatch = useDispatch();
   const history = useHistory();
+
+  const handleAutoSaveSettings = () => {
+    const { hour, minute } = getMinuteHour(preferredTime);
+    const settingsData = {
+      interval: "testing",
+      hour,
+      minute,
+      weekday: weekday as string,
+      monthday: monthday as string,
+      amount: amount + "00",
+      active: false,
+    };
+    dispatch(
+      updateAutosaveSettings(settingsData, history, startTime as string)
+    );
+  };
 
   useEffect(() => {
     document.body.style.overflow = "hidden";
@@ -30,7 +59,7 @@ const FinishAutoSaveSettings = () => {
       <div className="modal-div">
         <div className="flex-between">
           <div></div>
-          <div className="icon" onClick={() => history.goBack()}>
+          <div className="icon" onClick={() => setFinish(false)}>
             <Icon name="cancel" />
           </div>
         </div>
@@ -45,30 +74,57 @@ const FinishAutoSaveSettings = () => {
                 <Icon size="big" name="calendar" />
               </div>
               <div>
-                <h4>₦2,000 weekly</h4>
+                <h4>
+                  ₦{amount} {code}
+                </h4>
                 <div className="base">Continue your settings below.</div>
               </div>
             </div>
-            <label>Day of the week</label>
-            <div className="drops">
-              <Dropdown
-                placeholder="Select Interval"
-                fluid
-                value={code}
-                selection
-                onChange={handleChange}
-                options={saveOptions}
-              />
-            </div>
+            {code === "monthly" && (
+              <div>
+                <label>Day of the month</label>
+                <div className="drops">
+                  <Dropdown
+                    placeholder="Select Day"
+                    fluid
+                    value={monthday}
+                    selection
+                    onChange={(e, data) =>
+                      setMonthday(data.value as dropdownSetStateType)
+                    }
+                    options={monthOptions}
+                  />
+                </div>
+              </div>
+            )}
+            {code === "weekly" && (
+              <div>
+                <label>Day of the week</label>
+                <div className="drops">
+                  <Dropdown
+                    placeholder="Select Day"
+                    fluid
+                    value={weekday}
+                    selection
+                    onChange={(e, data) =>
+                      setWeekday(data.value as dropdownSetStateType)
+                    }
+                    options={dayOptions}
+                  />
+                </div>
+              </div>
+            )}
             <label>Preferred Time</label>
             <div className="drops">
               <Dropdown
                 placeholder="Select Time"
                 fluid
-                value={code}
+                value={preferredTime}
                 selection
-                onChange={handleChange}
-                options={saveOptions}
+                onChange={(e, data) =>
+                  setPreferredTime(data.value as dropdownSetStateType)
+                }
+                options={timeOptions}
               />
             </div>
             <label>Where should funds come from?</label>
@@ -78,8 +134,7 @@ const FinishAutoSaveSettings = () => {
                 fluid
                 value={code}
                 selection
-                onChange={handleChange}
-                options={saveOptions}
+                options={fundsOptions}
               />
             </div>
             <label>When do you want to start?</label>
@@ -87,16 +142,32 @@ const FinishAutoSaveSettings = () => {
               <Dropdown
                 placeholder="Select Start Time"
                 fluid
-                value={code}
+                value={startTime}
+                onChange={(e, data) =>
+                  setStartTime(data.value as dropdownSetStateType)
+                }
                 selection
-                onChange={handleChange}
-                options={saveOptions}
+                options={startTimeOptions}
               />
             </div>
           </div>
           <div className="bottom-card">
-            <button onClick={() => history.goBack()} className="auth-button">
-              Continue
+            <button
+              disabled={
+                preferredTime === undefined
+                  ? true
+                  : user.isAutosaveSettingLoading
+                  ? true
+                  : code === "weekly" && weekday === undefined
+                  ? true
+                  : code === "monthly" && monthday === undefined
+                  ? true
+                  : false
+              }
+              onClick={handleAutoSaveSettings}
+              className="auth-button"
+            >
+              {user.isAutosaveSettingLoading ? "Loading..." : "Save Settings"}
             </button>
           </div>
         </div>

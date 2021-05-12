@@ -4,6 +4,7 @@ const initialState = {
   user: {},
   isLoading: false,
   isProfilePhotoLoading: false,
+  isAutosaveSettingLoading: false,
   isUserLoading: false,
   status: false,
   showBalanceStatus: false,
@@ -28,9 +29,14 @@ const user = createSlice({
       state.success = action.payload.message;
       return state;
     },
+    setAutosaveSetting: (state, action) => {
+      state.isAutosaveSettingLoading = false;
+      state.success = action.payload.message;
+      return state;
+    },
     clearData: (state) => {
-      state.success = "";
       state.error = "";
+      state.success = "";
       return state;
     },
     setUserLoading: (state, action) => {
@@ -41,10 +47,15 @@ const user = createSlice({
       state.isProfilePhotoLoading = true;
       return state;
     },
+    setAutosaveSettingLoading: (state, action) => {
+      state.isAutosaveSettingLoading = true;
+      return state;
+    },
     setUserError: (state, action) => {
       state.isUserLoading = false;
       state.isLoading = false;
       state.isProfilePhotoLoading = false;
+      state.isAutosaveSettingLoading = false;
       state.error = action.payload;
       return state;
     },
@@ -75,6 +86,8 @@ export const {
   setProfilePhotoLoading,
   setProfilePhoto,
   clearData,
+  setAutosaveSetting,
+  setAutosaveSettingLoading,
 } = user.actions;
 
 export default user.reducer;

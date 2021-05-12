@@ -4,34 +4,35 @@ import {
   setUserError,
   setProfilePhotoLoading,
   setProfilePhoto,
+  setAutosaveSetting,
+  setAutosaveSettingLoading,
 } from "../slices/user";
 import axios from "axios";
 import { store } from "..";
+import { RouteComponentProps } from "react-router-dom";
 
-export const activateUser = (
-  data: codeData,
-  setLoading: Function,
-  showMessage: Function
-) => async (dispatch: typeof store.dispatch) => {
-  try {
-    setLoading(true);
-    const res = await axios.post(`user/activate`, data);
-    if (res) {
-      setLoading(false);
-      const { message } = res.data;
-      showMessage(message);
-      console.log(res.data);
-      //dispatch(setIsLogin({ status: true, token }));
+export const activateUser =
+  (data: codeData, setLoading: Function, showMessage: Function) =>
+  async (dispatch: typeof store.dispatch) => {
+    try {
+      setLoading(true);
+      const res = await axios.post(`user/activate`, data);
+      if (res) {
+        setLoading(false);
+        const { message } = res.data;
+        showMessage(message);
+        console.log(res.data);
+        //dispatch(setIsLogin({ status: true, token }));
+      }
+    } catch (err) {
+      console.log(err);
+      if (err && err.response) {
+        console.log(err.response.data);
+        showMessage(err.response.data.message);
+        setLoading(false);
+      }
     }
-  } catch (err) {
-    console.log(err);
-    if (err && err.response) {
-      console.log(err.response.data);
-      showMessage(err.response.data.message);
-      setLoading(false);
-    }
-  }
-};
+  };
 
 export const getUserDetail = () => async (dispatch: typeof store.dispatch) => {
   try {
@@ -49,24 +50,97 @@ export const getUserDetail = () => async (dispatch: typeof store.dispatch) => {
   }
 };
 
-export const updateProfilePhoto = (data: FormData) => async (
-  dispatch: typeof store.dispatch
-) => {
-  try {
-    dispatch(setProfilePhotoLoading(true));
-    const res = await axios.put(`user/photo`, data);
-    console.log(res.data);
-    if (res.data) {
-      dispatch(setProfilePhoto(res.data));
+export const updateProfilePhoto =
+  (data: FormData) => async (dispatch: typeof store.dispatch) => {
+    try {
+      dispatch(setProfilePhotoLoading(true));
+      const res = await axios.put(`user/photo`, data);
+      if (res.data) {
+        dispatch(setProfilePhoto(res.data));
+      }
+    } catch (err) {
+      if (err && err.response) {
+        dispatch(setUserError(err.response.data.message));
+      }
     }
-  } catch (err) {
-    if (err && err.response) {
-      console.log(err.response.data);
-      dispatch(setUserError(err.response.data.message));
+  };
+
+export const updateAutosaveSettings =
+  (
+    data: settingsData,
+    history: RouteComponentProps["history"],
+    startNow: string
+  ) =>
+  async (dispatch: typeof store.dispatch) => {
+    try {
+      dispatch(setAutosaveSettingLoading(true));
+      const res = await axios.put(`user/autosave`, data);
+      console.log(res.data);
+      if (res.data) {
+        if (startNow === "true") {
+          dispatch(switchOnAutosave(history));
+          localStorage.setItem("autosave", startNow);
+        }
+        dispatch(setAutosaveSetting(res.data));
+        history.push("/save/b/bizzbank");
+      }
+    } catch (err) {
+      if (err && err.response) {
+        console.log(err.response.data);
+        dispatch(setUserError(err.response.data.message));
+      }
     }
-  }
-};
+  };
+
+export const switchOffAutosave =
+  (data: { active: boolean }, history: RouteComponentProps["history"]) =>
+  async (dispatch: typeof store.dispatch) => {
+    try {
+      dispatch(setAutosaveSettingLoading(true));
+      const res = await axios.put(`user/autosave/switch`, data);
+      console.log(res.data);
+      if (res.data) {
+        dispatch(setAutosaveSetting(res.data));
+        history.push("/save/b/bizzbank");
+      }
+    } catch (err) {
+      if (err && err.response) {
+        console.log(err.response.data);
+        dispatch(setUserError(err.response.data.message));
+      }
+    }
+  };
+
+export const switchOnAutosave =
+  (history: RouteComponentProps["history"]) =>
+  async (dispatch: typeof store.dispatch) => {
+    try {
+      dispatch(setAutosaveSettingLoading(true));
+      console.log("moving");
+      const res = await axios.post(`pay/auto-fund`);
+      console.log(res.data);
+      if (res.data) {
+        dispatch(setAutosaveSetting(res.data));
+        history.push("/save/b/bizzbank");
+      }
+    } catch (err) {
+      if (err && err.response) {
+        console.log(err.response.data);
+        dispatch(setUserError(err.response.data.message));
+      }
+    }
+  };
 
 type codeData = {
   code: string;
+};
+
+type settingsData = {
+  interval: string;
+  hour: number;
+  minute: number;
+  weekday: string;
+  monthday: string;
+  amount: string;
+  active: boolean;
 };

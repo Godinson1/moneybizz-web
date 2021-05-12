@@ -198,6 +198,15 @@ const getChildRoute = (to: string) => {
   };
 };
 
+const getMinuteHour = (data: string | undefined) => {
+  const hour = parseInt(data?.slice(0, -3) as string);
+  const minute = parseInt(data?.slice(3) as string);
+  return {
+    hour,
+    minute,
+  };
+};
+
 export {
   checkData,
   isEmail,
@@ -210,4 +219,5 @@ export {
   formatNumber,
   readURI,
   getChildRoute,
+  getMinuteHour,
 };

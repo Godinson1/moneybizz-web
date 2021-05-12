@@ -33,14 +33,14 @@ export const handleTabRouting = (
   history: RouteComponentProps["history"]
 ) => {
   if (data === 1) {
-    history.push("/save/ajo");
+    history.push("/save/b/ajo");
   } else if (data === 3) {
-    history.push("/save/targets");
+    history.push("/save/b/targets");
   } else if (data === 2) {
-    history.push("/save/safelock");
+    history.push("/save/b/safelock");
   } else if (data === 4) {
-    history.push("/save/soon");
+    history.push("/save/b/soon");
   } else if (data === 0) {
-    history.push("/save/bizzbank");
+    history.push("/save/b/bizzbank");
   }
 };
