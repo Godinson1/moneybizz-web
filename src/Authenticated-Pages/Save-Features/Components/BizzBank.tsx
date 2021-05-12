@@ -81,7 +81,9 @@ const BizzBank: FC = () => {
                     <div>
                       {formatNumber(
                         parseInt(
-                          user.user.data.details.autoSave.amount.slice(0, -2)
+                          user.user.data.details.autoSave.amount
+                            .toString()
+                            .slice(0, -2)
                         )
                       )}{" "}
                       {user.user.data.details.autoSave.interval ===
