@@ -82,7 +82,7 @@ const Notification: FC = () => {
             <div className="flex-bottom-card">
               <div className="secondary-color">
                 {allNotification.length === 0
-                  ? "NO CONNECTIONS RECORDED"
+                  ? "NO CONNECTION RECORDED"
                   : "SEE MORE CONNECTIONS"}
               </div>
             </div>

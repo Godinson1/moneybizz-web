@@ -3,7 +3,11 @@ import { useSelector, RootStateOrAny } from "react-redux";
 import { useRouteMatch, Route, Link, useHistory } from "react-router-dom";
 import { Icon } from "semantic-ui-react";
 import { Save } from "../../../Components";
-import { formatNumber } from "../../../utilities";
+import {
+  formatNumber,
+  usePrepareLink,
+  getChildRoute,
+} from "../../../utilities";
 import { Settings, Withdraw, Interest, AutoSaveSettings } from "./index";
 import "./styles.scss";
 
@@ -12,6 +16,11 @@ import "../savefeatures.scss";
 const BizzBank: FC = () => {
   const user = useSelector((state: RootStateOrAny) => state.user);
   const history = useHistory();
+  const saveLink = usePrepareLink(getChildRoute("/quicksave"));
+  const autosaveLink = usePrepareLink(getChildRoute("/autosave_settings"));
+  const withdrawLink = usePrepareLink(getChildRoute("/withdraw"));
+  const interestLink = usePrepareLink(getChildRoute("/interest"));
+  const settingsLink = usePrepareLink(getChildRoute("/settings"));
   const { url } = useRouteMatch();
 
   return (
@@ -76,7 +85,7 @@ const BizzBank: FC = () => {
         </div>
       </div>
       <Route
-        path={`${url}/quicksave`}
+        path={saveLink.pathname}
         children={({ match }) => {
           return (
             <div>
@@ -94,8 +103,9 @@ const BizzBank: FC = () => {
         }}
       />
       <Route
-        path={`${url}/settings`}
+        path={settingsLink.pathname}
         children={({ match }) => {
+          console.log(match);
           return (
             <div>
               {match && (
@@ -112,7 +122,7 @@ const BizzBank: FC = () => {
         }}
       />
       <Route
-        path={`${url}/withdraw`}
+        path={withdrawLink.pathname}
         children={({ match }) => {
           return (
             <div>
@@ -130,7 +140,7 @@ const BizzBank: FC = () => {
         }}
       />
       <Route
-        path={`${url}/interest`}
+        path={interestLink.pathname}
         children={({ match }) => {
           return (
             <div>
@@ -148,7 +158,7 @@ const BizzBank: FC = () => {
         }}
       />
       <Route
-        path={`${url}/autosave_settings`}
+        path={autosaveLink.pathname}
         children={({ match }) => {
           return (
             <div>

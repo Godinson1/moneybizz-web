@@ -7,7 +7,8 @@ const checkData = (data: string): string => {
 };
 
 const isEmail = (data: string): boolean => {
-  const regEx = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
+  const regEx =
+    /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
   if (data.match(regEx)) return true;
   else return false;
 };
@@ -189,6 +190,11 @@ const getChildRoute = (to: string) => {
   return {
     to,
     isRelativePath: true,
+    query: {},
+    pushToQuery: {},
+    hash: null,
+    keepOldQuery: false,
+    state: {},
   };
 };
 

@@ -4,9 +4,22 @@
 
 .modal-div,
 .modal-div-pay {
-  height: 400px;
+  height: 600px;
   padding: 20px;
+  //padding: 0;
   background-color: $primary-color;
+
+  .bottom-card {
+    margin-top: 20px;
+  }
+
+  .content {
+    //background-color: red;
+    overflow: auto;
+    overflow-x: hidden;
+    height: 300px;
+    padding: 10px 10px 10px 0;
+  }
 
   .flex-buttons {
     @include flex-center;

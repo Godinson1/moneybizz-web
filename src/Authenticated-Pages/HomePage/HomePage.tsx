@@ -82,6 +82,7 @@ const HomePage: FC = () => {
       <Route
         path={saveLink.pathname}
         children={({ match }) => {
+          console.log(match);
           return (
             <div>
               {match && (
