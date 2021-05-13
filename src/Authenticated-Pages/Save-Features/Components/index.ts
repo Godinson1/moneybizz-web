@@ -1,5 +1,5 @@
 import Targets from "./Targets";
-import Safelock from "./Safelock";
+import Safelock from "./Safelock/Safelock";
 import ComingSoon from "./ComingSoon";
 import Ajo from "./Ajo";
 import BizzBank from "./BizzBank";

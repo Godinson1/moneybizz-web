@@ -50,8 +50,44 @@
   }
 }
 
+.header-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 15px;
+}
+
 .first-card {
   width: 60%;
+  margin-bottom: 50px;
+}
+
+.safelock-header {
+  @include custom-border-radius;
+  border: 1px solid rgb(182, 181, 181);
+  padding: 5px;
+  cursor: pointer;
+}
+
+.active-safelock {
+  border-top: 1px solid rgb(182, 181, 181);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  //gap: 50px;
+  cursor: pointer;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.trans {
+  padding: 10px;
+}
+
+.active {
+  background-color: $secondary-color;
+  color: $primary-color;
 }
 
 .second-card {
@@ -115,6 +151,16 @@
   gap: 10px;
 }
 
+.autosave-banner-settings {
+  width: 100%;
+  padding: 25px;
+  @include custom-border-radius;
+  @include flex-start-center;
+  margin-bottom: 30px;
+  border: 1px solid rgb(182, 181, 181);
+  cursor: pointer;
+}
+
 .autosave-banner {
   width: 100%;
   padding: 20px;
@@ -123,18 +169,21 @@
   margin-bottom: 30px;
   background-color: $secondary-color;
   color: $primary-color;
+}
 
-  h4 {
-    font-size: 1.2rem;
-  }
+h4 {
+  font-size: 1.2rem;
+}
 
-  .base {
-    margin-top: -15px;
-  }
+.base {
+  margin-top: -15px;
 }
 
 .custom-card-header {
   padding: 10px;
+  div:nth-child(1) {
+    margin-bottom: 15px;
+  }
 }
 
 .flex-between {

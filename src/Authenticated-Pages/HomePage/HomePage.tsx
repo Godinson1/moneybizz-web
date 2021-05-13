@@ -4,7 +4,7 @@ import { useRouteMatch, Link, Route } from "react-router-dom";
 import { Icon, Popup } from "semantic-ui-react";
 import Dashboard from "../../Pages/Dashboard/Components";
 import { Save } from "../../Components";
-import { AutoSaveSettings } from "../Save-Features/Components";
+import { AutoSaveSettings, SwitchAutosave } from "../Save-Features/Components";
 import PreloaderMain from "../../Components/preloader/PreloaderMain";
 import {
   Header,
@@ -162,6 +162,24 @@ const HomePage: FC = () => {
                   <div className="modal-container">
                     <div>
                       <AutoSaveSettings />
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+          );
+        }}
+      />
+      <Route
+        path={`${url}/autosavetoggle`}
+        children={({ match }) => {
+          return (
+            <div>
+              {match && (
+                <div id="show-modal-picture">
+                  <div className="modal-container">
+                    <div>
+                      <SwitchAutosave />
                     </div>
                   </div>
                 </div>

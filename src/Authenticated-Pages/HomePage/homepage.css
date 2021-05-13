@@ -367,6 +367,7 @@ div.header-home .cns {
   border-radius: 10px;
   background-color: #222222;
   margin-left: 15px;
+  cursor: pointer;
 }
 
 div.header-home .ab {
@@ -399,8 +400,7 @@ div.header-home .ab {
   height: 100vh;
   position: fixed;
   z-index: 17;
-  overflow-y: scroll;
-  overflow-x: hidden;
+  overflow: hidden;
   background: transparent;
 }
 
@@ -424,8 +424,7 @@ div.header-home .ab {
   height: 100vh;
   position: fixed;
   z-index: 17;
-  overflow-y: scroll;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 .modal-container {

@@ -19,6 +19,27 @@ export const startTimeOptions = [
   },
 ];
 
+export const SAFELOCK = [
+  {
+    name: "Referral Bonus - Joseph G.",
+    amount: "1000",
+    interest: "1.23",
+    status: "ongoing",
+  },
+  {
+    name: "Goddy Lock",
+    amount: "2000",
+    interest: "1.23",
+    status: "completed",
+  },
+  {
+    name: "Referral Bonus - Test P.",
+    amount: "4000",
+    interest: "1.23",
+    status: "ongoing",
+  },
+];
+
 export const saveOptions = [
   {
     key: "Daily",

@@ -8,9 +8,22 @@ Color variables
 /*........................................................*/
 .modal-div,
 .modal-div-pay {
-  height: 400px;
+  height: 600px;
   padding: 20px;
   background-color: #ffffff;
+}
+
+.modal-div .bottom-card,
+.modal-div-pay .bottom-card {
+  margin-top: 20px;
+}
+
+.modal-div .content,
+.modal-div-pay .content {
+  overflow: auto;
+  overflow-x: hidden;
+  height: 300px;
+  padding: 10px 10px 10px 0;
 }
 
 .modal-div .flex-buttons,

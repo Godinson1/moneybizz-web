@@ -11,10 +11,6 @@ export const panes = [
     render: () => <BizzBank />,
   },
   {
-    menuItem: { key: "Ajo", icon: "save", content: "Ajo", color: "green" },
-    render: () => <Ajo />,
-  },
-  {
     menuItem: {
       key: "Safelock",
       icon: "lock",
@@ -22,6 +18,10 @@ export const panes = [
       color: "red",
     },
     render: () => <Safelock />,
+  },
+  {
+    menuItem: { key: "Ajo", icon: "save", content: "Ajo", color: "green" },
+    render: () => <Ajo />,
   },
   {
     menuItem: {

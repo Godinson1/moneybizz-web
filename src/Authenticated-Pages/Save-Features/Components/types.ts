@@ -7,3 +7,10 @@ export type dropdownSetStateType = React.SetStateAction<
   | "string | number | boolean | (string | number | boolean)[] | undefined"
   | undefined
 >;
+
+export type safelockType = {
+  name: string;
+  amount: string;
+  interest: string;
+  status: string;
+};
