@@ -29,13 +29,13 @@ export const SAFELOCK = [
   {
     name: "Goddy Lock",
     amount: "2000",
-    interest: "1.23",
+    interest: "1.45",
     status: "completed",
   },
   {
     name: "Referral Bonus - Test P.",
     amount: "4000",
-    interest: "1.23",
+    interest: "4.53",
     status: "ongoing",
   },
 ];

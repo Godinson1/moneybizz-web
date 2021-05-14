@@ -2,18 +2,18 @@ import React, { FC, useState, useEffect } from "react";
 import { useSelector, RootStateOrAny } from "react-redux";
 import { useRouteMatch, Route, useHistory } from "react-router-dom";
 import { Icon } from "semantic-ui-react";
-import { SafelockInfo, CreateSafelock } from "./Components";
+import { AjoInfo, CreateAjo } from "./Components";
 import { formatNumber } from "../../../../utilities";
-import { SAFELOCK } from "../constants";
+import { AJO } from "./Components/constants";
 import { safelockType } from "../types";
 
 //import "../../Save-Features/savefeatures.scss";
 import "../styles.scss";
 
-const Safelock: FC = () => {
+const Ajo: FC = () => {
   const user = useSelector((state: RootStateOrAny) => state.user);
   const history = useHistory();
-  const [allSafelock, setAllSafelock] = useState<Array<safelockType>>([]);
+  const [allAjo, setAllAjo] = useState<Array<safelockType>>([]);
   const [activeClassName, setActiveClassName] = useState(1);
 
   const { url } = useRouteMatch();
@@ -29,17 +29,13 @@ const Safelock: FC = () => {
   };
 
   useEffect(() => {
-    const filtereOngoing = SAFELOCK.filter(
-      (safelock) => safelock.status === "ongoing"
-    );
-    setAllSafelock(filtereOngoing);
+    const filtereOngoing = AJO.filter((ajo) => ajo.status === "ongoing");
+    setAllAjo(filtereOngoing);
   }, []);
 
   const handleSort = (status: string) => {
-    const filtereCompleted = SAFELOCK.filter(
-      (safelock) => safelock.status === status
-    );
-    setAllSafelock(filtereCompleted);
+    const filtereCompleted = AJO.filter((ajo) => ajo.status === status);
+    setAllAjo(filtereCompleted);
   };
 
   return (
@@ -48,7 +44,7 @@ const Safelock: FC = () => {
         <div className="first-card">
           <div className="custom-card">
             <div className="custom-card-header">
-              <div>SAFELOCK BALANCE</div>
+              <div>AJO BALANCE</div>
               {user.user && user.user.data && (
                 <div className="flex-between">
                   <div className="amount-text">{formatNumber(0)}</div>
@@ -59,12 +55,11 @@ const Safelock: FC = () => {
               <div
                 onClick={() => history.push(`${url}/selectsafelockduration`)}
               >
-                <Icon id="iconed" name="plus" color="blue" /> &nbsp; Create a
-                Safelock
+                <Icon id="iconed" name="plus" color="blue" /> &nbsp; Create Ajo
               </div>
               <div onClick={() => history.push(`${url}/learn_safelock`)}>
                 <Icon id="iconed" name="info circle" color="blue" /> &nbsp; What
-                is Safelock?
+                is Ajo?
               </div>
             </div>
           </div>
@@ -81,7 +76,7 @@ const Safelock: FC = () => {
         <div className="first-card">
           <div className="custom-card">
             <div className="trans">
-              <div>MY SAFELOCKS</div>
+              <div>MY AJO</div>
               <div className="flex-header">
                 <div className="header-options">
                   <div
@@ -104,7 +99,7 @@ const Safelock: FC = () => {
                 <div></div>
               </div>
             </div>
-            {allSafelock.map((data) => {
+            {allAjo.map((data) => {
               const { name, amount, interest } = data;
               return (
                 <div className="active-safelock">
@@ -145,7 +140,7 @@ const Safelock: FC = () => {
                 <div id="show-modal-picture">
                   <div className="modal-container">
                     <div>
-                      <SafelockInfo />
+                      <AjoInfo />
                     </div>
                   </div>
                 </div>
@@ -163,7 +158,7 @@ const Safelock: FC = () => {
                 <div id="show-modal-picture">
                   <div className="modal-container">
                     <div>
-                      <CreateSafelock />
+                      <CreateAjo />
                     </div>
                   </div>
                 </div>
@@ -176,4 +171,4 @@ const Safelock: FC = () => {
   );
 };
 
-export default Safelock;
+export default Ajo;

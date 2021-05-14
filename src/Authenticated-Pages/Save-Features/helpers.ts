@@ -7,10 +7,8 @@ export const getIndex = (urlData: string) => {
     ? 1
     : urlData === "bizzbank"
     ? 0
-    : urlData === "targets"
+    : urlData === "connections"
     ? 3
-    : urlData === "soon"
-    ? 4
     : "";
 };
 
@@ -21,10 +19,8 @@ export const getTabString = (urlData: string) => {
     ? "SAFELOCK"
     : urlData === "bizzbank"
     ? "BIZZBANK"
-    : urlData === "targets"
-    ? "TARGETS"
-    : urlData === "soon"
-    ? "COMING SOON"
+    : urlData === "connections"
+    ? "CONNECTIONS"
     : "";
 };
 
@@ -34,12 +30,10 @@ export const handleTabRouting = (
 ) => {
   if (data === 2) {
     history.push("/save/b/ajo");
-  } else if (data === 3) {
-    history.push("/save/b/targets");
   } else if (data === 1) {
     history.push("/save/b/safelock");
-  } else if (data === 4) {
-    history.push("/save/b/soon");
+  } else if (data === 3) {
+    history.push("/save/b/connections");
   } else if (data === 0) {
     history.push("/save/b/bizzbank");
   }

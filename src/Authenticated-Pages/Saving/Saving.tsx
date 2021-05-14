@@ -67,16 +67,11 @@ const Saving: FC = () => {
                   Lock funds to avoid temptations and withdraw at set dates.
                 </span>
               </div>
-              <div onClick={() => history.push("/save/b/targets")}>
-                <Icon name="rocket" size="big" />
-                <h2>Targets</h2>
-                <span>Reach your unique individual saving goals.</span>
-              </div>
-              <div onClick={() => history.push("/save/b/soon")}>
-                <Icon name="osi" size="big" />
-                <h2>Coming Soon</h2>
+              <div onClick={() => history.push("/save/b/connections")}>
+                <Icon name="plug" size="big" />
+                <h2>Connections</h2>
                 <span>
-                  See MoneyBizz features that will be available soonest.
+                  See other moneybizz users you've had transaction with.
                 </span>
               </div>
             </div>

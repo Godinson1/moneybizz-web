@@ -1,4 +1,4 @@
-import { Ajo, BizzBank, ComingSoon, Safelock, Targets } from "./Components";
+import { Ajo, BizzBank, Connections, Safelock } from "./Components";
 
 export const panes = [
   {
@@ -15,31 +15,22 @@ export const panes = [
       key: "Safelock",
       icon: "lock",
       content: "Safelock",
-      color: "red",
+      color: "green",
     },
     render: () => <Safelock />,
   },
   {
-    menuItem: { key: "Ajo", icon: "save", content: "Ajo", color: "green" },
+    menuItem: { key: "Ajo", icon: "save", content: "Ajo", color: "pink" },
     render: () => <Ajo />,
   },
   {
     menuItem: {
-      key: "Targets",
-      icon: "rocket",
-      content: "Targets",
-      color: "purple",
-    },
-    render: () => <Targets />,
-  },
-  {
-    menuItem: {
-      key: "Coming Soon",
-      icon: "osi",
-      content: "Coming Soon",
+      key: "Connections",
+      icon: "plug",
+      content: "Connections",
       color: "yellow",
     },
-    render: () => <ComingSoon />,
+    render: () => <Connections />,
   },
 ];
 
@@ -50,10 +41,8 @@ export const renderPage = (urlData: string) => {
     <Safelock />
   ) : urlData === "bizzbank" ? (
     <BizzBank />
-  ) : urlData === "targets" ? (
-    <Targets />
-  ) : urlData === "soon" ? (
-    <ComingSoon />
+  ) : urlData === "connections" ? (
+    <Connections />
   ) : (
     ""
   );
