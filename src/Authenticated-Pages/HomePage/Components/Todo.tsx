@@ -12,13 +12,22 @@ const Todo = () => {
   return (
     <div className="todo-container">
       <div className="todo">TODO</div>
-      <div
-        onClick={() => history.push(`${url}/identity`)}
-        className="auth-options"
-      >
-        <Icon size="small" id="icon" color="blue" name="dot circle outline" />
-        <div>Add your BVN or NIN</div>
-      </div>
+      {user.user &&
+        user.user.data &&
+        user.user.data.details.bvnConfirmed !== true && (
+          <div
+            onClick={() => history.push(`${url}/identity`)}
+            className="auth-options"
+          >
+            <Icon
+              size="small"
+              id="icon"
+              color="blue"
+              name="dot circle outline"
+            />
+            <div>Verify your Identity</div>
+          </div>
+        )}
       <div
         onClick={() => history.push(`save/b/safelock`)}
         className="auth-options"

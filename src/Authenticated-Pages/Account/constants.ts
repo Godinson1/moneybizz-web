@@ -10,7 +10,7 @@ export const ACCOUNT_OPTIONS = [
     color: "blue",
   },
   {
-    title: "Add your BVN or NIN",
+    title: "Verify Your Identity",
     icon: "lock",
     color: "green",
   },

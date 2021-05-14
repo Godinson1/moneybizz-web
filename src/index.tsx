@@ -4,6 +4,7 @@ import "@fontsource/lexend";
 import "semantic-ui-css/semantic.min.css";
 import "./sass-styles/_global.scss";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import "react-semantic-ui-datepickers/dist/react-semantic-ui-datepickers.css";
 import { BrowserRouter as Router } from "react-router-dom";
 import { Provider } from "react-redux";
 import { MyErrorBoundary } from "./utilities";

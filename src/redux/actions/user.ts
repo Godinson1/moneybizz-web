@@ -6,9 +6,12 @@ import {
   setProfilePhoto,
   setAutosaveSetting,
   setAutosaveSettingLoading,
+  setUserSuccess,
+  setLoading as setLoadingMain,
 } from "../slices/user";
 import axios from "axios";
 import { store } from "..";
+import { codeData, settingsData, verifyUserType } from "../types";
 import { RouteComponentProps } from "react-router-dom";
 
 export const activateUser =
@@ -131,16 +134,44 @@ export const switchOnAutosave =
     }
   };
 
-type codeData = {
-  code: string;
-};
+export const verifyUser =
+  (
+    data: verifyUserType,
+    history: RouteComponentProps["history"],
+    url: string
+  ) =>
+  async (dispatch: typeof store.dispatch) => {
+    try {
+      dispatch(setLoadingMain(true));
+      const res = await axios.put(`user/verify-user`, data);
+      console.log(res.data);
+      if (res.data) {
+        dispatch(setUserSuccess(res.data));
+        history.push(`${url}/otp`);
+      }
+    } catch (err) {
+      if (err && err.response) {
+        console.log(err.response.data);
+        dispatch(setUserError(err.response.data.message));
+      }
+    }
+  };
 
-type settingsData = {
-  interval: string;
-  hour: number;
-  minute: number;
-  weekday: string;
-  monthday: string;
-  amount: string;
-  active: boolean;
-};
+export const verifyUserOtp =
+  (data: { otp: number }, history: RouteComponentProps["history"]) =>
+  async (dispatch: typeof store.dispatch) => {
+    try {
+      dispatch(setLoadingMain(true));
+      const res = await axios.post(`user/verify-user-otp`, data);
+      console.log(res.data);
+      if (res.data) {
+        dispatch(setUserSuccess(res.data));
+        history.push(`/home`);
+      }
+    } catch (err) {
+      if (err && err.response) {
+        console.log(err.response.data);
+        dispatch(setUserError(err.response.data.message));
+      }
+    }
+  };

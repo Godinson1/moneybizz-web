@@ -163,6 +163,24 @@ div.header-home {
   @include main-modal;
 }
 
+.dateOfBirth {
+  width: 100%;
+  //overflow: hidden;
+
+  #dateOfBirth {
+    margin-bottom: 10px;
+    width: 390px;
+    border-radius: 10px;
+  }
+}
+
+.bvn-content {
+  height: 350px;
+  overflow: auto;
+  padding-right: 10px;
+  overflow-x: hidden;
+}
+
 .modal-container {
   width: 36%;
   height: 100%;
@@ -182,6 +200,10 @@ div.header-home {
   .modal-container {
     width: 100% !important;
     top: 0;
+  }
+
+  #dateOfBirth {
+    width: 310px !important;
   }
 
   .quick-buzz-btn {

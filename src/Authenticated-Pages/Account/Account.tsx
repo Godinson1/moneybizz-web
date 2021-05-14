@@ -4,16 +4,24 @@ import Dashboard from "../../Pages/Dashboard/Components";
 import { readURI, formatNumber } from "../../utilities";
 import { ACCOUNT_OPTIONS, PHONE_NUMBER } from "./constants";
 import { logoutUser, updateProfilePhoto } from "../../redux";
-import "./account.scss";
+import { useHistory } from "react-router-dom";
 import "../../Components/preloader/preloader.scss";
-import { Icon, SemanticICONS, Checkbox, Popup } from "semantic-ui-react";
-import { SemanticCOLORS } from "semantic-ui-react/dist/commonjs/generic";
+import {
+  Icon,
+  SemanticICONS,
+  Checkbox,
+  SemanticCOLORS,
+  Popup,
+} from "semantic-ui-react";
+
+import "./account.scss";
 
 const Account: FC = () => {
   const user = useSelector((state: RootStateOrAny) => state.user);
   const [showBalance, setShowBalance] = useState<boolean>(false);
   const [imageFile, setImageFile] = useState([]);
   const dispatch = useDispatch();
+  const history = useHistory();
 
   const handleShowBalance = () => {
     setShowBalance(!showBalance);
@@ -35,6 +43,9 @@ const Account: FC = () => {
     }
     if (title === "Contact Us") {
       window.location.href = PHONE_NUMBER;
+    }
+    if (title === "Verify Your Identity") {
+      history.push("/home/identity");
     }
   };
 

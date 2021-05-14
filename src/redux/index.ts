@@ -18,6 +18,8 @@ import {
   setAutosaveSettingLoading,
   setProfilePhoto,
   clearData,
+  setUserLoading,
+  setUserSuccess,
 } from "./slices/user";
 import {
   loginUser,
@@ -32,6 +34,8 @@ import {
   updateAutosaveSettings,
   switchOffAutosave,
   switchOnAutosave,
+  verifyUser,
+  verifyUserOtp,
 } from "./actions/user";
 import { clearMessage, clearPayMessage } from "./actions/dashboard";
 import { payWithBank, sendOtp, payWithExistingCard } from "./actions/payment";
@@ -67,4 +71,8 @@ export {
   updateAutosaveSettings,
   switchOffAutosave,
   switchOnAutosave,
+  setUserSuccess,
+  setUserLoading,
+  verifyUser,
+  verifyUserOtp,
 };
