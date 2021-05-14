@@ -266,7 +266,7 @@ Color variables
   font-weight: 500;
   font-size: 1.1rem;
   border: 1px solid #083e9e;
-  width: 400px;
+  width: 500px;
   padding: 15px 20px 15px 20px;
   border-bottom-right-radius: 7px;
   border-top-left-radius: 7px;
@@ -278,6 +278,34 @@ Color variables
 
 .auth-home .auth-options #icon {
   font-size: 1.3rem;
+}
+
+.auth-home .flex-between-recent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
+.auth-home .flex-between-recent .flex-recent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+}
+
+.auth-home .flex-between-recent #icon {
+  margin-top: 10px;
+}
+
+.auth-home .recent-activities {
+  margin-top: 50px;
 }
 
 .auth-home .mobile-button {

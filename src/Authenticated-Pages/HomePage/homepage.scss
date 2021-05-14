@@ -72,7 +72,7 @@
     font-weight: 500;
     font-size: 1.1rem;
     border: 1px solid $secondary-color;
-    width: 400px;
+    width: 500px;
     @include custom-border-radius;
     margin-top: 15px;
     height: 60px;
@@ -80,6 +80,24 @@
     #icon {
       font-size: 1.3rem;
     }
+  }
+
+  .flex-between-recent {
+    @include flex-between;
+    width: 100%;
+
+    .flex-recent {
+      display: flex;
+      gap: 10px;
+    }
+
+    #icon {
+      margin-top: 10px;
+    }
+  }
+
+  .recent-activities {
+    margin-top: 50px;
   }
 
   .mobile-button {

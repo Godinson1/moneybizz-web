@@ -2,6 +2,7 @@ import React from "react";
 import { useSelector, RootStateOrAny } from "react-redux";
 import { Icon } from "semantic-ui-react";
 import { useHistory, useRouteMatch } from "react-router-dom";
+import RecentActivities from "./RecentActivities";
 
 const Todo = () => {
   const user = useSelector((state: RootStateOrAny) => state.user);
@@ -35,6 +36,16 @@ const Todo = () => {
         <Icon size="small" id="icon" color="blue" name="dot circle outline" />
         <div>Safelock Funds</div>
       </div>
+      <div
+        onClick={() => history.push(`save/b/bizzbank/settings`)}
+        className="auth-options"
+      >
+        <Icon size="small" id="icon" color="blue" name="dot circle outline" />
+        <div>
+          Set your security question now!{" "}
+          <Icon name="lock" color="blue" size="small" />
+        </div>
+      </div>
       {user.user && user.user.data && user.user.data.details.autoSave && (
         <div>
           {AutosaveState !== "true" && (
@@ -57,6 +68,16 @@ const Todo = () => {
           )}
         </div>
       )}
+      <div
+        onClick={() => history.push(`/save/b/bizzbank/interest`)}
+        className="auth-options"
+      >
+        <Icon size="small" id="icon" color="blue" name="dot circle outline" />
+        <div>Get your savings interest for the month!</div>
+      </div>
+      <div className="recent-activities">
+        <RecentActivities />
+      </div>
     </div>
   );
 };
