@@ -19,7 +19,7 @@ const HomeInfo = () => {
         </div>
         <div className="dash-title">
           <div>DOWNLOAD THE MOBILE APP</div>
-          <div className="flex-start">
+          <div className="flex-start-button">
             <div className="mobile-button">
               <div>
                 <Icon name="apple" size="big" />

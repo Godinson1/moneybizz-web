@@ -9,6 +9,7 @@
   @include flex-center;
   gap: 100px;
   padding: 50px 200px 50px 50px;
+  height: 100vh;
 
   .register-button-home {
     @include custom-button;
@@ -17,18 +18,21 @@
   }
 
   .mobile-button {
-    padding: 5px 10px 5px 10px !important;
+    width: 170px;
+    height: 50px;
+    padding: 0 5px 0 5px !important;
     @include custom-border-radius;
     background-color: $black-color;
     color: $primary-color;
-    margin-top: 15px;
     cursor: pointer;
-    @include flex-center;
+    @include flex-start-center;
   }
 
   .flex-start {
     @include flex-start;
+    margin-top: 15px;
     gap: 10px;
+    flex-wrap: wrap;
   }
 
   .picture-holder {
@@ -77,10 +81,5 @@
 
   .picture-holder {
     display: none;
-  }
-
-  .mobile-button {
-    padding: 5px 2px 5px 2px !important;
-    flex-wrap: wrap;
   }
 }

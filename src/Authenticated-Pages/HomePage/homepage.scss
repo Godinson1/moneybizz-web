@@ -101,11 +101,12 @@
   }
 
   .mobile-button {
-    padding: 5px 10px 5px 10px;
+    width: 170px;
+    height: 50px;
+    padding: 0 5px 0 5px !important;
     @include custom-border-radius;
     background-color: $black-color;
     color: $primary-color;
-
     cursor: pointer;
     @include flex-center;
   }
@@ -115,6 +116,13 @@
     margin: 5px 0 20px 0;
     flex-wrap: wrap;
     gap: 45px;
+  }
+
+  .flex-start-button {
+    @include flex-between;
+    margin: 5px 0 20px 0;
+    flex-wrap: wrap;
+    gap: 15px;
   }
 }
 
@@ -236,8 +244,20 @@ div.header-home {
     width: 100%;
   }
 
+  .banner {
+    img {
+      width: 100% !important;
+    }
+  }
+
   .flex-start {
     gap: 10px !important;
+  }
+
+  .flex-start-button {
+    gap: 10px !important;
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
   }
 
   .home-flex {

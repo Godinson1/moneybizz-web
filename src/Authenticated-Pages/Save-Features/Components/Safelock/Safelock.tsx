@@ -110,7 +110,7 @@ const Safelock: FC = () => {
                 <div className="active-safelock">
                   <div className="flex-content first">
                     <div>
-                      <Icon name="save" size="big" color="blue" />
+                      <Icon name="lock" size="big" color="blue" />
                     </div>
                     <div>
                       <div>{name}</div>
