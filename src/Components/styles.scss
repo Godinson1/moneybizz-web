@@ -4,9 +4,8 @@
 
 .modal-div,
 .modal-div-pay {
-  height: 600px;
+  height: 100vh;
   padding: 20px;
-  //padding: 0;
   background-color: $primary-color;
 
   .bottom-card {
@@ -138,5 +137,11 @@
 @include media-sm {
   .flex-between {
     gap: 10px;
+  }
+
+  .modal-div,
+  .modal-div-pay {
+    overflow: auto;
+    overflow-x: hidden;
   }
 }

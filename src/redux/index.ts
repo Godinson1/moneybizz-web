@@ -36,6 +36,7 @@ import {
   switchOnAutosave,
   verifyUser,
   verifyUserOtp,
+  activateUser,
 } from "./actions/user";
 import { clearMessage, clearPayMessage } from "./actions/dashboard";
 import { payWithBank, sendOtp, payWithExistingCard } from "./actions/payment";
@@ -75,4 +76,5 @@ export {
   setUserLoading,
   verifyUser,
   verifyUserOtp,
+  activateUser,
 };

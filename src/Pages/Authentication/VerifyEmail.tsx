@@ -1,6 +1,9 @@
-import React, { FC, useState } from "react";
+import React, { FC, useState, useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
+import { Message } from "semantic-ui-react";
 import {
-  LOGIN_ERROR_HEADER,
+  VERIFY_ERROR_HEADER,
   LOGO,
   VERIFY_EMAIL,
   VERIFY_EMAIL_DESC,
@@ -8,21 +11,50 @@ import {
   EMAIL,
 } from "./constants";
 import Design from "./Design";
+import { validateVerifyEmail } from "../../utilities";
+import { resetPassword } from "../../redux";
 import "./auth.scss";
 
 const VerifyEmail: FC = () => {
-  const [error, setError] = useState<boolean | string>(false);
+  const [errors, setError] = useState<boolean | string>(false);
+  const [email, setEmail] = useState<string>("");
+  const [loading, setLoading] = useState<boolean>(false);
+  const dispatch = useDispatch();
+  const history = useHistory();
+
+  useEffect(() => {
+    setTimeout(() => {
+      setError(false);
+    }, 3000);
+  }, [errors]);
+
+  const handleVerifyEmail = () => {
+    const { error, valid } = validateVerifyEmail({
+      email,
+    });
+    if (!valid) {
+      setLoading(false);
+      setError(error);
+    } else {
+      const userData = {
+        email,
+      };
+      dispatch(resetPassword(userData, setLoading, setError, history));
+    }
+  };
+
   return (
     <div>
       <div className="test">
         <div className="designs">
           <Design />
           <div className="login-auth">
-            {error && (
-              <div className="ui error message">
-                <i onClick={() => setError(false)} className="close icon"></i>
-                <div className="header">{LOGIN_ERROR_HEADER}</div>
-                <p>{error}</p>
+            {errors && (
+              <div className="message-auth">
+                <Message negative>
+                  <Message.Header>{VERIFY_ERROR_HEADER}</Message.Header>
+                  <p>{errors}</p>
+                </Message>
               </div>
             )}
             <h1 className="register-logo">{LOGO}</h1>
@@ -34,10 +66,22 @@ const VerifyEmail: FC = () => {
               <div>
                 <label>{EMAIL}</label>
                 <div className="auth-input">
-                  <input type="text" placeholder="Email address" />
+                  <input
+                    type="text"
+                    placeholder="Email address"
+                    onChange={(e) => setEmail(e.target.value)}
+                  />
                 </div>
               </div>
-              <div className="auth-button">{VERIFY}</div>
+              <div>
+                <button
+                  disabled={loading}
+                  onClick={handleVerifyEmail}
+                  className="auth-button"
+                >
+                  {loading ? "Verifying..." : VERIFY}
+                </button>
+              </div>
             </div>
           </div>
           <div className="flex-between">

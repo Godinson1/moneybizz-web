@@ -1,7 +1,9 @@
-import React, { FC, useState } from "react";
-import { Link } from "react-router-dom";
+import React, { FC, useState, useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { useHistory, Link } from "react-router-dom";
+import { Message } from "semantic-ui-react";
 import {
-  LOGIN_ERROR_HEADER,
+  ACTIVATE_ERROR_HEADER,
   LOGO,
   ACTIVATE,
   ACTIVATE_DESC,
@@ -11,21 +13,46 @@ import {
   TRY_AGAIN,
 } from "./constants";
 import Design from "./Design";
+import { activateUser } from "../../redux";
 import "./auth.scss";
 
 const Activate: FC = () => {
-  const [error, setError] = useState<boolean | string>(false);
+  const [errors, setError] = useState<boolean | string>(false);
+  const [code, setCode] = useState<string>("");
+  const [loading, setLoading] = useState<boolean>(false);
+  const dispatch = useDispatch();
+  const history = useHistory();
+
+  useEffect(() => {
+    setTimeout(() => {
+      setError(false);
+    }, 3000);
+  }, [errors]);
+
+  const handleActivateUser = () => {
+    if (!code) {
+      setLoading(false);
+      setError("Code cannot be empty!");
+    } else {
+      const userData = {
+        code,
+      };
+      dispatch(activateUser(userData, setLoading, setError, history));
+    }
+  };
+
   return (
     <div>
       <div className="test">
         <div className="designs">
           <Design />
           <div className="login-auth">
-            {error && (
-              <div className="ui error message">
-                <i onClick={() => setError(false)} className="close icon"></i>
-                <div className="header">{LOGIN_ERROR_HEADER}</div>
-                <p>{error}</p>
+            {errors && (
+              <div className="message-auth">
+                <Message negative>
+                  <Message.Header>{ACTIVATE_ERROR_HEADER}</Message.Header>
+                  <p>{errors}</p>
+                </Message>
               </div>
             )}
             <h1 className="register-logo">{LOGO}</h1>
@@ -37,10 +64,21 @@ const Activate: FC = () => {
               <div>
                 <label>{ACTIVATION_CODE}</label>
                 <div className="auth-input">
-                  <input type="text" />
+                  <input
+                    type="text"
+                    onChange={(e) => setCode(e.target.value)}
+                  />
                 </div>
               </div>
-              <div className="auth-button">{ACTIVATE}</div>
+              <div>
+                <button
+                  disabled={loading}
+                  onClick={handleActivateUser}
+                  className="auth-button"
+                >
+                  {loading ? "Activating..." : ACTIVATE}
+                </button>
+              </div>
               <div className="base">
                 <p>
                   {DIDNT_RECEIVE_CODE}

@@ -26,6 +26,7 @@ const FinishAutoSaveSettings = ({
   const user = useSelector((state: RootStateOrAny) => state.user);
   const [weekday, setWeekday] = useState<dropdownTypes>();
   const [monthday, setMonthday] = useState<dropdownTypes>();
+  const [fundSource, setFundSource] = useState<dropdownTypes>();
   const [preferredTime, setPreferredTime] = useState<dropdownTypes>();
   const [startTime, setStartTime] = useState<dropdownTypes>();
   const dispatch = useDispatch();
@@ -68,7 +69,7 @@ const FinishAutoSaveSettings = ({
             <h2>Finish Settings</h2>
             <div className="desc">Complete your autosave settings.</div>
           </div>
-          <div className="content">
+          <div className="contents">
             <div className="autosave-banner">
               <div>
                 <Icon size="big" name="calendar" />
@@ -132,7 +133,10 @@ const FinishAutoSaveSettings = ({
               <Dropdown
                 placeholder="Select Source"
                 fluid
-                value={code}
+                value={fundSource}
+                onChange={(e, data) =>
+                  setFundSource(data.value as dropdownSetStateType)
+                }
                 selection
                 options={fundsOptions}
               />

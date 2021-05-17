@@ -47,6 +47,9 @@ const Account: FC = () => {
     if (title === "Verify Your Identity") {
       history.push("/home/identity");
     }
+    if (title === "Refer & Earn N500") {
+      history.push("/home/refer&earn");
+    }
   };
 
   const showBalanceState = localStorage.getItem("showBalance");

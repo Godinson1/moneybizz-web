@@ -55,11 +55,11 @@ const Ajo: FC = () => {
               <div
                 onClick={() => history.push(`${url}/selectsafelockduration`)}
               >
-                <Icon id="iconed" name="plus" color="blue" /> &nbsp; Create Ajo
+                <Icon id="iconed" name="plus" color="blue" /> Create Ajo
               </div>
               <div onClick={() => history.push(`${url}/learn_safelock`)}>
-                <Icon id="iconed" name="info circle" color="blue" /> &nbsp; What
-                is Ajo?
+                <Icon id="iconed" name="info circle" color="blue" /> What is
+                Ajo?
               </div>
             </div>
           </div>
@@ -104,7 +104,7 @@ const Ajo: FC = () => {
               return (
                 <div className="active-safelock">
                   <div className="flex-content first">
-                    <div>
+                    <div className="icon">
                       <Icon name="save" size="big" color="blue" />
                     </div>
                     <div>

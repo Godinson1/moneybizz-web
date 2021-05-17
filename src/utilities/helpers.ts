@@ -111,8 +111,6 @@ const validateResetPassword = ({
 }: resetData): { error: string; valid: boolean } => {
   let error = "";
 
-  if (isEmpty(mbCode)) error = "Bizz reset code cannot be empty";
-
   if (isEmpty(password)) error = "Password must not be empty";
   if (isEmpty(confirmPassword)) error = "Password must not be empty";
   if (notValidPassword(password))
@@ -121,6 +119,23 @@ const validateResetPassword = ({
     error = "Password must have at least 6 characters";
 
   if (password !== confirmPassword) error = "Passwords do not match!";
+  if (isEmpty(mbCode)) error = "Bizz reset code cannot be empty";
+
+  return {
+    error,
+    valid: error === "" ? true : false,
+  };
+};
+
+const validateVerifyEmail = ({
+  email,
+}: {
+  email: string;
+}): { error: string; valid: boolean } => {
+  let error = "";
+
+  if (isEmpty(email)) error = "Email must not be empty";
+  else if (!isEmail(email)) error = "Must be a valid email address";
 
   return {
     error,
@@ -215,6 +230,7 @@ export {
   validateLogin,
   validateResetPassword,
   validateReg,
+  validateVerifyEmail,
   getUserMessage,
   formatNumber,
   readURI,

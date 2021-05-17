@@ -15,17 +15,19 @@ import { codeData, settingsData, verifyUserType } from "../types";
 import { RouteComponentProps } from "react-router-dom";
 
 export const activateUser =
-  (data: codeData, setLoading: Function, showMessage: Function) =>
+  (
+    data: codeData,
+    setLoading: Function,
+    showMessage: Function,
+    history: RouteComponentProps["history"]
+  ) =>
   async (dispatch: typeof store.dispatch) => {
     try {
       setLoading(true);
       const res = await axios.post(`user/activate`, data);
       if (res) {
         setLoading(false);
-        const { message } = res.data;
-        showMessage(message);
-        console.log(res.data);
-        //dispatch(setIsLogin({ status: true, token }));
+        history.push("/home");
       }
     } catch (err) {
       console.log(err);

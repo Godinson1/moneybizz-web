@@ -31,6 +31,8 @@ const BizzBank: FC = () => {
   const { url } = useRouteMatch();
   const AutosaveState = localStorage.getItem("autosave");
 
+  console.log(parseInt((0).toString()));
+
   return (
     <div>
       <div className="card-container">
@@ -51,13 +53,13 @@ const BizzBank: FC = () => {
             </div>
             <div className="flex-bottom-card">
               <div onClick={() => history.push(`${url}/interest`)}>
-                <Icon id="iconed" name="percent" color="blue" /> &nbsp; Interest
+                <Icon id="iconed" name="percent" color="blue" /> Interest
               </div>
               <div onClick={() => history.push(`${url}/withdraw`)}>
-                <Icon id="iconed" name="home" color="blue" /> &nbsp; Withdraw
+                <Icon id="iconed" name="home" color="blue" /> Withdraw
               </div>
               <div onClick={() => history.push(`${url}/settings`)}>
-                <Icon id="iconed" name="setting" color="blue" /> &nbsp; Settings
+                <Icon id="iconed" name="setting" color="blue" /> Settings
               </div>
             </div>
           </div>
@@ -71,37 +73,39 @@ const BizzBank: FC = () => {
           <div className="custom-card-autosave">
             <div className="card-header">
               <div>SAVINGS INFO</div>
-              {user.user && user.user.data && user.user.data.details.autoSave && (
-                <div className="flex-between">
-                  <div
-                    onClick={() => history.push(`${url}/autosave_settings`)}
-                    className="autosave-btn"
-                  >
-                    <div>AutoSave Deposit</div>
-                    <div>
-                      {formatNumber(
-                        parseInt(
-                          user.user.data.details.autoSave.amount
-                            .toString()
-                            .slice(0, -2)
-                        )
-                      )}{" "}
-                      {user.user.data.details.autoSave.interval ===
-                      "testing" ? (
-                        "/2mins"
-                      ) : (
-                        <span id="bold-text">
-                          {user.user.data.details.autoSave.interval}
-                        </span>
-                      )}
+              {user.user &&
+                user.user.data &&
+                user.user.data.details.autoSave.amount !== 0 && (
+                  <div className="flex-between">
+                    <div
+                      onClick={() => history.push(`${url}/autosave_settings`)}
+                      className="autosave-btn"
+                    >
+                      <div>AutoSave Deposit</div>
+                      <div>
+                        {formatNumber(
+                          parseInt(
+                            user.user.data.details.autoSave.amount
+                              .toString()
+                              .slice(0, -2)
+                          )
+                        )}{" "}
+                        {user.user.data.details.autoSave.interval ===
+                        "testing" ? (
+                          "/2mins"
+                        ) : (
+                          <span id="bold-text">
+                            {user.user.data.details.autoSave.interval}
+                          </span>
+                        )}
+                      </div>
+                    </div>
+                    <div className="autosave-btn">
+                      <div>Next Withdrawal</div>
+                      <div>30 June 21</div>
                     </div>
                   </div>
-                  <div className="autosave-btn">
-                    <div>Next Withdrawal</div>
-                    <div>30 June 21</div>
-                  </div>
-                </div>
-              )}
+                )}
             </div>
             <div
               onClick={() => history.push(`${url}/autosavetoggle`)}

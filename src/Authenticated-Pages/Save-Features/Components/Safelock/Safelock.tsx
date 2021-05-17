@@ -59,12 +59,11 @@ const Safelock: FC = () => {
               <div
                 onClick={() => history.push(`${url}/selectsafelockduration`)}
               >
-                <Icon id="iconed" name="plus" color="blue" /> &nbsp; Create a
-                Safelock
+                <Icon id="iconed" name="plus" color="blue" /> Create a Safelock
               </div>
               <div onClick={() => history.push(`${url}/learn_safelock`)}>
-                <Icon id="iconed" name="info circle" color="blue" /> &nbsp; What
-                is Safelock?
+                <Icon id="iconed" name="info circle" color="blue" /> What is
+                Safelock?
               </div>
             </div>
           </div>
@@ -109,7 +108,7 @@ const Safelock: FC = () => {
               return (
                 <div className="active-safelock">
                   <div className="flex-content first">
-                    <div>
+                    <div className="icon">
                       <Icon name="lock" size="big" color="blue" />
                     </div>
                     <div>

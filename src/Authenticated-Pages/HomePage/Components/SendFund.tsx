@@ -28,6 +28,28 @@ const SendFund = () => {
               Still in development. Kindly check back later!
             </div>
           </div>
+          <div className="autosave-banner-settings">
+            <div>
+              <Icon size="big" name="setting" />
+            </div>
+            <div>
+              <h4>Mono Credit</h4>
+              <div className="base">
+                Send fund to a single user using his/her bizz handle.
+              </div>
+            </div>
+          </div>
+          <div className="autosave-banner-settings">
+            <div>
+              <Icon size="big" name="setting" />
+            </div>
+            <div>
+              <h4>Multiple Credit - Give Away</h4>
+              <div className="base">
+                Send fund to more than one user at a go using their bizz handle.
+              </div>
+            </div>
+          </div>
           <div>
             <button onClick={() => history.goBack()} className="auth-button">
               Cancel

@@ -2,6 +2,9 @@ const constant = 2;
 
 const LOGIN_ERROR_HEADER = "Error trying to Login..";
 const REGISTER_ERROR_HEADER = "Error trying to Register";
+const VERIFY_ERROR_HEADER = "Error trying to verify email.";
+const RESET_ERROR_HEADER = "Error trying to reset password.";
+const ACTIVATE_ERROR_HEADER = "Error trying to activate account.";
 const REGISTER = "Register";
 const LOGIN = "Login";
 const DONT_HAVE_ACCOUNT = "Don't have an account?";
@@ -91,18 +94,21 @@ const RESET_FORM = [
     placeholder: "Bizz Code",
     type: "text",
     className: "auth-input",
+    name: "mbCode",
   },
   {
     label: "Password",
     placeholder: "Password",
     type: "password",
     className: "auth-input",
+    name: "password",
   },
   {
     label: "Confirm Password",
     placeholder: "Confirm Password",
     type: "password",
     className: "auth-input",
+    name: "confirmPassword",
   },
 ];
 
@@ -133,7 +139,10 @@ export {
   DIDNT_RECEIVE_CODE,
   RESET,
   ACTIVATE,
+  VERIFY_ERROR_HEADER,
   ACTIVATE_HEADER,
   ACTIVATE_DESC,
   ACTIVATION_CODE,
+  RESET_ERROR_HEADER,
+  ACTIVATE_ERROR_HEADER,
 };

@@ -1,8 +1,12 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Icon } from "semantic-ui-react";
 import { useHistory } from "react-router-dom";
 
 const RequestFund = () => {
+  const [handle, setHandle] = useState<string>("");
+  const [title, setTitle] = useState<string>("");
+  const [amount, setAmount] = useState<string>("");
+
   const history = useHistory();
 
   useEffect(() => {
@@ -29,8 +33,37 @@ const RequestFund = () => {
             </div>
           </div>
           <div>
+            <label>Amount</label>
+            <div className="auth-input">
+              <input
+                onChange={(e) => setAmount(e.target.value)}
+                type="number"
+                value={amount}
+                placeholder="50000"
+              />
+            </div>
+            <label>Bizzer handle</label>
+            <div className="auth-input">
+              <input
+                onChange={(e) => setHandle(e.target.value)}
+                type="text"
+                value={handle}
+                placeholder="mypaddi"
+              />
+            </div>
+            <label>Message</label>
+            <div className="auth-input">
+              <input
+                onChange={(e) => setTitle(e.target.value)}
+                type="textarea"
+                value={title}
+                placeholder="Abeg! find me small 2k make I take dey.."
+              />
+            </div>
+          </div>
+          <div>
             <button onClick={() => history.goBack()} className="auth-button">
-              Cancel
+              Request Fund
             </button>
           </div>
         </div>

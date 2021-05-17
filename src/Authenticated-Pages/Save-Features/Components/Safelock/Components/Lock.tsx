@@ -1,26 +1,33 @@
 import React, { useEffect, useState } from "react";
 import { Icon, Dropdown, DropdownProps } from "semantic-ui-react";
+import SemanticDatepicker from "react-semantic-ui-datepickers";
 import { useHistory, useRouteMatch } from "react-router-dom";
+import dayjs from "dayjs";
 import { getDuration } from "./helper";
-import { SAFELOCK_OPTIONS, fundsOptions } from "./constants";
+import { fundsOptions } from "./constants";
 import "./styles.scss";
 import "../../styles.scss";
 
 const Lock = () => {
-  const [account_number, setAccountNumber] = useState<string>("");
   const [code, setCode] = useState<string>("");
+  const [title, setTitle] = useState<string>("");
+  const [amount, setAmount] = useState<string>("");
+  const [payBackDate, setPayBackDate] = useState("");
 
   const handleChange = (
     e: React.SyntheticEvent<HTMLElement, Event>,
     data: DropdownProps
   ) => {
     setCode(data.value as string);
-    console.log(account_number);
   };
+
+  const onChange = (
+    event: React.SyntheticEvent<Element, Event> | undefined,
+    data: any
+  ) => setPayBackDate(dayjs(data.value).format("YYYY-MM-DD"));
 
   const history = useHistory();
   const { url } = useRouteMatch();
-  console.log(url.slice(-5));
 
   useEffect(() => {
     document.body.style.overflow = "hidden";
@@ -28,6 +35,12 @@ const Lock = () => {
       document.body.style.overflow = "hidden";
     };
   }, []);
+
+  const handleSafelock = () => {
+    const safelockData = { title, amount, payBackDate };
+    console.log(safelockData);
+    history.goBack();
+  };
 
   return (
     <div>
@@ -45,32 +58,31 @@ const Lock = () => {
               Create a SafeLock for just {getDuration(url)} days.
             </div>
           </div>
-          <div className="safelockinfo-container">
+          <div>
             <label>Amount to Lock / Invest</label>
             <div className="auth-input">
               <input
-                onChange={(e) => setAccountNumber(e.target.value)}
+                onChange={(e) => setAmount(e.target.value)}
                 type="number"
+                value={amount}
                 placeholder="50000"
               />
             </div>
             <label>Title of SafeLock™</label>
             <div className="auth-input">
               <input
-                onChange={(e) => setAccountNumber(e.target.value)}
-                type="number"
+                onChange={(e) => setTitle(e.target.value)}
+                type="text"
+                value={title}
                 placeholder="My New Lock"
               />
             </div>
             <label>Set Payback Date</label>
-            <div className="drops">
-              <Dropdown
-                placeholder="Pick a Date"
-                fluid
-                value={code}
-                selection
-                onChange={handleChange}
-                options={SAFELOCK_OPTIONS}
+            <div className="dateOfBirth">
+              <SemanticDatepicker
+                size="big"
+                id="dateOfBirth-lock"
+                onChange={onChange}
               />
             </div>
             <label>Source of Funds</label>
@@ -85,7 +97,7 @@ const Lock = () => {
               />
             </div>
             <div>
-              <button onClick={() => history.goBack()} className="auth-button">
+              <button onClick={handleSafelock} className="auth-button">
                 Submit
               </button>
             </div>

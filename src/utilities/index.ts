@@ -5,6 +5,8 @@ import usePayWithCard from "./usePayWithCard";
 import {
   getUserMessage,
   validateLogin,
+  validateResetPassword,
+  validateVerifyEmail,
   validateReg,
   readURI,
   getMinuteHour,
@@ -18,6 +20,8 @@ export {
   MyErrorBoundary,
   getUserMessage,
   validateLogin,
+  validateResetPassword,
+  validateVerifyEmail,
   validateReg,
   formatNumber,
   readURI,

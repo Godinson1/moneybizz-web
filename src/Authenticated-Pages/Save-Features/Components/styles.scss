@@ -74,9 +74,11 @@
   display: flex;
   justify-content: space-evenly;
   align-items: flex-start;
+
   width: 100%;
   gap: 40px;
   cursor: pointer;
+  overflow: hidden;
   padding: 10px 10px 5px 10px;
   margin-top: 20px;
 
@@ -212,6 +214,17 @@ h4 {
     width: 100%;
     margin-top: 20px;
     .info {
+      display: none;
+    }
+  }
+}
+
+@include media-sm {
+  .active-safelock {
+    flex-wrap: wrap;
+    gap: 10px;
+
+    .icon {
       display: none;
     }
   }

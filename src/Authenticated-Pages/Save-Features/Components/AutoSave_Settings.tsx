@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useSelector, RootStateOrAny } from "react-redux";
 import { Icon, DropdownProps, Dropdown } from "semantic-ui-react";
 import { useHistory } from "react-router-dom";
 import { saveOptions } from "./constants";
@@ -7,8 +8,13 @@ import FinishAutoSaveSettings from "./FinishAutoSaveSettings";
 import "./styles.scss";
 
 const AutoSave_Settings = () => {
-  const [code, setCode] = useState<string>("");
-  const [amount, setAmount] = useState<string>("");
+  const user = useSelector((state: RootStateOrAny) => state.user);
+  const [code, setCode] = useState<string>(
+    user.user.data.details.autoSave.interval
+  );
+  const [amount, setAmount] = useState<string>(
+    user.user.data.details.autoSave.amount.toString().slice(0, -2)
+  );
   const [finish, setFinish] = useState<boolean>(false);
 
   const handleChange = (
