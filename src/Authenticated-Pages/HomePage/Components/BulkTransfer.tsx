@@ -63,7 +63,7 @@ const BulkTransfer = () => {
                 prefix={"₦"}
               />
             </div>
-            <label>Bizzer handle (Seperate handle with comma)</label>
+            <label>Bizzer handles (Seperate handle with comma)</label>
             <div className="auth-input">
               <input
                 onChange={(e) => setHandle(e.target.value)}
