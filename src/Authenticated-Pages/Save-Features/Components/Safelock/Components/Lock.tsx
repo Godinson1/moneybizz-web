@@ -83,6 +83,7 @@ const Lock = () => {
                 size="big"
                 id="dateOfBirth-lock"
                 onChange={onChange}
+                minDate={new Date()}
               />
             </div>
             <label>Source of Funds</label>

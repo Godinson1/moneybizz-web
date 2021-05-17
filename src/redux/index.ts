@@ -20,6 +20,7 @@ import {
   clearData,
   setUserLoading,
   setUserSuccess,
+  setUserError,
 } from "./slices/user";
 import {
   loginUser,
@@ -36,7 +37,10 @@ import {
   switchOnAutosave,
   verifyUser,
   verifyUserOtp,
+  requestFund,
   activateUser,
+  singleTransfer,
+  bulkTransfer,
 } from "./actions/user";
 import { clearMessage, clearPayMessage } from "./actions/dashboard";
 import { payWithBank, sendOtp, payWithExistingCard } from "./actions/payment";
@@ -77,4 +81,8 @@ export {
   verifyUser,
   verifyUserOtp,
   activateUser,
+  requestFund,
+  singleTransfer,
+  bulkTransfer,
+  setUserError,
 };

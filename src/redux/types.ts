@@ -6,6 +6,12 @@ export type bankDataType = {
   code: string;
 };
 
+export type transferSingleType = {
+  reason: string;
+  amount: string;
+  handle: string;
+};
+
 export type OtpType = { otp: string };
 
 export type codeData = {

@@ -134,6 +134,19 @@
   @include flex-center;
 }
 
+.textarea-request {
+  background-color: transparent;
+  height: 100px;
+  width: 100%;
+  border-radius: 10px;
+  border-color: rgb(204, 223, 230);
+  resize: none;
+  padding: 10px;
+  &:focus {
+    outline: none;
+  }
+}
+
 @include media-sm {
   .flex-between {
     gap: 10px;

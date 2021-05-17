@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Icon } from "semantic-ui-react";
+import NumberFormat from "react-number-format";
 import { useHistory } from "react-router-dom";
 import PaymentOption from "./PaymentOption";
 import "./styles.scss";
@@ -34,10 +35,11 @@ const Save = ({ data }: { data: string }) => {
           </div>
           <label>Enter an Amount - E.g 5000</label>
           <div className="auth-input">
-            <input
-              onChange={(e) => setAmount(e.target.value)}
-              type="number"
-              placeholder="Enter Amount"
+            <NumberFormat
+              placeholder="Enter amount"
+              thousandSeparator={true}
+              onValueChange={({ formattedValue, value }) => setAmount(value)}
+              prefix={"₦"}
             />
           </div>
           <div>

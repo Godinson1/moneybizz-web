@@ -177,3 +177,70 @@ export const verifyUserOtp =
       }
     }
   };
+
+export const requestFund =
+  (
+    data: { amount: string; message: string; handle: string },
+    history: RouteComponentProps["history"]
+  ) =>
+  async (dispatch: typeof store.dispatch) => {
+    try {
+      dispatch(setLoadingMain(true));
+      const res = await axios.post(`user/request-fund`, data);
+      if (res.data) {
+        dispatch(setUserSuccess(res.data));
+        history.push(`/home`);
+      }
+    } catch (err) {
+      if (err && err.response) {
+        console.log(err.response.data);
+        dispatch(setUserError(err.response.data.message));
+      }
+    }
+  };
+
+export const singleTransfer =
+  (
+    data: { amount: string; reason: string; handle: string },
+    history: RouteComponentProps["history"]
+  ) =>
+  async (dispatch: typeof store.dispatch) => {
+    try {
+      dispatch(setLoadingMain(true));
+      const res = await axios.post(`pay/transfer/single`, data);
+      if (res.data) {
+        dispatch(setUserSuccess(res.data));
+        history.push(`/home`);
+      }
+    } catch (err) {
+      if (err && err.response) {
+        console.log(err.response.data);
+        dispatch(setUserError(err.response.data.message));
+      }
+    }
+  };
+
+export const bulkTransfer =
+  (
+    data: {
+      amount: string;
+      reason: string;
+      bizzers: Array<{ handle: string }>;
+    },
+    history: RouteComponentProps["history"]
+  ) =>
+  async (dispatch: typeof store.dispatch) => {
+    try {
+      dispatch(setLoadingMain(true));
+      const res = await axios.post(`pay/transfer/bulk`, data);
+      if (res.data) {
+        dispatch(setUserSuccess(res.data));
+        history.push(`/home`);
+      }
+    } catch (err) {
+      if (err && err.response) {
+        console.log(err.response.data);
+        dispatch(setUserError(err.response.data.message));
+      }
+    }
+  };

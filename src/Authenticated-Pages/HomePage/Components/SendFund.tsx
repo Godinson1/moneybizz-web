@@ -1,9 +1,11 @@
 import React, { useEffect } from "react";
 import { Icon } from "semantic-ui-react";
-import { useHistory } from "react-router-dom";
+import { useHistory, Route, useRouteMatch } from "react-router-dom";
+import { BulkTransfer, SingleTransfer } from "./index";
 
 const SendFund = () => {
   const history = useHistory();
+  const { url } = useRouteMatch();
 
   useEffect(() => {
     document.body.style.overflow = "hidden";
@@ -28,9 +30,12 @@ const SendFund = () => {
               Still in development. Kindly check back later!
             </div>
           </div>
-          <div className="autosave-banner-settings">
+          <div
+            onClick={() => history.push(`${url}/single_transfer`)}
+            className="autosave-banner-settings"
+          >
             <div>
-              <Icon size="big" name="setting" />
+              <Icon size="big" name="user" />
             </div>
             <div>
               <h4>Mono Credit</h4>
@@ -39,9 +44,12 @@ const SendFund = () => {
               </div>
             </div>
           </div>
-          <div className="autosave-banner-settings">
+          <div
+            onClick={() => history.push(`${url}/give_away`)}
+            className="autosave-banner-settings"
+          >
             <div>
-              <Icon size="big" name="setting" />
+              <Icon size="big" name="users" />
             </div>
             <div>
               <h4>Multiple Credit - Give Away</h4>
@@ -57,6 +65,42 @@ const SendFund = () => {
           </div>
         </div>
       </div>
+      <Route
+        path={`${url}/single_transfer`}
+        children={({ match }) => {
+          return (
+            <div>
+              {match && (
+                <div id="show-modal-payment">
+                  <div className="modal-container">
+                    <div>
+                      <SingleTransfer />
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+          );
+        }}
+      />
+      <Route
+        path={`${url}/give_away`}
+        children={({ match }) => {
+          return (
+            <div>
+              {match && (
+                <div id="show-modal-payment">
+                  <div className="modal-container">
+                    <div>
+                      <BulkTransfer />
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+          );
+        }}
+      />
     </div>
   );
 };
