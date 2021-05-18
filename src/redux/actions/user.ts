@@ -244,3 +244,29 @@ export const bulkTransfer =
       }
     }
   };
+
+export const safelockFund =
+  (
+    data: {
+      amount: string;
+      payBackDate: string;
+      interest: string;
+      title: string;
+    },
+    history: RouteComponentProps["history"]
+  ) =>
+  async (dispatch: typeof store.dispatch) => {
+    try {
+      dispatch(setLoadingMain(true));
+      const res = await axios.post(`user/safelock`, data);
+      if (res.data) {
+        dispatch(setUserSuccess(res.data));
+        history.push(`/home`);
+      }
+    } catch (err) {
+      if (err && err.response) {
+        console.log(err.response.data);
+        dispatch(setUserError(err.response.data.message));
+      }
+    }
+  };

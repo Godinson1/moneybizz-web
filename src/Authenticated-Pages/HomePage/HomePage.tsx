@@ -14,6 +14,7 @@ import {
   RequestFund,
   AddBVN,
   ReferEarn,
+  SecurityQuestion,
 } from "./Components";
 import { usePrepareLink, getChildRoute } from "../../utilities";
 import { getUserDetail } from "../../redux";
@@ -198,6 +199,24 @@ const HomePage: FC = () => {
                   <div className="modal-container">
                     <div>
                       <ReferEarn />
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+          );
+        }}
+      />
+      <Route
+        path={`${url}/security_question`}
+        children={({ match }) => {
+          return (
+            <div>
+              {match && (
+                <div id="show-modal-picture">
+                  <div className="modal-container">
+                    <div>
+                      <SecurityQuestion />
                     </div>
                   </div>
                 </div>

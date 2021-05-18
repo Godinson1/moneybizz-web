@@ -3,7 +3,8 @@ import { useDispatch, useSelector, RootStateOrAny } from "react-redux";
 import NumberFormat from "react-number-format";
 import { Icon } from "semantic-ui-react";
 import { useHistory } from "react-router-dom";
-import { bulkTransfer } from "../../../redux";
+import { bulkTransfer, setUserError } from "../../../redux";
+import { BULK_TRANSFER_ERROR } from "./constants";
 
 const BulkTransfer = () => {
   const user = useSelector((state: RootStateOrAny) => state.user);
@@ -23,17 +24,21 @@ const BulkTransfer = () => {
   const handleRequestFund = () => {
     const test = handle.split(",");
     let newArray = [];
-    for (let i = 0; i < test.length; i++) {
-      newArray.push({
-        handle: test[i].trim(),
-      });
+    if (test.length === 1) {
+      dispatch(setUserError(BULK_TRANSFER_ERROR));
+    } else {
+      for (let i = 0; i < test.length; i++) {
+        newArray.push({
+          handle: test[i].trim(),
+        });
+      }
+      const requestData = {
+        bizzers: newArray,
+        amount: amount + "00",
+        reason: message,
+      };
+      dispatch(bulkTransfer(requestData, history));
     }
-    const requestData = {
-      bizzers: newArray,
-      amount: amount + "00",
-      reason: message,
-    };
-    dispatch(bulkTransfer(requestData, history));
   };
 
   return (

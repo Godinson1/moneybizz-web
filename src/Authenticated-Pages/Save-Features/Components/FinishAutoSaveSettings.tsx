@@ -69,7 +69,7 @@ const FinishAutoSaveSettings = ({
             <h2>Finish Settings</h2>
             <div className="desc">Complete your autosave settings.</div>
           </div>
-          <div className="contents">
+          <div className="content">
             <div className="autosave-banner">
               <div>
                 <Icon size="big" name="calendar" />

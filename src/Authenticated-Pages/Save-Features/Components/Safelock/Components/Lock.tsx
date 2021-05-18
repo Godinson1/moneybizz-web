@@ -2,8 +2,9 @@ import React, { useEffect, useState } from "react";
 import { Icon, Dropdown, DropdownProps } from "semantic-ui-react";
 import SemanticDatepicker from "react-semantic-ui-datepickers";
 import { useHistory, useRouteMatch } from "react-router-dom";
+import NumberFormat from "react-number-format";
 import dayjs from "dayjs";
-import { getDuration } from "./helper";
+import { getDuration, getInterest } from "./helper";
 import { fundsOptions } from "./constants";
 import "./styles.scss";
 import "../../styles.scss";
@@ -37,7 +38,12 @@ const Lock = () => {
   }, []);
 
   const handleSafelock = () => {
-    const safelockData = { title, amount, payBackDate };
+    const safelockData = {
+      title,
+      amount,
+      payBackDate,
+      interest: getInterest(url),
+    };
     console.log(safelockData);
     history.goBack();
   };
@@ -55,17 +61,18 @@ const Lock = () => {
           <div className="info-header">
             <h2>Lock for {getDuration(url)} days</h2>
             <div className="desc">
-              Create a SafeLock for just {getDuration(url)} days.
+              Create a SafeLock for just {getDuration(url)} days. Still in
+              development, kindly check back later.
             </div>
           </div>
           <div>
             <label>Amount to Lock / Invest</label>
             <div className="auth-input">
-              <input
-                onChange={(e) => setAmount(e.target.value)}
-                type="number"
-                value={amount}
-                placeholder="50000"
+              <NumberFormat
+                placeholder="5000"
+                thousandSeparator={true}
+                onValueChange={({ formattedValue, value }) => setAmount(value)}
+                prefix={"₦"}
               />
             </div>
             <label>Title of SafeLock™</label>
@@ -98,7 +105,11 @@ const Lock = () => {
               />
             </div>
             <div>
-              <button onClick={handleSafelock} className="auth-button">
+              <button
+                disabled={amount === "" || payBackDate === ""}
+                onClick={handleSafelock}
+                className="auth-button"
+              >
                 Submit
               </button>
             </div>

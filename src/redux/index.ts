@@ -41,6 +41,7 @@ import {
   activateUser,
   singleTransfer,
   bulkTransfer,
+  safelockFund,
 } from "./actions/user";
 import { clearMessage, clearPayMessage } from "./actions/dashboard";
 import { payWithBank, sendOtp, payWithExistingCard } from "./actions/payment";
@@ -85,4 +86,5 @@ export {
   singleTransfer,
   bulkTransfer,
   setUserError,
+  safelockFund,
 };

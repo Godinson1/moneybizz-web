@@ -200,6 +200,7 @@ h4 {
 
 .flex-between {
   @include flex-between;
+  flex-wrap: wrap;
 }
 
 .quick-save-btn {

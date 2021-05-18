@@ -7,6 +7,7 @@ import AddBVN from "./AddBVN";
 import ReferEarn from "./ReferEarn";
 import SingleTransfer from "./SingleTransfer";
 import BulkTransfer from "./BulkTransfer";
+import SecurityQuestion from "./SecurityQuestion";
 
 export {
   Header,
@@ -18,4 +19,5 @@ export {
   ReferEarn,
   BulkTransfer,
   SingleTransfer,
+  SecurityQuestion,
 };

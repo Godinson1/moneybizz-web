@@ -13,7 +13,6 @@
   }
 
   .content {
-    //background-color: red;
     overflow: auto;
     overflow-x: hidden;
     height: 300px;
@@ -156,5 +155,10 @@
   .modal-div-pay {
     overflow: auto;
     overflow-x: hidden;
+  }
+
+  .content {
+    height: 100% !important;
+    padding: 0;
   }
 }

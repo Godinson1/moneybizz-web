@@ -37,7 +37,7 @@ const Todo = () => {
         <div>Safelock Funds</div>
       </div>
       <div
-        onClick={() => history.push(`save/b/bizzbank/settings`)}
+        onClick={() => history.push(`${url}/security_question`)}
         className="auth-options"
       >
         <Icon size="small" id="icon" color="blue" name="dot circle outline" />

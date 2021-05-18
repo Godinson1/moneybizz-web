@@ -44,19 +44,8 @@
     }
 
     .auth-options {
-      @include flex-start-center;
-      gap: 20px;
-      font-weight: 500;
-      font-size: 1.1rem;
-      border: 1px solid $secondary-color;
-      width: 300px;
-      @include custom-border-radius;
-      margin-top: 15px;
+      @include auth-options;
       height: 50px;
-      cursor: pointer;
-      #icon {
-        font-size: 1.3rem;
-      }
     }
   }
 

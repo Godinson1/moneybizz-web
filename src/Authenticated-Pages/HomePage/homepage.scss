@@ -67,23 +67,18 @@
   }
 
   .auth-options {
-    @include flex-start-center;
-    gap: 20px;
-    font-weight: 500;
-    font-size: 1.1rem;
-    border: 1px solid $secondary-color;
-    width: 500px;
-    @include custom-border-radius;
-    margin-top: 15px;
+    @include auth-options;
     height: 60px;
-    cursor: pointer;
-    #icon {
-      font-size: 1.3rem;
-    }
+  }
+
+  .auth-recent {
+    @include auth-options;
   }
 
   .flex-between-recent {
     @include flex-between;
+    gap: 20px;
+    padding: 10px 0 10px 0;
     width: 100%;
 
     .flex-recent {

@@ -1,7 +1,7 @@
 import React, { FC, useEffect } from "react";
 import { useSelector, RootStateOrAny, useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
-import { Icon, SemanticICONS } from "semantic-ui-react";
+import { Icon, SemanticICONS, Transition } from "semantic-ui-react";
 import { Sidebar, Navbar, MobileSidebar } from "../Utils";
 import { _layoutTypes } from "./types";
 import { SIDEBAR_LINKS } from "../Utils/constants";
@@ -40,19 +40,25 @@ const Dashboard: FC<_layoutTypes> = ({ children, title }) => {
           </div>
           <div className={state.isSidebarOpen ? "main-mobile" : "main"}>
             {user.success && (
-              <div className="message-show">
-                <span>{user.success}</span>
-              </div>
+              <Transition duration={3000} animation="scale">
+                <div className="message-show">
+                  <span>{user.success}</span>
+                </div>
+              </Transition>
             )}
             {pay.error && (
-              <div className="message-show-error">
-                <span>{pay.error}</span>
-              </div>
+              <Transition duration={3000} animation="scale">
+                <div className="message-show-error">
+                  <span>{pay.error}</span>
+                </div>
+              </Transition>
             )}
             {user.error && (
-              <div className="message-show-error">
-                <span>{user.error}</span>
-              </div>
+              <Transition duration={500}>
+                <div className="message-show-error">
+                  <span>{user.error}</span>
+                </div>
+              </Transition>
             )}
             {children}
           </div>

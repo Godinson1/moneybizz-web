@@ -75,7 +75,11 @@ const AutoSave_Settings = () => {
           </div>
           <div>
             <button
-              disabled={amount.length < 3 || code === "" ? true : false}
+              disabled={
+                (amount && code && amount.length < 3) || code === ""
+                  ? true
+                  : false
+              }
               onClick={() => setFinish(true)}
               className="auth-button"
             >
