@@ -257,7 +257,8 @@ div.header-home {
 
   .home-flex {
     gap: 10px !important;
-    .auth-options {
+    .auth-options,
+    .auth-recent {
       width: 100%;
     }
   }
