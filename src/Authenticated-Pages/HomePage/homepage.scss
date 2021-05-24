@@ -29,7 +29,10 @@
 
   .flex-home-btns {
     display: flex;
-    gap: 5px;
+  }
+
+  .flex-home-btns > * + * {
+    margin: 0 0 0 10px;
   }
 
   .todo {
@@ -44,7 +47,6 @@
   .home-flex {
     display: flex;
     justify-content: space-between;
-    gap: 50px;
     flex-wrap: wrap-reverse;
     margin-top: 20px;
     width: 100%;
@@ -75,15 +77,21 @@
     @include auth-options;
   }
 
+  .flex-between-recent > * + * {
+    margin: 0 0 0 20px;
+  }
+
+  .flex-recent > * + * {
+    margin: 0 0 0 10px;
+  }
+
   .flex-between-recent {
     @include flex-between;
-    gap: 20px;
     padding: 10px 0 10px 0;
     width: 100%;
 
     .flex-recent {
       display: flex;
-      gap: 10px;
     }
 
     #icon {
@@ -110,14 +118,16 @@
     @include flex-start;
     margin: 5px 0 20px 0;
     flex-wrap: wrap;
-    gap: 45px;
   }
 
   .flex-start-button {
     @include flex-between;
     margin: 5px 0 20px 0;
     flex-wrap: wrap;
-    gap: 15px;
+  }
+
+  .flex-start-button > * + * {
+    margin: 0 0 0 15px;
   }
 }
 
@@ -211,9 +221,9 @@ div.header-home {
 
 @include media-sm {
   .auth-home {
-    padding: 20px 10px 50px 10px;
+    padding: 20px 20px 50px 15px;
     overflow: hidden;
-    margin-left: -10px;
+    margin-left: -5px;
     width: 100vw;
   }
 
@@ -245,18 +255,28 @@ div.header-home {
     }
   }
 
-  .flex-start {
-    gap: 10px !important;
+  .flex-start > * + * {
+    margin: 15px 0 0 0 !important;
   }
 
   .flex-start-button {
-    gap: 10px !important;
     justify-content: flex-start !important;
     align-items: flex-start !important;
   }
 
+  .flex-start-button {
+    flex-direction: column;
+  }
+
+  .flex-start-button > * + * {
+    margin: 15px 0 0 0 !important;
+  }
+
+  .home-flex > * + * {
+    margin: 20px 0 0 0 !important;
+  }
+
   .home-flex {
-    gap: 10px !important;
     .auth-options,
     .auth-recent {
       width: 100%;

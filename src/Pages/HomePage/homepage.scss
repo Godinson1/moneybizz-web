@@ -31,8 +31,10 @@
   .flex-start {
     @include flex-start;
     margin-top: 15px;
-    gap: 10px;
-    flex-wrap: wrap;
+  }
+
+  .flex-start > * + * {
+    margin: 0 0 0 10px;
   }
 
   .picture-holder {
@@ -81,5 +83,13 @@
 
   .picture-holder {
     display: none;
+  }
+
+  .flex-start {
+    flex-direction: column;
+  }
+
+  .flex-start > * + * {
+    margin: 10px 0 0 0 !important;
   }
 }

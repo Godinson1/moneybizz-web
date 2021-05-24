@@ -110,6 +110,7 @@
   .auth-saving {
     width: 100vw;
     overflow: hidden;
+    padding: 0 10px 0 10px !important;
     padding: 0;
     margin-left: -10px;
   }
@@ -129,6 +130,10 @@
     .total-balance {
       width: 100% !important;
     }
+  }
+
+  .save-options > * + * {
+    margin: 15px 0 0 0 !important;
   }
 
   .save-options {
