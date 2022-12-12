@@ -14,11 +14,7 @@ jobs:
       - name: Install Dependencies
         run: npm install
       - name: Build App
-        run: |
-          chmod +x deploy.sh
-          ./deploy.sh build
-        env:
-          REACT_APP_API_URL: ${{ secrets.STAGING_REACT_APP_API_URL }}
+        run: npm run build
       - name: move deploy script
         run: mv deploy.sh build/
       - name: Share artifact inside workflow
