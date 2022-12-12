@@ -39,4 +39,4 @@ main() {
   clearCache
   deploy_s3
 }
-
+$@
