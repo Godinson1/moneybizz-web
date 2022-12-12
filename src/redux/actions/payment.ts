@@ -21,7 +21,7 @@ export const payWithBank =
         dispatch(getPayment(res.data));
         setOtpOpen(true);
       }
-    } catch (err) {
+    } catch (err: any) {
       if (err && err.response) {
         console.log(err.response.data);
         dispatch(setPaymentError(err.response.data.message));
@@ -49,7 +49,7 @@ export const payWithExistingCard =
           dispatch(getUserDetail());
         }, 5000);
       }
-    } catch (err) {
+    } catch (err: any) {
       if (err && err.response) {
         console.log(err.response.data);
         dispatch(setPaymentError(err.response.data.message));
@@ -78,7 +78,7 @@ export const sendOtp =
           dispatch(getUserDetail());
         }, 5000);
       }
-    } catch (err) {
+    } catch (err: any) {
       if (err && err.response) {
         console.log(err.response.data);
         dispatch(setPaymentError(err.response.data.message));

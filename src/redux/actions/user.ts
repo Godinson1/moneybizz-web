@@ -29,7 +29,7 @@ export const activateUser =
         setLoading(false);
         history.push("/home");
       }
-    } catch (err) {
+    } catch (err: any) {
       console.log(err);
       if (err && err.response) {
         console.log(err.response.data);
@@ -47,7 +47,7 @@ export const getUserDetail = () => async (dispatch: typeof store.dispatch) => {
       console.log(res.data);
       dispatch(getUser(res.data));
     }
-  } catch (err) {
+  } catch (err: any) {
     if (err && err.response) {
       console.log(err.response.data);
       dispatch(setUserError(err.response.data.message));
@@ -63,7 +63,7 @@ export const updateProfilePhoto =
       if (res.data) {
         dispatch(setProfilePhoto(res.data));
       }
-    } catch (err) {
+    } catch (err: any) {
       if (err && err.response) {
         dispatch(setUserError(err.response.data.message));
       }
@@ -89,7 +89,7 @@ export const updateAutosaveSettings =
         dispatch(setAutosaveSetting(res.data));
         history.push("/save/b/bizzbank");
       }
-    } catch (err) {
+    } catch (err: any) {
       if (err && err.response) {
         console.log(err.response.data);
         dispatch(setUserError(err.response.data.message));
@@ -108,7 +108,7 @@ export const switchOffAutosave =
         dispatch(setAutosaveSetting(res.data));
         history.push("/save/b/bizzbank");
       }
-    } catch (err) {
+    } catch (err: any) {
       if (err && err.response) {
         console.log(err.response.data);
         dispatch(setUserError(err.response.data.message));
@@ -128,7 +128,7 @@ export const switchOnAutosave =
         dispatch(setAutosaveSetting(res.data));
         history.push("/save/b/bizzbank");
       }
-    } catch (err) {
+    } catch (err: any) {
       if (err && err.response) {
         console.log(err.response.data);
         dispatch(setUserError(err.response.data.message));
@@ -151,7 +151,7 @@ export const verifyUser =
         dispatch(setUserSuccess(res.data));
         history.push(`${url}/otp`);
       }
-    } catch (err) {
+    } catch (err: any) {
       if (err && err.response) {
         console.log(err.response.data);
         dispatch(setUserError(err.response.data.message));
@@ -170,7 +170,7 @@ export const verifyUserOtp =
         dispatch(setUserSuccess(res.data));
         history.push(`/home`);
       }
-    } catch (err) {
+    } catch (err: any) {
       if (err && err.response) {
         console.log(err.response.data);
         dispatch(setUserError(err.response.data.message));
@@ -191,7 +191,7 @@ export const requestFund =
         dispatch(setUserSuccess(res.data));
         history.push(`/home`);
       }
-    } catch (err) {
+    } catch (err: any) {
       if (err && err.response) {
         console.log(err.response.data);
         dispatch(setUserError(err.response.data.message));
@@ -212,7 +212,7 @@ export const singleTransfer =
         dispatch(setUserSuccess(res.data));
         history.push(`/home`);
       }
-    } catch (err) {
+    } catch (err: any) {
       if (err && err.response) {
         console.log(err.response.data);
         dispatch(setUserError(err.response.data.message));
@@ -237,7 +237,7 @@ export const bulkTransfer =
         dispatch(setUserSuccess(res.data));
         history.push(`/home`);
       }
-    } catch (err) {
+    } catch (err: any) {
       if (err && err.response) {
         console.log(err.response.data);
         dispatch(setUserError(err.response.data.message));
@@ -263,7 +263,7 @@ export const safelockFund =
         dispatch(setUserSuccess(res.data));
         history.push(`/home`);
       }
-    } catch (err) {
+    } catch (err: any) {
       if (err && err.response) {
         console.log(err.response.data);
         dispatch(setUserError(err.response.data.message));

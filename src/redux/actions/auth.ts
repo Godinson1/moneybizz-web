@@ -28,7 +28,7 @@ export const registerUser =
         dispatch(getUserDetail());
         history.push("/home");
       }
-    } catch (err) {
+    } catch (err: any) {
       console.log(err);
       if (err && err.response) {
         console.log(err.response.data);
@@ -59,7 +59,7 @@ export const loginUser =
         dispatch(setIsLogin({ status: true, token }));
         history.push("/home");
       }
-    } catch (err) {
+    } catch (err: any) {
       console.log(err);
       if (err && err.response) {
         console.log(err.response.data);
@@ -85,7 +85,7 @@ export const resetPassword =
         setLoading(false);
         history.push("/reset-password");
       }
-    } catch (err) {
+    } catch (err: any) {
       console.log(err.response.data);
       if (err && err.response && err.response.data) {
         showMessage(err.response.data.message);
@@ -109,7 +109,7 @@ export const createNewPassword =
         setLoading(false);
         history.push("/login");
       }
-    } catch (err) {
+    } catch (err: any) {
       if (err && err.response) {
         console.log(err.response);
         showMessage(err.response.data.message);
