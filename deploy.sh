@@ -8,7 +8,7 @@ build(){
   else
        export REACT_APP_API_URL=$REACT_APP_API_URL
   fi
-  yarn build
+  npm run build
 }
 
 # Deploy application
