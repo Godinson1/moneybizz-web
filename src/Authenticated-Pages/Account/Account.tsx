@@ -1,7 +1,7 @@
 import React, { FC, useState } from "react";
 import { useSelector, RootStateOrAny, useDispatch } from "react-redux";
 import Dashboard from "../../Pages/Dashboard/Components";
-import { readURI, formatNumber } from "../../utilities";
+import {  formatNumber } from "../../utilities";
 import { ACCOUNT_OPTIONS, PHONE_NUMBER } from "./constants";
 import { logoutUser, updateProfilePhoto } from "../../redux";
 import { useHistory } from "react-router-dom";
@@ -19,7 +19,7 @@ import "./account.scss";
 const Account: FC = () => {
   const user = useSelector((state: RootStateOrAny) => state.user);
   const [showBalance, setShowBalance] = useState<boolean>(false);
-  const [imageFile, setImageFile] = useState([]);
+  const [previewImage, setPreviewImage] = useState<any>()
   const dispatch = useDispatch();
   const history = useHistory();
 
@@ -28,11 +28,21 @@ const Account: FC = () => {
     localStorage.setItem("showBalance", `${!showBalance}`);
   };
 
+  const previewFile = (file: File) => {
+    const fileReader = new FileReader();
+    fileReader.readAsDataURL(file);
+    fileReader.onloadend = () => {
+      const data = fileReader.result;
+      setPreviewImage(data)
+    }
+  }
+
   const handleImage = async (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files[0]) {
-      readURI(e, setImageFile);
+      const file = e.target.files[0];
+      previewFile(file)
       const data = new FormData();
-      data.append("mb_image", e.target.files[0]);
+      data.append("mb_image", file);
       dispatch(updateProfilePhoto(data));
     }
   };
@@ -89,8 +99,8 @@ const Account: FC = () => {
                     <div className="account-avatar">
                       <img
                         src={
-                          imageFile[0]
-                            ? imageFile[0]
+                          previewImage
+                            ? previewImage
                             : user.user.data.details.profile_photo
                         }
                         alt="user"
